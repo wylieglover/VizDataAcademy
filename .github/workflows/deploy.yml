@@ -1,0 +1,21 @@
+name: run-docker-compose
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout the repo
+        uses: actions/checkout@v2
+        
+      - name: Create env file
+        run: |
+          touch ./dataliteracy/.env
+          echo "SECRET_KEY=${{ secrets.SECRET_KEY }}" >> ./dataliteracy/.env
+          echo "DJANGO_ALLOWED_HOSTS=${{ secrets.DJANGO_ALLOWED_HOSTS }}" >> ./dataliteracy/.env
+          cat ./dataliteracy/.env
+          
+      - name: Run Docker Compose
+        run: docker compose -f ./dataliteracy/docker-compose.yml up -d --force-recreate --build
