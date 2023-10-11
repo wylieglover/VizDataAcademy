@@ -4,6 +4,7 @@ Our group has been tasked with developing an application for high school student
 # Local Development Setup
 Before starting, make sure you have at least these components installed on your computer:
 - Python
+- python-dotenv
 - Django
 
 Start by cloning this repository into a local folder/directory:
