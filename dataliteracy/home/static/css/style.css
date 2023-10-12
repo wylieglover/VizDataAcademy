@@ -78,9 +78,26 @@
     color: #757575;
 }
 
+.statementPR {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    color: #757575;
+    text-align: right;
+    border: 10px;
+}
+
+.portraitR {
+    float: right;
+    border: 10px;
+}
+
 .subTitle {
     text-align: center;
     font-size: 35px;
     margin-bottom: 20px;
     margin-top: 15px;
+}
+
+#danielCampa, #wylieGlover{
+    text-align: right;
 }
