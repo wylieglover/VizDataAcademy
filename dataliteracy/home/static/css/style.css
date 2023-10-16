@@ -1,11 +1,18 @@
 
 /* Styling top-nav */
 
+.contained {
+    background-color: rgb(245, 245, 245);
+    overflow: auto;
+}
+
 #topNav {
     background-color: paleturquoise;
     background-clip:padding-box;
     border: 10px;
+    position:sticky;
     z-index: 1;
+    width: 100%;
 }
 
 #brand {
@@ -39,10 +46,15 @@
 
 .listy {
     background-color: paleturquoise;
-    border-bottom: 0px;
+    margin-top: 10px;
     height: 75px;
     line-height: 75px;
     text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: #000000a6;
+    font-size: 20px;
+    overflow: auto;
 }
 
 .listy:hover {
@@ -75,7 +87,9 @@
 .statementP {
     font-family:Arial, Helvetica, sans-serif;
     font-size: 25px;
+    line-height: 25px;
     color: #757575;
+    margin-top: 20px;
 }
 
 .statementPR {
@@ -83,12 +97,27 @@
     font-size: 25px;
     color: #757575;
     text-align: right;
+    margin-right: 300px;
     border: 10px;
 }
 
+.portrait {
+    width: 280px;
+    height: 402px;
+    left:0;
+    border: 10px solid;
+    line-height: 25px;
+    border-image: linear-gradient(teal,paleturquoise) 30;
+}
+
 .portraitR {
-    float: right;
+    float:right;
+    right: 0px;
     border: 10px;
+    width: 280px;
+    height: 402px;
+    border: 10px solid;
+    border-image: linear-gradient(teal,paleturquoise) 30;
 }
 
 .subTitle {
