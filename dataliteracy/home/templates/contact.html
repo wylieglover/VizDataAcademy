@@ -8,34 +8,36 @@
 </head>
 
 <body>
-  <div class="contained">
     <!--Inserting the top navbar with id of topNav -->
     <div class="navbar navbar-expand-lg navbar-light" id="topNav">
-        <a class="navbar-brand" href="#" id="brand">Data Literacy</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="dropbtn" href="#">Graphing</a>
-                <div class="dropdown-content">
-                  <a id="yuhh" href="#"><span id="yuhh">Link 1</span></a>
-                  <a href="#">Link 2</a>
-                </div>
+      <a class="navbar-brand" href="#" id="brand">Data Literacy</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home</a>
           </li>
-             <li class="nav-item">
-              <a class="nav-link" href="#">Lessons</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Info</a>
-            </li>
-          </ul>
-        </div>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Graphing
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#">Bar Chart</a>
+              <a class="dropdown-item" href="#">Line Chart</a>
+              <a class="dropdown-item" href="#">Scatterplot</a>
+            </div>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" href="#">Lessons</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Info</a>
+          </li>
+        </ul>
       </div>
+    </div>
 
     <!--Inserting the sidebar for navigation of homescreen-->
     <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse">
@@ -49,5 +51,4 @@
           </div>
         </div>
       </nav>
-  </div>
 </body>

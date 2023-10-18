@@ -1,16 +1,12 @@
 
 /* Styling top-nav */
 
-.contained {
-    background-color: rgb(245, 245, 245);
-}
-
 #topNav {
     background-color: paleturquoise;
     background-clip:padding-box;
     border: 10px;
     position:sticky;
-    z-index: -1;
+    z-index: 1;
     width: 100%;
 }
 
@@ -135,8 +131,4 @@
 
 #studentTitle {
     font-size: 25px;
-}
-
-.item {
-    z-index: 1;
 }
