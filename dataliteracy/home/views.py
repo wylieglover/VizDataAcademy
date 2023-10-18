@@ -20,3 +20,7 @@ def contact(request):
 def reviews(request):
   template = loader.get_template('reviews.html')
   return HttpResponse(template.render())
+
+def graphing(request):
+  template = loader.get_template('graphing.html')
+  return HttpResponse(template.render())

@@ -7,4 +7,5 @@ urlpatterns = [
     path('home/templates/contact.html', views.contact , name='contact'),
     path('home/templates/reviews.html', views.reviews , name='reviews'),
     path('home/templates/sponsors.html', views.sponsors , name='sponsors'),
+    path('home/templates/graphing.html', views.graphing , name='graphing')
 ]
