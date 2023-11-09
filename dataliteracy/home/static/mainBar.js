@@ -34,7 +34,7 @@ const layout = {
     color: '#6b6f8a'
   }
 };
-Plotly.newPlot('barChart', barChartData, layout, config);
+Plotly.newPlot('useGraph', barChartData, layout, config);
 
 function updateBars(_this) {
   var ItemCount = +_this.value
@@ -102,7 +102,7 @@ for (var i = 1; i <= segments; i++) {
   }
 }
 
-function submitData() {
+function submitDataBar() {
   var graphTitle = document.querySelector("#chartName").value;
   var numBars = document.querySelector("#numBars").value;
   const barNames = [];
@@ -198,6 +198,5 @@ function submitData() {
   }
 
   bLayout.title = graphTitle;
-  Plotly.newPlot('barChart', barData, bLayout, config);
+  Plotly.newPlot('useGraph', barData, bLayout, config);
 }
-
