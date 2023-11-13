@@ -26,7 +26,7 @@ const ogBarTrace2 = {
 
 const barChartData = [ogBarTrace1,ogBarTrace2];
 const layout = {
-  title: "",
+  title: "Example Graph",
   barmode: 'group',
   showlegend: false,
   paper_bgcolor: '#0b122b',

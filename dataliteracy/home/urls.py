@@ -7,5 +7,9 @@ urlpatterns = [
     path('home/templates/contact.html', views.contact , name='contact'),
     path('home/templates/reviews.html', views.reviews , name='reviews'),
     path('home/templates/sponsors.html', views.sponsors , name='sponsors'),
-    path('home/templates/graphing.html', views.graphing , name='graphing')
+    path('home/templates/graphing.html', views.graphing , name='graphing'),
+    path('home/templates/barGraphing.html', views.barGraphing , name='barGraphing'),
+    path('home/templates/lineGraphing.html', views.lineGraphing , name='lineGraphing'),
+    path('home/templates/pieGraphing.html', views.pieGraphing , name='pieGraphing')
+
 ]

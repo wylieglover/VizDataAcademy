@@ -24,3 +24,15 @@ def reviews(request):
 def graphing(request):
   template = loader.get_template('graphing.html')
   return HttpResponse(template.render())
+
+def barGraphing(request):
+  template = loader.get_template('barGraphing.html')
+  return HttpResponse(template.render())
+
+def lineGraphing(request):
+  template = loader.get_template('lineGraphing.html')
+  return HttpResponse(template.render())
+
+def pieGraphing(request):
+  template = loader.get_template('pieGraphing.html')
+  return HttpResponse(template.render())
