@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 import os
 from sys import platform
+import mimetypes
+mimetypes.add_type("text/css", ".css", True)
 
 if platform == "win32":
     from dotenv import load_dotenv
