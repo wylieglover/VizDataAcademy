@@ -60,6 +60,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "dataliteracy.urls"
 
+
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
