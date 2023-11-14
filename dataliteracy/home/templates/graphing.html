@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <!--Google Icons-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+        <link rel="stylesheet" href="/home/static/css/styling.css" />
+        <title>Data Literacy</title>
+    </head>
+
+    <body>
+        <script src="https://cdn.plot.ly/plotly-2.4.2.min.js"></script>
+        <!--Data for more complex charts?-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+
+        <nav class="navbar">
+            <div class="container">
+                <div>
+                    <h1>Data Literacy</h1>
+                    <div class="menu">
+                        <ul>
+                            <li>
+                                <a href="/home/templates/missionStatement.html" class="">Home</a>
+                            </li>
+                            <li>
+                                <a href="#">Lessons</a>
+                            </li>
+                            <li>
+                                <div class="dropdown">
+                                    <button class="dropbtn" ><a href="/home/templates/graphing.html" id="graphing" class="">Graphing</a></button>
+                                    <div class="dropdown-content">
+                                      <a href="/home/templates/barGraphing.html">Bar Graph</a>
+                                      <a href="/home/templates/lineGraphing.html">Line Graph</a>
+                                      <a href="/home/templates/pieGraphing.html">Pie Chart</a>
+                                    </div>
+                                  </div>
+                            </li>
+                            <li>
+                                <a href="#">Info</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <nav class="sidebar">
+            <div class="container">
+                <h3 class="title">Home</h3>
+                <ul>
+                    <li>
+                        <a href="#">
+                            <span>Mission Statement</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span>Sponsors</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span>Contributors</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span>Contact Us</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span>Reviews</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="mainBody">
+            <div class="contentPage" id="contactTemplate">
+              <h1 class="pageTitle display-1"><b><u>Graphing:</b></u></h1>
+              <div class="contactPiece">
+                <h3 class="contactTitle display-3"><a href="/home/templates/barGraphing.html"> Bar Graphs<br><br></h3>
+                <h3 class="contactTitle display-3"><a href="/home/templates/lineGraphing.html"><br><br> Line Graphs<br><br></h3>
+                <h3 class="contactTitle display-3"><a href="/home/templates/pieGraphing.html"><br><br> Pie Charts<br><br></h3>
+                <h3 class="contactTitle display-3"><a href="/home/templates/histoGraphing.html"><br><br> Histograms<br></h3>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

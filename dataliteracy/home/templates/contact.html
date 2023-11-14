@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <!--Google Icons-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+        <link rel="stylesheet" href="/home/static/css/styling.css" />
+        <title>Data Literacy</title>
+    </head>
+
+<body>
+    <!--Inserting the top navbar with id of topNav -->
+    <nav class="navbar">
+      <div class="container">
+          <div>
+              <h1>Data Literacy</h1>
+              <div class="menu">
+                  <ul>
+                      <li>
+                          <a href="/home/templates/missionStatement.html" class="active">Home</a>
+                      </li>
+                      <li>
+                          <a href="#">Lessons</a>
+                      </li>
+                      <li>
+                          <div class="dropdown">
+                              <button class="dropbtn" ><a href="/home/templates/graphing.html" id="graphing">Graphing</a></button>
+                              <div class="dropdown-content">
+                                <a href="/home/templates/barGraphing.html">Bar Graph</a>
+                                <a href="/home/templates/lineGraphing.html">Line Graph</a>
+                                <a href="/home/templates/pieGraphing.html">Pie Chart</a>
+                            </div>
+                            </div>
+                      </li>
+                      <li>
+                          <a href="#">Info</a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </nav>
+
+  <nav class="sidebar">
+      <div class="container">
+          <h3 class="title">Home</h3>
+          <ul>
+              <li>
+                <a href="/home/">
+                    <span>Mission Statement</span>
+                  </a>
+              </li>
+              <li>
+                <a href="/home/templates/sponsors.html">
+                    <span>Sponsors</span>
+                  </a>
+              </li>
+              <li>
+                  <a href="/home/templates/contributors.html">
+                      <span>Contributors</span>
+                  </a>
+              </li>
+              <li>
+                  <a href="/home/templates/contact.html">
+                      <span>Contact Us</span>
+                  </a>
+              </li>
+              <li>
+                  <a href="/home/templates/reviews.html">
+                      <span>Reviews</span>
+                  </a>
+              </li>
+          </ul>
+      </div>
+  </nav>
+
+
+    <!--Inserting the main body components for contact information-->
+    <div class="mainBody">
+    <div class="contentPage" id="contactTemplate">
+      <h1 class="pageTitle display-1"><b><u>Contact Info:</b></u></h1>
+      <div class="contactPiece">
+        <h3 class="contactTitle display-3">Phone Number:</h3>
+        <h5 class="contactInfo display-5">+1-234-567-7890</h5>
+      </div>
+      <div class="contactPiece"></div>
+      <h3 class="contactTitle display-3">Fax:</h3>
+      <h5 class="contactInfo display-5">+1-234-567-7890</h5>
+      <div class="contactPiece">
+        <h3 class="contactTitle display-3">Email Address:</h3>
+        <h5 class="contactInfo display-5">dataliteracy@gmail.com</h5>
+      </div>
+    </div>
+  </div>
+</body>

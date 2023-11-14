@@ -1,0 +1,321 @@
+body {
+    margin: 0;
+    font-family: Helvetica, sans-serif;
+    color: #fff;
+    background: #172042;
+    min-height: 100vh;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h1,h2,h3,h4 {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+p {
+    color: #6b6f8a;
+    font-size: 0.9em;
+}
+
+small {
+    color: #6b6f8a;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0c1839;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #6b6f8a;
+}
+
+/*====== Navbar ======*/
+.navbar {
+    text-decoration: none;
+    background: #1c2147;
+    z-index: 3;
+    position: fixed;
+    width: 100%;
+    height: 6%;
+}
+
+.navbar .container {
+    padding: 1em 2em;
+    margin: 0 auto;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.navbar .container > div {
+    display:  grid;
+    grid-template-columns: 15% 75%;
+    align-items: center;
+}
+
+.navbar .menu,
+.navbar .social-media {
+    display: flex;
+    justify-content:  space-between;
+    align-items: center;
+}
+
+.navbar ul {
+    width: 100%;
+    height: 100%;
+}
+
+.navbar ul li {
+    display: inline-block;
+    margin-right: 10%;
+}
+.navbar ul a {
+    font-size: 0.8em;
+    text-transform: uppercase;
+    color: #6b6f8a;
+    padding-bottom: 0.2em;
+    transition: 0.3s;
+}
+
+.navbar ul a:hover {
+    color: #fff;
+}
+
+.navbar .active {
+    border-bottom: 2px #03dcee solid;
+    color: #fff;
+}
+
+.navbar .container .menu-btn {
+    display: none;
+}
+
+.options span {
+    font-size: 2em;
+    color: #fff;
+}
+
+.profile-img {
+    width: 2.5em;
+    border-radius: 50%;
+}
+
+
+/*==== Sidebar ======*/
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    padding: 5em 2em 0 2em;
+    background: linear-gradient(
+        0deg, #0c1839, #1c2145
+    );
+    overflow-y: scroll;
+    width: 15%;
+}
+
+.sidebar .container {
+    position: relative;
+    height: 100%;
+}
+
+.sidebar .title {
+    font-weight: 400;
+    color: #6b6f8a;
+}
+
+.sidebar ul {
+    margin: 1em 0 3em 0;
+}
+
+.sidebar li {
+    display: block;
+    padding: 1em 0;
+    border-bottom: 1px #21284c solid;
+}
+
+.sidebar ul a {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.siderbar a .material-icons {
+    margin-right: 0.7em;
+    color: #6b6f8a;
+    transition: 0.3s;
+}
+
+.sidebar a:hover .material-icons {
+    color: #fff;
+}
+
+
+#useGraph {
+    position: fixed;
+    left: 15%;
+    top: 6%;
+    border: 0;
+    background-color: #0c1845;
+    width: 45%;
+    height: 70%;
+}
+
+.dataCollection {
+    position: fixed;
+    left: 60%;
+    top: 6%;
+    border-left: solid 20px #384882;
+    width: 40%;
+    height: 97%;
+    text-align: center;
+    overflow: scroll;
+}
+
+#barInfo {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.barHide{
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+.dataCollection > * {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+#barNames > *,#compValues > *, .barHide > * {
+    margin-bottom: 10px;
+}
+
+.submit {
+    margin: 20px 20px 20px 20px;
+}
+
+.barHide > * {
+    margin-bottom: 30px;
+}
+
+.mainBody {
+    left: 15%;
+    top: 7%;
+    position: fixed;
+    text-align: center;
+    width: 84%;
+    height: 95vh;
+    overflow: scroll;
+}
+
+.mainBody > h1 {
+    font-size: 100px;
+    margin: 10px 10px;
+    color: rgb(70, 86, 233)
+}
+
+.subHead > .statementP {
+    font-size: 25px;
+}
+
+.subHead > h5 {
+    font-size: 40px
+}
+
+.pageTitle {
+    text-align: center;
+    color: #474747;
+    font-size: 100px;
+    margin-bottom: 40px;
+}
+
+.statementP {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    line-height: 25px;
+    color: #757575;
+    margin-top: 20px;
+}
+
+.statementPR {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    color: #757575;
+    text-align: right;
+    margin-right: 300px;
+    border: 10px;
+}
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: #00000000;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #0c1839;
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #00000040;}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn {background-color: #00000080;}
+
+  #graphing{
+    width: fit-content;
+    height: 100px;
+  }
+
+  .portrait{
+    width: 400px;
+    height: 600px;
+  }
