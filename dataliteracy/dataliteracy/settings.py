@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
-    'corsheaders',
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "home",
@@ -61,7 +60,6 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "dataliteracy.urls"
 
-CORS_ORIGIN_ALLOW_ALL = True 
 
 TEMPLATES = [
     {
