@@ -1,142 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <!--Google Icons-->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-        <link rel="stylesheet" href="/home/static/css/styling.css" />
-        <title>Data Literacy</title>
-    </head>
+{% extends "base.html" %}
+{% load static %}
 
-    <body>
-        <script src="https://cdn.plot.ly/plotly-2.4.2.min.js"></script>
-        <!--Data for more complex charts?-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
-
-        <nav class="navbar">
-            <div class="container">
-                <div>
-                    <h1>Data Literacy</h1>
-                    <div class="menu">
-                        <ul>
-                            <li>
-                                <a href="/home/templates/missionStatement.html" class="">Home</a>
-                            </li>
-                            <li>
-                                <a href="#">Lessons</a>
-                            </li>
-                            <li>
-                                <div class="dropdown">
-                                    <button class="dropbtn" ><a href="/home/templates/graphing.html" id="graphing" class="">Graphing</a></button>
-                                    <div class="dropdown-content">
-                                      <a href="/home/templates/barGraphing.html">Bar Graph</a>
-                                      <a href="/home/templates/lineGraphing.html">Line Graph</a>
-                                      <a href="/home/templates/pieGraphing.html">Pie Chart</a>
-                                    </div>
-                                  </div>
-                            </li>
-                            <li>
-                                <a href="#">Info</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+{% block content %}
+    <main class="dashboard">
+        <div id="graphOpt">
+            <div id="useGraph"></div>
+        </div>
+        <div class="dataCollection">
+            <h2 class="dataLabel">Graph Title</h1>
+            <input type="text" id="chartName" placeholder="Graph Name" />
+            <h2 class="dataLabel">X-Axis Label</h1>
+            <input type="text" id="chartName" placeholder="X-Axis" />
+            <h2 class="dataLabel">Y-Axis Label</h1>
+            <input type="text" id="chartName" placeholder="Y-Axis" />
+            <h2 class="dataLabel">Number of Points per Line </h2>
+            <select id="numLines" placeholder='' onchange="updateLines(this)">
+                <option value="" disable selected>Select</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+            </select>
+            <div class="barInfo">
+                <container id="barNames">
+                </container>
             </div>
-        </nav>
-
-        <nav class="sidebar">
-            <div class="container">
-                <h3 class="title">Home</h3>
-                <ul>
-                    <li>
-                        <a href="#">
-                            <span>Mission Statement</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span>Sponsors</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span>Contributors</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span>Contact Us</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span>Reviews</span>
-                        </a>
-                    </li>
-                </ul>
+            <h2 class="dataLabel">Number of Comparisons</h2>
+            <select id="numComp" onchange="updateComp(this);updateValues()">
+                <option value="" disable selected>Select</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <div class="compInfo">
+                <container id="compValues"></container>
             </div>
-        </nav>
-
-        <main class="dashboard">
-            <div id="graphOpt">
-                <div id="useGraph"></div>
+            <div class="barHide" >
             </div>
-            <div class="dataCollection">
-                <h2 class="dataLabel">Graph Title</h1>
-                <input type="text" id="chartName" placeholder="Graph Name" />
-                <h2 class="dataLabel">X-Axis Label</h1>
-                <input type="text" id="chartName" placeholder="X-Axis" />
-                <h2 class="dataLabel">Y-Axis Label</h1>
-                <input type="text" id="chartName" placeholder="Y-Axis" />
-                <h2 class="dataLabel">Number of Points per Line </h2>
-                <select id="numLines" placeholder='' onchange="updateLines(this)">
-                    <option value="" disable selected>Select</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                            <option value="11">11</option>
-                            <option value="12">12</option>
-                            <option value="13">13</option>
-                            <option value="14">14</option>
-                            <option value="15">15</option>
-                            <option value="16">16</option>
-                            <option value="17">17</option>
-                            <option value="18">18</option>
-                            <option value="19">19</option>
-                            <option value="20">20</option>
-                </select>
-                <div class="barInfo">
-                    <container id="barNames">
-                    </container>
-                </div>
-                <h2 class="dataLabel">Number of Comparisons</h2>
-                <select id="numComp" onchange="updateComp(this);updateValues()">
-                    <option value="" disable selected>Select</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select>
-                <div class="compInfo">
-                    <container id="compValues"></container>
-                </div>
-                <div class="barHide" >
-                </div>
-                <button class="submit" onclick="submitData()"> Submit! </button>
-            </div>
-        </main>
-          
-          <script src='https://cdn.plot.ly/plotly-2.4.2.min.js'></script>
-          <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script>
-          <script src="/home/static/mainLine.js"></script>
-
-    </body>
-</html>
+            <button class="submit" onclick="submitData()"> Submit! </button>
+        </div>
+    </main>
+    
+    <script src='https://cdn.plot.ly/plotly-2.4.2.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script>
+    <script src="/home/static/mainLine.js"></script>
+  
+  {% endblock  %}
