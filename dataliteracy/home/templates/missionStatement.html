@@ -1,118 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <!--Google Icons-->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"  />
-        <link  href="/home/static/css/styling.css" />
-        <title>Data Literacy</title>
-    </head>
 
-    <body>
-        <script src="https://cdn.plot.ly/plotly-2.4.2.min.js"></script>
-        <!--Data for more complex charts?-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+{% extends "base.html" %}
+{% load static %}
 
-        <nav class="navbar">
-          <div class="container">
-              <div>
-                  <h1>Data Literacy</h1>
-                  <div class="menu">
-                      <ul>
-                          <li>
-                              <a href="/home/templates/missionStatement.html" class="active">Home</a>
-                          </li>
-                          <li>
-                              <a href="#">Lessons</a>
-                          </li>
-                          <li>
-                              <div class="dropdown">
-                                  <button class="dropbtn" ><a href="/home/templates/graphing.html" id="graphing">Graphing</a></button>
-                                  <div class="dropdown-content">
-                                    <a href="/home/templates/barGraphing.html">Bar Graph</a>
-                                    <a href="/home/templates/lineGraphing.html">Line Graph</a>
-                                    <a href="/home/templates/pieGraphing.html">Pie Chart</a>
-                                </div>
-                                </div>
-                          </li>
-                          <li>
-                              <a href="#">Info</a>
-                          </li>
-                      </ul>
-                  </div>
-              </div>
-          </div>
-      </nav>
-
-        <nav class="sidebar">
-            <div class="container">
-                <h3 class="title">Home</h3>
-                <ul>
-                    <li>
-                        <a href="/home/">
-                            <span>Mission Statement</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/home/templates/sponsors.html">
-                            <span>Sponsors</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/home/templates/contributors.html">
-                            <span>Contributors</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/home/templates/contact.html">
-                            <span>Contact Us</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/home/templates/reviews.html">
-                            <span>Reviews</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-
-        <div class="mainBody">
-            <h1 class="pageTitle display-1" id=""><b><u>Mission Statement</u></b></h1>
-          <div class="contentSubsection">
+{% block content %}
+    <div class="mainBody">
+        <h1 class="pageTitle display-1" id=""><b><u>Mission Statement</u></b></h1>
+        <div class="contentSubsection">
             <div class="subHead" id="progress">
-              <h5 class="subTitle display-5"><u>Current Progress:</u></h5>
-              <p class="statementP"> &emsp;&emsp; We are currently in the early stages of development and our current objective is working on
-              deployment of python libraries through the django framework. As of now, we have setup
-              the framework of our application by creating an appropriate environment with Django
-              . We are working through adding in the plotly libraries full functionalities in
-              bringing user inputs to the webpages we've established. </p>
+            <h5 class="subTitle display-5"><u>Current Progress:</u></h5>
+            <p class="statementP"> &emsp;&emsp; We are currently in the early stages of development and our current objective is working on
+            deployment of python libraries through the django framework. As of now, we have setup
+            the framework of our application by creating an appropriate environment with Django
+            . We are working through adding in the plotly libraries full functionalities in
+            bringing user inputs to the webpages we've established. </p>
             </div>
             <div class="subHead" id="purpose">
-              <h5 class="subTitle display-5"><u>Purpose:</u></h5>
-              <p class="statementP"> 	&emsp;&emsp;As students at Georgia Southern currently enrolled in Professor
+            <h5 class="subTitle display-5"><u>Purpose:</u></h5>
+            <p class="statementP"> 	&emsp;&emsp;As students at Georgia Southern currently enrolled in Professor
                 John Repko's Computer Science Capstone, we have been tasked with developing an application
-                 for data visualization and comprehension. Under the guidance of Professors Hui and Allen,
-                  we hope to appeal to the kinesthetic learner in offering a digital environment for high
-               school student interact with data and graphs. <br>
-               &emsp;&emsp;Although the current method of teaching someone to understand data isn’t incorrect, we hope 
-               to diversify the methods available and appeal to those who’ve struggled with previous styles.
+                for data visualization and comprehension. Under the guidance of Professors Hui and Allen,
+                we hope to appeal to the kinesthetic learner in offering a digital environment for high
+            school student interact with data and graphs. <br>
+            &emsp;&emsp;Although the current method of teaching someone to understand data isn’t incorrect, we hope 
+            to diversify the methods available and appeal to those who’ve struggled with previous styles.
                 There have been programs built like this before; however, the programs have become outdated
-                 and clunky compared to modern expectations.
-               <br> &emsp;&emsp; We are currently in the early stages of development and our current objective is working on
+                and clunky compared to modern expectations.
+            <br> &emsp;&emsp; We are currently in the early stages of development and our current objective is working on
                 deployment of python libraries through the django framework. </p>
             </div>
             <div class="subHead" id="future">
-              <h5 class="subTitle display-5"><u>Future:</u></h5>
-              <p class="statementP"> 	&emsp;&emsp;As students at Georgia Southern currently enrolled in Professor
+            <h5 class="subTitle display-5"><u>Future:</u></h5>
+            <p class="statementP"> 	&emsp;&emsp;As students at Georgia Southern currently enrolled in Professor
                 John Repko's Computer Science Capstone, we have been tasked with developing an application
-                 for data visualization and comprehension. Under the guidance of Professors Hui and Allen,
-                  we hope to appeal to the kinesthetic learner in offering a digital environment for high
-               school student interact with data and graphs. <br></p>
+                for data visualization and comprehension. Under the guidance of Professors Hui and Allen,
+                we hope to appeal to the kinesthetic learner in offering a digital environment for high
+            school student interact with data and graphs. <br></p>
             </div>
-          </div>
         </div>
-    </body>
-</html>
+    </div>
+{% endblock  %}

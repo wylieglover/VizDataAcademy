@@ -1,117 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <!--Google Icons-->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"  />
-        <link  href="/home/static/css/styling.css" />
-        <title>Data Literacy</title>
-    </head>
 
-    <body>
-        <script src="https://cdn.plot.ly/plotly-2.4.2.min.js"></script>
-        <!--Data for more complex charts?-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+{% extends "base.html" %}
+{% load static %}
 
-        <nav class="navbar">
-            <div class="container">
-                <div>
-                    <h1>Data Literacy</h1>
-                    <div class="menu">
-                        <ul>
-                            <li>
-                                <a href="/home/templates/missionStatement.html" class="active">Home</a>
-                            </li>
-                            <li>
-                                <a href="#">Lessons</a>
-                            </li>
-                            <li>
-                                <div class="dropdown">
-                                    <button class="dropbtn" ><a href="/home/templates/graphing.html" id="graphing">Graphing</a></button>
-                                    <div class="dropdown-content">
-                                      <a href="/home/templates/barGraphing.html">Bar Graph</a>
-                                      <a href="/home/templates/lineGraphing.html">Line Graph</a>
-                                      <a href="/home/templates/pieGraphing.html">Pie Chart</a>
-                                    </div>
-                                  </div>
-                            </li>
-                            <li>
-                                <a href="#">Info</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+{% block content %}
+    <div class="mainBody">
+        <h1 class="pageTitle display-1" id=""><b><u>Contributors</u></b></h1>
+        <div class="contentSubsection">
+            <div class="subHead" id="evan_beadle">
+                <h3 class="contributor" id="evanBeadle"><u>Evan Beadle:</u></h3>
+                <img src="/home/static/blank.jpg" alt="Your photo here" class="portrait">
+                <p class="statementP"> &emsp;&emsp;[Please enter bio about yourself here] </p>
             </div>
-        </nav>
-
-        <nav class="sidebar">
-            <div class="container">
-                <h3 class="title">Home</h3>
-                <ul>
-                    <li>
-                        <a href="/home/">
-                            <span>Mission Statement</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/home/templates/sponsors.html">
-                            <span>Sponsors</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/home/templates/contributors.html">
-                            <span>Contributors</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/home/templates/contact.html">
-                            <span>Contact Us</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/home/templates/reviews.html">
-                            <span>Reviews</span>
-                        </a>
-                    </li>
-                </ul>
+            <div class="subHead" id="daniel_campa">
+                <h3 class="contributor" id="danielCampa"><u>Daniel Campa:</u></h3>
+                <img src="/home/static/blank.jpg" alt="Your photo here" class="portraitR"><br>
+                <p class="statementPR"> 	&emsp;&emsp;[Please enter bio about yourself here]
+                <br><br><br><br>
             </div>
-        </nav>
-
-        <div class="mainBody">
-            <h1 class="pageTitle display-1" id=""><b><u>Contributors</u></b></h1>
-            <div class="contentSubsection">
-                <div class="subHead" id="evan_beadle">
-                    <h3 class="contributor" id="evanBeadle"><u>Evan Beadle:</u></h3>
-                    <img src="/home/static/blank.jpg" alt="Your photo here" class="portrait">
-                    <p class="statementP"> &emsp;&emsp;[Please enter bio about yourself here] </p>
-                  </div>
-                  <div class="subHead" id="daniel_campa">
-                    <h3 class="contributor" id="danielCampa"><u>Daniel Campa:</u></h3>
-                    <img src="/home/static/blank.jpg" alt="Your photo here" class="portraitR"><br>
-                    <p class="statementPR"> 	&emsp;&emsp;[Please enter bio about yourself here]
-                     <br><br><br><br>
-                  </div>
-                  <div class="subHead" id="storm_caswell">
-                        <h3 class="contributor" id="conStorm"><u>Storm Caswell:</u></h3>
-                        <img src="/home/static/stormTest.png" alt="Your photo here" class="portrait" id="stormImg">
-                        <p class="statementP"> &emsp;&emsp; Storm Caswell is a Senior at Georgia
-                        Southern University at the Statesboro campus. He is currently
-                        majoring in Computer Science with a minor in Animation. For this
-                        project, Storm has taken a role in polishing the aesthetic appeal
-                        as well as focusing on scheduling. After graduating, Storm's goal
-                        is to continue schooling and independently develop his animation
-                        portfolio.
-                        </p>
-                  </div>
-                  <div class="subHead" id="wylie_glover">
-                    <h3 class="contributor" id="wylieGlover"><u>Wylie Glover:</u></h3>
-                    <img src="/home/static/blank.jpg" alt="Your photo here" class="portraitR"><br><br><br>
-                    <p class="statementPR"> &emsp;&emsp;[Please enter bio about yourself here]</p>
-                  </div>
-                </div>
+            <div class="subHead" id="storm_caswell">
+                    <h3 class="contributor" id="conStorm"><u>Storm Caswell:</u></h3>
+                    <img src="/home/static/stormTest.png" alt="Your photo here" class="portrait" id="stormImg">
+                    <p class="statementP"> &emsp;&emsp; Storm Caswell is a Senior at Georgia
+                    Southern University at the Statesboro campus. He is currently
+                    majoring in Computer Science with a minor in Animation. For this
+                    project, Storm has taken a role in polishing the aesthetic appeal
+                    as well as focusing on scheduling. After graduating, Storm's goal
+                    is to continue schooling and independently develop his animation
+                    portfolio.
+                    </p>
+            </div>
+            <div class="subHead" id="wylie_glover">
+                <h3 class="contributor" id="wylieGlover"><u>Wylie Glover:</u></h3>
+                <img src="/home/static/blank.jpg" alt="Your photo here" class="portraitR"><br><br><br>
+                <p class="statementPR"> &emsp;&emsp;[Please enter bio about yourself here]</p>
+            </div>
             </div>
         </div>
-    </body>
-</html>
+    </div>
+{% endblock  %}
