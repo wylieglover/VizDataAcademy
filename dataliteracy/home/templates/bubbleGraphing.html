@@ -22,14 +22,14 @@
                     <div class="menu">
                         <ul>
                             <li>
-                                <a href="/home/templates/missionStatement.html" class="active">Home</a>
+                                <a href="/home/templates/missionStatement.html" class="">Home</a>
                             </li>
                             <li>
                                 <a href="#">Lessons</a>
                             </li>
                             <li>
                                 <div class="dropdown">
-                                    <button class="dropbtn" ><a href="/home/templates/graphing.html" id="graphing">Graphing</a></button>
+                                    <button class="dropbtn" ><a href="/home/templates/graphing.html" class="" id="graphing">Graphing</a></button>
                                     <div class="dropdown-content">
                                       <a href="/home/templates/barGraphing.html">Bar Graph</a>
                                       <a href="/home/templates/lineGraphing.html">Line Graph</a>
@@ -51,27 +51,27 @@
                 <h3 class="title">Home</h3>
                 <ul>
                     <li>
-                        <a href="/home/">
+                        <a href="#">
                             <span>Mission Statement</span>
                         </a>
                     </li>
                     <li>
-                        <a href="/home/templates/sponsors.html">
+                        <a href="#">
                             <span>Sponsors</span>
                         </a>
                     </li>
                     <li>
-                        <a href="/home/templates/contributors.html">
+                        <a href="#">
                             <span>Contributors</span>
                         </a>
                     </li>
                     <li>
-                        <a href="/home/templates/contact.html">
+                        <a href="#">
                             <span>Contact Us</span>
                         </a>
                     </li>
                     <li>
-                        <a href="/home/templates/reviews.html">
+                        <a href="#">
                             <span>Reviews</span>
                         </a>
                     </li>
@@ -79,39 +79,45 @@
             </div>
         </nav>
 
-        <div class="mainBody">
-            <h1 class="pageTitle display-1" id=""><b><u>Contributors</u></b></h1>
-            <div class="contentSubsection">
-                <div class="subHead" id="evan_beadle">
-                    <h3 class="contributor" id="evanBeadle"><u>Evan Beadle:</u></h3>
-                    <img src="/home/static/blank.jpg" alt="Your photo here" class="portrait">
-                    <p class="statementP"> &emsp;&emsp;[Please enter bio about yourself here] </p>
-                  </div>
-                  <div class="subHead" id="daniel_campa">
-                    <h3 class="contributor" id="danielCampa"><u>Daniel Campa:</u></h3>
-                    <img src="/home/static/blank.jpg" alt="Your photo here" class="portraitR"><br>
-                    <p class="statementPR"> 	&emsp;&emsp;[Please enter bio about yourself here]
-                     <br><br><br><br>
-                  </div>
-                  <div class="subHead" id="storm_caswell">
-                        <h3 class="contributor" id="conStorm"><u>Storm Caswell:</u></h3>
-                        <img src="/home/static/stormTest.png" alt="Your photo here" class="portrait" id="stormImg">
-                        <p class="statementP"> &emsp;&emsp; Storm Caswell is a Senior at Georgia
-                        Southern University at the Statesboro campus. He is currently
-                        majoring in Computer Science with a minor in Animation. For this
-                        project, Storm has taken a role in polishing the aesthetic appeal
-                        as well as focusing on scheduling. After graduating, Storm's goal
-                        is to continue schooling and independently develop his animation
-                        portfolio.
-                        </p>
-                  </div>
-                  <div class="subHead" id="wylie_glover">
-                    <h3 class="contributor" id="wylieGlover"><u>Wylie Glover:</u></h3>
-                    <img src="/home/static/blank.jpg" alt="Your photo here" class="portraitR"><br><br><br>
-                    <p class="statementPR"> &emsp;&emsp;[Please enter bio about yourself here]</p>
-                  </div>
-                </div>
+        <main class="dashboard">
+            <div id="graphOpt">
+                <div id="useGraph"></div>
             </div>
-        </div>
+            <div class="dataCollection">
+                <h2 class="dataLabel">Graph Title</h1>
+                <input type="text" id="chartName" placeholder="Graph Name" />
+                <h2 class="dataLabel">Number of Pieces </h2>
+                <select id="numLines" placeholder='' onchange="updatePieces(this)">
+                    <option value="" disable selected>Select</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <div class="barInfo">
+                    <container id="barNames">
+                    </container>
+                </div>
+                <h2 class="dataLabel">Number of Comparisons</h2>
+                <select id="numComp" onchange="updateComp(this);updateValues()">
+                    <option value="" disable selected>Select</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <div class="compInfo">
+                    <container id="compValues"></container>
+                </div>
+                <div class="barHide" >
+                </div>
+                <button class="submit" onclick="submitData()"> Submit! </button>
+            </div>
+        </main>
+          
+          <script src='https://cdn.plot.ly/plotly-2.4.2.min.js'></script>
+          <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script>
+          <script src="/home/static/mainBubble.js"></script>
+
     </body>
 </html>

@@ -48,3 +48,15 @@ def graphing(request):
 def histoGraphing(request):
   template = loader.get_template('histoGraphing.html')
   return HttpResponse(template.render())
+
+def bubbleGraphing(request):
+  template = loader.get_template('bubbleGraphing.html')
+  return HttpResponse(template.render())
+
+def boxGraphing(request):
+  template = loader.get_template('boxGraphing.html')
+  return HttpResponse(template.render())
+
+def dotGraphing(request):
+  template = loader.get_template('dotGraphing.html')
+  return HttpResponse(template.render())
