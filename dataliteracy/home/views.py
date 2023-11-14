@@ -36,3 +36,15 @@ def lineGraphing(request):
 def pieGraphing(request):
   template = loader.get_template('pieGraphing.html')
   return HttpResponse(template.render())
+
+def missionStatement(request):
+  template = loader.get_template('missionStatement.html')
+  return HttpResponse(template.render())
+
+def graphing(request):
+  template = loader.get_template('graphing.html')
+  return HttpResponse(template.render())
+
+def histoGraphing(request):
+  template = loader.get_template('histoGraphing.html')
+  return HttpResponse(template.render())

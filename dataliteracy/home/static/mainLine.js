@@ -22,15 +22,15 @@ var trace1 = {
   };
   Plotly.newPlot('useGraph', data, layout);
 
-  function updateBars(_this) {
+  function updateLines(_this) {
     var ItemCount = +_this.value
     var results = document.querySelector('#barNames')
     results.innerHTML = '' //clear the results on each update
   for (var i = 1; i <= ItemCount; i++) {
     var input = document.createElement('input') //create input
     var label = document.createElement("label"); //create label
-    label.innerText = 'Name ' + i
-    //label.className = "inputText"
+    label.innerText = 'Point  ' + i
+    label.id= "pointLabel" + i
     input.type = "text";
     input.placeholder = "Bar_Name"; //add a placeholder
     input.className = "inputText"; // set the CSS class

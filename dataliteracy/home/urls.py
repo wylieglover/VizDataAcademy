@@ -10,6 +10,9 @@ urlpatterns = [
     path('home/templates/graphing.html', views.graphing , name='graphing'),
     path('home/templates/barGraphing.html', views.barGraphing , name='barGraphing'),
     path('home/templates/lineGraphing.html', views.lineGraphing , name='lineGraphing'),
-    path('home/templates/pieGraphing.html', views.pieGraphing , name='pieGraphing')
+    path('home/templates/pieGraphing.html', views.pieGraphing , name='pieGraphing'),
+    path('home/templates/missionStatement.html', views.missionStatement , name='missionStatement'),
+    path('home/templates/graphing.html', views.graphing , name='graphing'),
+    path('home/templates/histoGraphing.html', views.histoGraphing , name='histoGraphing')
 
 ]
