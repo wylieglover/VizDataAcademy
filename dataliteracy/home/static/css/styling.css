@@ -246,6 +246,11 @@ ul {
     font-size: 40px
 }
 
+.graphDisplay {
+    position: relative;
+    margin-left: 200px;
+}
+
 .pageTitle {
     text-align: center;
     color: #474747;
