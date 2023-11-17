@@ -8,4 +8,4 @@ var trace = {
     type: 'histogram',
   };
 var data = [trace];
-Plotly.newPlot('useGraph', data);
+Plotly.newPlot('myDiv', data);
