@@ -1,11 +1,20 @@
-var x = [];
-for (var i = 0; i < 500; i ++) {
-	x[i] = Math.random();
-}
+const ctx = document.getElementById('histogram');
 
-var trace = {
-    x: x,
-    type: 'histogram',
-  };
-var data = [trace];
-Plotly.newPlot('myDiv', data);
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      datasets: [{
+        label: '# of Votes',
+        data: [12, 19, 3, 5, 2, 3],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
