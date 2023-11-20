@@ -1,9 +1,3 @@
-//var dotDiv = document.getElementById("dot-chart");
-
-//FIX SUBMITDOTDATA
-//datatoCompare: refactor to add inputtext dependent on items comparing
-//do not need dataPoints, should be able to extend count from x-Axis
-
 const config = {responsive: true};
 
 const traceA = {
@@ -13,7 +7,6 @@ const traceA = {
   y: [5, 10, 15, 20],
   name: 'Highest Marks',
   marker: {
-    color: 'rgba(156, 165, 196, 0.5)',
     line: {
       color: 'rgba(156, 165, 196, 1)',
       width: 0.5,
@@ -33,7 +26,6 @@ const traceB = {
   y: [5, 10, 15, 20],
   name: 'Second Highest Marks',
   marker: {
-    color: 'rgba(165, 196, 50, 0.5)',
     line: {
       color: 'rgba(165, 196, 50, 1)',
       width: 0.5,
