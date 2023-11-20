@@ -12,7 +12,7 @@ services:
     env_file:
       - .env
 
-  nginx-proxy-manager:
+  nginx-proxy-manager: 
     container_name: nginx-proxy-manager
     restart: unless-stopped
     image: 'jc21/nginx-proxy-manager:latest'
