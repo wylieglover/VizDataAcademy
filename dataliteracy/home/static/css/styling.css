@@ -180,6 +180,16 @@ ul {
     height: 70%;
 }
 
+#useDotGraph {
+    position: fixed;
+    left: 15%;
+    top: 6%;
+    border: 0;
+    background-color: #0c1845;
+    width: 75%;
+    height: 85%;
+}
+
 .dataCollection {
     position: fixed;
     left: 60%;

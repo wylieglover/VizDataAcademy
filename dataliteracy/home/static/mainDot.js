@@ -24,7 +24,7 @@ const traceB = {
   mode: "markers",
   x: [1, 2, 3, 4],
   y: [5, 10, 15, 20],
-  name: 'Second Highest Marks',
+  name: 'Second Highest Mark',
   marker: {
     line: {
       color: 'rgba(165, 196, 50, 1)',
@@ -40,15 +40,10 @@ const traceB = {
 
 var scatterData = [traceA, traceB];
 
-var layout = {
+const layout = {
   autosize: false,
-  width: 500,
-  height: 500,
-  title: {
-    'text': 'Test title',
-    'xanchor': 'center',
-    'color' : 'white',
-  },
+  showlegend: false,
+  title: ' ',
   xaxis: {
     showgrid: true,
     showline: true,
@@ -93,12 +88,11 @@ function updateDataCount(_this){
     var label = document.createElement('label')
     var input = document.createElement('input')
     label.innerText = 'Entry ' + i;
-    label.id='dataName';
 
     input.id='numName'+i
     input.type='inputText';
     input.placeholder='Enter variable name';
-    input.className='dataInput';
+    input.className='inputText';
 
     plotCount.appendChild(label);
     plotCount.appendChild(input);
@@ -121,6 +115,7 @@ function xAxisValues(_this){
     input.type='inputText';
     input.placeholder='X-axis for data comparison';
     input.id='variableName' + i;
+    input.className = "inputText";
 
     x_Points.appendChild(label);
     x_Points.appendChild(input);
@@ -128,22 +123,23 @@ function xAxisValues(_this){
   }
 }
 function yAxisValues(_this){
-  var dataCount = +_this.value
-  var dataPoints = document.querySelector('#dotPoints')
-  dataPoints.innerHTML=''
+  var dataCount = +_this.value;
+  var dataPoints = document.querySelector('#dotPoints');
+  dataPoints.innerHTML=' ';
 
   for(var i=1; i<=dataCount; i++){
-    var label = document.createElement('label')
-    var input = document.createElement('input')
+    var label = document.createElement('label');
+    var input = document.createElement('input');
 
-    label.id = 'dataLabel'
+    label.id = 'dataLabel';
 
-    input.type='inputText'
-    input.id='dataValue' + i
+    input.type='inputText';
+    input.id='dataValue' + i;
+    input.className = "inputText";
 
-    dataPoints.appendChild(label)
-    dataPoints.appendChild(input)
-    dataPoints.appendChild(document.createElement('br'))
+    dataPoints.appendChild(label);
+    dataPoints.appendChild(input);
+    dataPoints.appendChild(document.createElement('br'));
   }
 }
 
@@ -171,6 +167,7 @@ function updateData(){
       xInput.placeholder='Variable ' + i + ' x-axis value: ';
       xInput.type='inputText';
       xInput.id='Value' + i;
+      xInput.className = "inputText";
       dotVal.appendChild(xInput);
       dotVal.appendChild(document.createElement('br'));
   
@@ -179,6 +176,7 @@ function updateData(){
         yInput.placeholder='Variable ' + i + " y-axis value: " + j;
         yInput.type='inputText';
         yInput.id='Value'+ i + j;
+        yInput.className = "inputText";
   
         dotVal.appendChild(yInput);
         dotVal.appendChild(document.createElement('br'));
@@ -189,29 +187,29 @@ function updateData(){
 }
 
 function submitDotData(){
-  var chartTitle=document.querySelector('#dotChartTitle').value
-  var numVariables=document.querySelector('#numEntry').value
-  var horizontalAxis=document.querySelector('#numComparison').value
-  var dataPoints = document.querySelector('#dataValues')
+  var chartTitle=document.querySelector('#dotChartTitle').value;
+  var numVariables=document.querySelector('#numEntry').value;
+  var horizontalAxis=document.querySelector('#numComparison').value;
+  var dataPoints = document.querySelector('#dataValues');
 
-  const dataNames = []
+  const dataNames = [];
   for(var i=1; i<=numVariables; i++){
-    var nameIndex = document.querySelector('#numName'+i).value
-    let add=dataNames.push(nameIndex)
+    var nameIndex = document.querySelector('#numName'+i).value;
+    let add=dataNames.push(nameIndex);
   }
-  const labels = []
+  const labels = [];
   for(var i=1; i<=horizontalAxis; i++){
-    var axisIndex = document.querySelector('#variableName' + i).value
-    let add=labels.push(axisIndex)
+    var axisIndex = document.querySelector('#variableName' + i).value;
+    let add=labels.push(axisIndex);
   }
-  const values = []
+  const values = [];
   for(var i=1; i<=numVariables; i++){
-    const itemValue = []
+    const itemValue = [];
     for(var j=1; j<=horizontalAxis; j++){
-      var curVal = document.querySelector('#Value' + i + j).value
-      let add = itemValue.push(curVal)
+      var curVal = document.querySelector('#Value' + i + j).value;
+      let add = itemValue.push(curVal);
     }
-    let add = values.push(itemValue)
+    let add = values.push(itemValue);
   }
 
 }
@@ -266,10 +264,10 @@ const scatterPoint5 = {
   }
 };
 var dLayout = {
-  showgrid: false,
+  showgrid: true,
   autosize: false,
-  width: 500,
-  height: 500,
+  title: " ",
+
   margin: {
     l: 75,
     b: 75,
@@ -288,7 +286,6 @@ var dLayout = {
       size: 12,
     }
   },
-  title: '',
   xaxis: {
     showgrid: false,
     showline: true,
@@ -315,5 +312,6 @@ if(numVariables>=5){
   let add = dotData.push(scatterPoint5)
 }
 
+dLayout.title=chartTitle;
 
-Plotly.newPlot('useGraph', dotData, layout, config);
+Plotly.newPlot('useGraph', dotData, dLayout, config);
