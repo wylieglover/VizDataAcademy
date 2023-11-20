@@ -7,13 +7,12 @@ const traceA = {
   y: [5, 10, 15, 20],
   name: 'Highest Marks',
   marker: {
-    color: 'rgba(156, 165, 196, 0.5)',
     line: {
       color: 'rgba(156, 165, 196, 1)',
-      width: 1,
+      width: 0.5,
     },
     symbol: 'circle',
-    size: 20
+    size: 10
   },
   hoverlabel: {
     bgcolor: 'black',
@@ -25,27 +24,28 @@ const traceB = {
   mode: "markers",
   x: [1, 2, 3, 4],
   y: [5, 10, 15, 20],
-  name: 'Second Highest Marks',
+  name: 'Second Highest Mark',
   marker: {
-    color: 'rgba(165, 196, 50, 0.5)',
     line: {
       color: 'rgba(165, 196, 50, 1)',
-      width: 1,
+      width: 0.5,
     },
     symbol: 'circle',
-    size: 20
+    size: 10
   },
   hoverlabel: {
     bgcolor: 'black',
   }
 };
 
-const scatterData = [traceA, traceB];
+var scatterData = [traceA, traceB];
 
 const layout = {
-  title: 'Test title',
+  autosize: false,
+  showlegend: false,
+  title: ' ',
   xaxis: {
-    showgrid: false,
+    showgrid: true,
     showline: true,
     linecolor: 'rgb(200, 0, 0)',
     ticks: 'outside',
@@ -53,13 +53,14 @@ const layout = {
     tickwidth: 4
   },
   margin: {
-    l: 280,
-    r: 80,
-    b: 100,
-    t: 160
+    l: 120,
+    r: 50,
+    b: 90,
+    t: 120,
+    pad: 4
   },
   legend: {
-    bgcolor: 'white',
+    bgcolor: 'rgb(0,0,0,0)',
     borderwidth: 1,
     bordercolor: 'black',
     orientation: 'h',
@@ -69,14 +70,13 @@ const layout = {
       size: 12,
     }
   },
-  width: 1000,
-  height: 1000,
-  paper_bgcolor: '#0b122b',
-  plot_bgcolor: 'rgb(255, 230, 255)',
+  paper_bgcolor: 'rgba(0,0,0,0)',
+  plot_bgcolor: '#8B9BBD',
+  scattermode:'group',
   hovermode: 'closest',
 };
 
-Plotly.newPlot('useGraph', scatterData, config)
+Plotly.newPlot('useGraph', scatterData, layout, config)
 
 function updateDataCount(_this){
   var dataCount = +_this.value
@@ -88,12 +88,11 @@ function updateDataCount(_this){
     var label = document.createElement('label')
     var input = document.createElement('input')
     label.innerText = 'Entry ' + i;
-    label.id='dataName';
 
     input.id='numName'+i
     input.type='inputText';
     input.placeholder='Enter variable name';
-    input.className='dataInput';
+    input.className='inputText';
 
     plotCount.appendChild(label);
     plotCount.appendChild(input);
@@ -101,7 +100,7 @@ function updateDataCount(_this){
   }
 }
 
-function itemsToCompare(_this){
+function xAxisValues(_this){
   var dataCount = +_this.value
   var x_Points = document.querySelector('#x_Points')
   x_Points.innerHTML = ''
@@ -116,35 +115,38 @@ function itemsToCompare(_this){
     input.type='inputText';
     input.placeholder='X-axis for data comparison';
     input.id='variableName' + i;
+    input.className = "inputText";
 
     x_Points.appendChild(label);
     x_Points.appendChild(input);
     x_Points.appendChild(document.createElement('br'));
   }
 }
-function dataToCompare(_this){
-  var dataCount = +_this.value
-  var dataPoints = document.querySelector('#dotPoints')
-  dataPoints.innerHTML=''
+function yAxisValues(_this){
+  var dataCount = +_this.value;
+  var dataPoints = document.querySelector('#dotPoints');
+  dataPoints.innerHTML=' ';
 
   for(var i=1; i<=dataCount; i++){
-    var label = document.createElement('label')
-    var input = document.createElement('input')
+    var label = document.createElement('label');
+    var input = document.createElement('input');
 
-    label.id = 'dataLabel'
+    label.id = 'dataLabel';
 
-    input.type='inputText'
-    input.id='dataValue' + i
+    input.type='inputText';
+    input.id='dataValue' + i;
+    input.className = "inputText";
 
-    dataPoints.appendChild(label)
-    dataPoints.appendChild(input)
-    dataPoints.appendChild(document.createElement('br'))
+    dataPoints.appendChild(label);
+    dataPoints.appendChild(input);
+    dataPoints.appendChild(document.createElement('br'));
   }
 }
 
 function updateData(){
   var numEntries = document.querySelector('#numEntry').value;
-  var numComp = document.querySelector('#numComparison').value;
+  var xComp = document.querySelector('#xComparison').value;
+  var yComp = document.querySelector('#yComparison').value;
   var dotVal = document.querySelector('.barHide'); 
   var whiteSpace = document.querySelector('.barHide');
   whiteSpace.innerHTML=''
@@ -152,50 +154,62 @@ function updateData(){
   header.innerText='ScatterPoint Values:'
   dotVal.appendChild(header);
 
-  for(var i=1; i<=numEntries; i++){
+  for(var a=1; a<=numEntries; a++){
     var buffer = document.createElement('div');
     var label = document.createElement('label');
     label.innerText='Variable ' + i + ' Values \n';
-    label.id='X_axis';
+    label.id='numDots';
     dotVal.appendChild(buffer);
     buffer.appendChild(label);
 
-    for(var j=1; j<=numComp; j++){
-      var input=document.createElement('input');
-      input.placeholder='Variable ' + i + " value " + j;
-      input.type='inputText';
-      input.id='Value'+ i + j;
-
-      dotVal.appendChild(input);
+    for(var i=1; i<=xComp; i++){
+      var xInput=document.createElement('input');
+      xInput.placeholder='Variable ' + i + ' x-axis value: ';
+      xInput.type='inputText';
+      xInput.id='Value' + i;
+      xInput.className = "inputText";
+      dotVal.appendChild(xInput);
       dotVal.appendChild(document.createElement('br'));
+  
+      for(var j=1; j<=yComp; j++){
+        var yInput=document.createElement('input');
+        yInput.placeholder='Variable ' + i + " y-axis value: " + j;
+        yInput.type='inputText';
+        yInput.id='Value'+ i + j;
+        yInput.className = "inputText";
+  
+        dotVal.appendChild(yInput);
+        dotVal.appendChild(document.createElement('br'));
+      }
     }
   }
+
 }
 
 function submitDotData(){
-  var chartTitle=document.querySelector('#dotChartTitle').value
-  var numVariables=document.querySelector('#numEntry').value
-  var horizontalAxis=document.querySelector('#numComparison').value
-  var dataPoints = document.querySelector('#dataValues')
+  var chartTitle=document.querySelector('#dotChartTitle').value;
+  var numVariables=document.querySelector('#numEntry').value;
+  var horizontalAxis=document.querySelector('#numComparison').value;
+  var dataPoints = document.querySelector('#dataValues');
 
-  const dataNames = []
+  const dataNames = [];
   for(var i=1; i<=numVariables; i++){
-    var nameIndex = document.querySelector('#numName'+i).value
-    let add=dataNames.push(nameIndex)
+    var nameIndex = document.querySelector('#numName'+i).value;
+    let add=dataNames.push(nameIndex);
   }
-  const labels = []
+  const labels = [];
   for(var i=1; i<=horizontalAxis; i++){
-    var axisIndex = document.querySelector('#variableName' + i).value
-    let add=labels.push(axisIndex)
+    var axisIndex = document.querySelector('#variableName' + i).value;
+    let add=labels.push(axisIndex);
   }
-  const values = []
+  const values = [];
   for(var i=1; i<=numVariables; i++){
-    const itemValue = []
+    const itemValue = [];
     for(var j=1; j<=horizontalAxis; j++){
-      var curVal = document.querySelector('#Value' + i + j).value
-      let add = itemValue.push(curVal)
+      var curVal = document.querySelector('#Value' + i + j).value;
+      let add = itemValue.push(curVal);
     }
-    let add = values.push(itemValue)
+    let add = values.push(itemValue);
   }
 
 }
@@ -249,6 +263,42 @@ const scatterPoint5 = {
     color: '#97C6B2',
   }
 };
+var dLayout = {
+  showgrid: true,
+  autosize: false,
+  title: " ",
+
+  margin: {
+    l: 75,
+    b: 75,
+    r: 50,
+    t: 50,
+    pad: 4
+  },
+  legend: {
+    bgcolor: 'white',
+    borderwidth: 1,
+    bordercolor: 'black',
+    orientation: 'h',
+    xanchor: 'center',
+    x: 0.5,
+    font: {
+      size: 12,
+    }
+  },
+  xaxis: {
+    showgrid: false,
+    showline: true,
+    linecolor: 'rgb(200, 0, 0)',
+    ticks: 'outside',
+    tickcolor: 'rgb(200, 0, 0)',
+    tickwidth: 4
+  },
+  paper_bgcolor: '#0b122b',
+    font: {
+      color: '#6b6f8a'
+    }
+}
 
 const dotData=[scatterPoint1,scatterPoint2];
 
@@ -262,5 +312,6 @@ if(numVariables>=5){
   let add = dotData.push(scatterPoint5)
 }
 
+dLayout.title=chartTitle;
 
-Plotly.newPlot('useGraph', dotData, layout, config);
+Plotly.newPlot('useGraph', dotData, dLayout, config);

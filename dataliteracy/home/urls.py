@@ -1,6 +1,6 @@
 from django.urls import path
 from . import views
-
+#
 urlpatterns = [
     path('home/', views.home, name='home'),
     path('serve-css/', views.serve_css, name='serve-css'),
@@ -14,6 +14,7 @@ urlpatterns = [
     path('home/templates/pieGraphing.html', views.pieGraphing , name='pieGraphing'),
     path('home/templates/missionStatement.html', views.missionStatement , name='missionStatement'),
     path('home/templates/graphing.html', views.graphing , name='graphing'),
+    path('home/templates/histoGraphing.html', views.histoGraphing , name='histoGraphing'),
     path('home/templates/histoGraphing.html', views.histoGraphing , name='histoGraphing'),
     path('home/templates/bubbleGraphing.html', views.bubbleGraphing , name='bubbleGraphing'),
     path('home/templates/dotGraphing.html', views.dotGraphing , name='dotGraphing'),

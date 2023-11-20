@@ -4,42 +4,47 @@
 
 {% block content %}
     <main class="dashboard">
-        <div id="graphOpt">
+
+        <div id="graphDisplay" >
             <div id="useGraph"></div>
         </div>
-        <div class="dataCollection">
-            <h2 class="dataLabel">Graph Title</h1>
-            <input type="text" id="chartName" placeholder="Graph Name" />
-            <h2 class="dataLabel">Number of Pieces </h2>
-            <select id="numLines" placeholder='' onchange="updatePieces(this)">
-                <option value="" disable selected>Select</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select>
-            <div class="barInfo">
-                <container id="barNames">
-                </container>
-            </div>
+
+        <div class="dataCollection" id="formfield">
+            <h2 class="dataLabel">Pie Chart</h1>
+            <h2 class="dataLabel">Number of Values </h2>
+
+            <div class = "category" id="cat">
+                <br><br>
+                <input type="text" id="catName1" class = "inputs" name="catName1" placeholder="Category Name value1"><br><br>
+                <input type="text" id="catName2" class = "inputs" name="catName2" placeholder="Category Name value2"><br><br>
+              </div>
+            
             <h2 class="dataLabel">Number of Comparisons</h2>
-            <select id="numComp" onchange="updateComp(this);updateValues()">
-                <option value="" disable selected>Select</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select>
+
+            <div class = "values" id="val">
+                <br><br>
+                <input type="text" id="value1" class = "inputs" name="value1" placeholder="value1"><br><br>
+                <input type="text" id="value2" class = "inputs" name="value2" placeholder="value2"><br><br>
+              </div>
             <div class="compInfo">
                 <container id="compValues"></container>
             </div>
             <div class="barHide" >
             </div>
-            <button class="submit" onclick="submitData()"> Submit! </button>
+
+            <div>
+              <input name="submit" type="Submit" value="Submit" onclick="updateGraph()"><br><br>
+              <div>
+                <button onclick="addValues()">Add</button>
+                <button onclick="removeValues()">Remove</button>
+              </div>
+            </div>        
         </div>
     </main>
     
     <script src='https://cdn.plot.ly/plotly-2.4.2.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script>
+    <script src="{% static 'pie_chart.js' %}"></script>
+
     <script src="{% static 'mainPie.js' %}"></script>
 {% endblock  %}
