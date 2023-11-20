@@ -1,3 +1,4 @@
+
 {% extends "base.html" %}
 {% load static %}
 
@@ -59,6 +60,6 @@
     
     <script src='https://cdn.plot.ly/plotly-2.4.2.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script>
-    <script src="/home/static/mainLine.js"></script>
+    <script src="{% static 'mainLine.js' %}"></script>
   
   {% endblock  %}

@@ -1,5 +1,15 @@
 from django.http import HttpResponse
 from django.template import loader
+from django.contrib.staticfiles import finders
+
+def serve_css(request):
+    css_path = finders.find('css/styling.css')
+    if css_path:
+        with open(css_path, 'rb') as f:
+            response = HttpResponse(f.read(), content_type='text/css')
+        return response
+    else:
+        return HttpResponse(status=404)
 
 def home(request):
   template = loader.get_template('missionStatement.html')
@@ -47,4 +57,16 @@ def graphing(request):
 
 def histoGraphing(request):
   template = loader.get_template('histoGraphing.html')
+  return HttpResponse(template.render())
+
+def bubbleGraphing(request):
+  template = loader.get_template('bubbleGraphing.html')
+  return HttpResponse(template.render())
+
+def boxGraphing(request):
+  template = loader.get_template('boxGraphing.html')
+  return HttpResponse(template.render())
+
+def dotGraphing(request):
+  template = loader.get_template('dotGraphing.html')
   return HttpResponse(template.render())
