@@ -3,6 +3,7 @@ version: '3.8'
 services:
   web:
     container_name: dataliteracy
+    restart: unless-stopped
     build: .
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
