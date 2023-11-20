@@ -33,9 +33,9 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = bool(os.environ.get("DEBUG", default=0))
+DEBUG = bool(os.environ.get("DEBUG", default=1))
 
-ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS").split(" ")
+ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", '').split()
 
 
 # Application definition
@@ -136,5 +136,5 @@ STATIC_URL = "home/static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 STATICFILES_DIRS= [
-    os.path.join(BASE_DIR / "home/static/css/styling.css")
+    os.path.join(BASE_DIR / "home/static/css/")
 ]
