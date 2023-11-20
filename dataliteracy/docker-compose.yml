@@ -5,9 +5,15 @@ services:
     container_name: dataliteracy
     build: .
     command: python manage.py runserver 0.0.0.0:8000
+    image: 'jc21/nginx-proxy-manager:latest'
+    restart: unless-stopped
     volumes:
       - .:/usr/src/app/
+      - ./data:/data
+      - ./letsencrypt:/etc/letsencrypt
     ports:
-      - 80:8000
+      - '80:80'
+      - '81:81'
+      - '443:443'
     env_file:
       - .env
