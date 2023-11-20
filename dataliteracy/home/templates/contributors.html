@@ -1,42 +1,62 @@
-
-{% extends "base.html" %}
-{% load static %}
-
-
-{% block content %}
-    <div class="mainBody">
-        <h1 class="pageTitle display-1" id=""><b><u>Contributors</u></b></h1>
-        <div class="contentSubsection">
-            <div class="subHead" id="evan_beadle">
-                <h3 class="contributor" id="evanBeadle"><u>Evan Beadle:</u></h3>
-                <img src="/home/static/blank.jpg" alt="Your photo here" class="portrait">
-                <p class="statementP"> &emsp;&emsp;[Please enter bio about yourself here] </p>
-            </div>
-
-            <div class="subHead" id="daniel_campa">
-                <h3 class="contributor" id="danielCampa"><u>Daniel Campa:</u></h3>
-                <img src="/home/static/blank.jpg" alt="Your photo here" class="portrait"><br>
-                <p class="statementP"> 	&emsp;&emsp;[Please enter bio about yourself here]
-                <br><br><br><br>
-            </div>
-            <div class="subHead" id="storm_caswell">
-                <h3 class="contributor" id="conStorm"><u>Storm Caswell:</u></h3>
-                <img src="/home/static/stormTest.png" alt="Your photo here" class="portrait" id="stormImg">
-                <p class="statementP"> &emsp;&emsp; Storm Caswell is a Senior at Georgia
-                    Southern University at the Statesboro campus. He is currently
-                    majoring in Computer Science with a minor in Animation. For this
-                    project, Storm has taken a role in polishing the aesthetic appeal
-                    as well as focusing on scheduling. After graduating, Storm's goal
-                    is to continue schooling and independently develop his animation
-                    portfolio.
-                </p>
-            </div>
-            <div class="subHead" id="wylie_glover">
-                <h3 class="contributor" id="wylieGlover"><u>Wylie Glover:</u></h3>
-                <img src="/home/static/blank.jpg" alt="Your photo here" class="portrait"><br><br><br>
-                <p class="statementP"> &emsp;&emsp;[Please enter bio about yourself here]</p>
-            </div>
-        </div>
+{% extends "base.html" %} {% load static %} {% block content %}
+<div class="mainBody">
+  <h1 class="pageTitle display-1" id="">
+    <b><u>Contributors</u></b>
+  </h1>
+  <div class="contentSubsection">
+    <div class="subHead" id="evan_beadle">
+      <h3 class="contributor" id="evanBeadle"><u>Evan Beadle:</u></h3>
+      <img
+        src="{% static 'blank.jpg' %}"
+        alt="Your photo here"
+        class="portrait"
+      />
+      <p class="statementP">
+        &emsp;&emsp;[Please enter bio about yourself here]
+      </p>
     </div>
-{% endblock  %}
 
+    <div class="subHead" id="daniel_campa">
+      <h3 class="contributor" id="danielCampa"><u>Daniel Campa:</u></h3>
+      <img
+        src="{% static 'blank.jpg' %}"
+        alt="Your photo here"
+        class="portrait"
+      /><br />
+      <p class="statementP">
+        &emsp;&emsp;[Please enter bio about yourself here]
+        <br /><br /><br /><br />
+      </p>
+    </div>
+
+    <div class="subHead" id="storm_caswell">
+      <h3 class="contributor" id="conStorm"><u>Storm Caswell:</u></h3>
+      <img
+        src="{%static 'stormTest.png' %}"
+        alt="Your photo here"
+        class="portrait"
+        id="stormImg"
+      />
+      <p class="statementP">
+        &emsp;&emsp; Storm Caswell is a Senior at Georgia Southern University at
+        the Statesboro campus. He is currently majoring in Computer Science with
+        a minor in Animation. For this project, Storm has taken a role in
+        polishing the aesthetic appeal as well as focusing on scheduling. After
+        graduating, Storm's goal is to continue schooling and independently
+        develop his animation portfolio.
+      </p>
+    </div>
+    <div class="subHead" id="wylie_glover">
+      <h3 class="contributor" id="wylieGlover"><u>Wylie Glover:</u></h3>
+      <img
+        src="{% static 'blank.jpg' %}"
+        alt="Your photo here"
+        class="portrait"
+      /><br /><br /><br />
+      <p class="statementP">
+        &emsp;&emsp;[Please enter bio about yourself here]
+      </p>
+    </div>
+  </div>
+</div>
+{% endblock %}

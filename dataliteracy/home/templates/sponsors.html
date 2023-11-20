@@ -1,26 +1,45 @@
-
-{% extends "base.html" %}
-{% load static %}
-
-{% block content %}
-    <div class="mainBody">
-        <h1 class="pageTitle" id=""><b><u>Sponsors</u></b></h1>
-        <div class="contentPage" id="missionTemplate">
-            <div class="contentSubsection">
-                <div class="subHead" id="andrew_allen">
-                <h3 class="contributor display-5" id="andrewAllen"><u>Professor Andrew Allen:</u></h3>
-                <img src="/home/static/Doctor Allen.jpg" alt="Your photo here" class="portrait">
-                <p class="statementP"> &emsp;&emsp; <u>Interim Department Chair and Associate
-                    Professor at Georgia Southern University</u><br><br> Professor Allen
-                    is working as the Computer Science guide in this project and 
-                    helping to better define the requirements of the software.</p>
-                </div>
-                <div class="subHead" id="hui_jin">
-                <h3 class="contributor display-5" id="huiJin"><u>Professor Hui:</u></h3>
-                <img src="/home/static/Doctor Hui.jpg" alt="Your photo here" class="portrait"><br>
-                <p class="statementP"> 	&emsp;&emsp; <u>Associate Professor Middle Grades
-                    and Secondary Education Armstrong Campus</u><br><br> 
-                </div>
-        </div>
+{% extends "base.html" %} {% load static %} {% block content %}
+<div class="mainBody">
+  <h1 class="pageTitle" id="">
+    <b><u>Sponsors</u></b>
+  </h1>
+  <div class="contentPage" id="missionTemplate">
+    <div class="contentSubsection">
+      <div class="subHead" id="andrew_allen">
+        <h3 class="contributor display-5" id="andrewAllen">
+          <u>Professor Andrew Allen:</u>
+        </h3>
+        <img
+          src="{% static 'Doctor Allen.jpg' %}"
+          alt="Your photo here"
+          class="portrait"
+        />
+        <p class="statementP">
+          &emsp;&emsp;
+          <u
+            >Interim Department Chair and Associate Professor at Georgia
+            Southern University</u
+          ><br /><br />
+          Professor Allen is working as the Computer Science guide in this
+          project and helping to better define the requirements of the software.
+        </p>
+      </div>
+      <div class="subHead" id="hui_jin">
+        <h3 class="contributor display-5" id="huiJin"><u>Professor Hui:</u></h3>
+        <img
+          src="{% static 'Doctor Hui.jpg' %}"
+          alt="Your photo here"
+          class="portrait"
+        /><br />
+        <p class="statementP">
+          &emsp;&emsp;
+          <u
+            >Associate Professor Middle Grades and Secondary Education Armstrong
+            Campus</u
+          ><br /><br />
+        </p>
+      </div>
     </div>
-{% endblock  %}
+  </div>
+  {% endblock %}
+</div>
