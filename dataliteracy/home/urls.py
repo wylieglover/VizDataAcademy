@@ -6,7 +6,7 @@ urlpatterns = [
     path('', RedirectView.as_view(url='/home', permanent=True), name='home_redirect'),
     # Redirect from vizdataacademy.com to vizdataacademy.com/home
     path('', RedirectView.as_view(url='/home', permanent=True), name='home_redirect_no_www'),
-    path('home/', views.home, name='home'),
+    path('home/', views.home, name='home'), 
     path('serve-css/', views.serve_css, name='serve-css'),
     path('home/templates/contributors.html', views.contributors, name='contributors'),
     path('home/templates/contact.html', views.contact , name='contact'),
