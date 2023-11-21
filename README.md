@@ -1,4 +1,4 @@
-# Data Literacy Project
+# Viz Data Academy
 Our group has been tasked with developing an application for high school students to help with understanding data and its visualization. We hope to appeal to the kinesthetic learner by offering an environment for students to interact with data and graphs in a new format. Although the application will be built with biology in mind, its use case expands beyond that of a single subject.
 
 # Local Development Setup
