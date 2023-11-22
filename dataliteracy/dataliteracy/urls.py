@@ -23,5 +23,6 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path('', include('home.urls')),
     path('', RedirectView.as_view(url='home/')),  #Sets up the redirect to homepage
+    path('accounts/', include('django.contrib.auth.urls')),
 
 ]
