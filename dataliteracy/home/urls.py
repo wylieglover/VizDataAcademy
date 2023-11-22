@@ -17,9 +17,9 @@ urlpatterns = [
     path('home/bar-graph/', views.barGraphing , name='barGraphing'),
     path('home/line-graph/', views.lineGraphing , name='lineGraphing'),
     path('home/pie-chart/', views.pieGraphing , name='pieGraphing'),
-    path('home/histo-graph/', views.histoGraphing , name='histo-graph'),
+    path('home/histogram/', views.histoGraphing , name='histo-graph'),
     path('home/bubble-graph/', views.bubbleGraphing , name='bubbleGraphing'),
-    path('home/dot-graph/', views.dotGraphing , name='dot-graph'),
-    path('home/box-graph/', views.boxGraphing , name='boxGraphing'),
+    path('home/box-plot/', views.boxGraphing , name='boxGraphing'),
+    path('home/scatter-plot/', views.dotGraphing , name='dot-graph'),
     path('home/graphing/', views.graphing , name='graphing'),
 ]
