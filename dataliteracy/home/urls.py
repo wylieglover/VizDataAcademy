@@ -22,4 +22,6 @@ urlpatterns = [
     path('home/box-plot/', views.boxGraphing , name='boxGraphing'),
     path('home/scatter-plot/', views.dotGraphing , name='dot-graph'),
     path('home/graphing/', views.graphing , name='graphing'),
+    path('signup/', views.SignUp_View , name='signup'),
+
 ]

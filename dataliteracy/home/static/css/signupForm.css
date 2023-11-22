@@ -1,0 +1,65 @@
+body{
+    background-color: blue;
+}
+
+.register {
+    border: 2px solid;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: auto;
+    align-items: center;
+    background-color: aqua;
+    width: 300px;
+    height: 600px;
+    padding: 15px;
+    border-radius: 20px;
+    
+}
+
+.text-center{
+    text-align: center;
+}
+
+input[type=text] {
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 15px;
+    border: 2px solid;
+    margin: 15px 0;
+}
+
+input[type=password] {
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 15px;
+    border: 2px solid;
+    margin: 10px 0;
+}
+
+input[type=submit]{
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+    border: none;
+    background-color: cadetblue;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.select {
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 15px;
+    border: 2px solid;
+    margin: 15px 0;
+}
+  
