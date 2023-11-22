@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.template import loader
 from django.contrib.staticfiles import finders
+from django.shortcuts import render
 
 def serve_css(request):
     css_path = finders.find('css/styling.css')
@@ -12,61 +13,43 @@ def serve_css(request):
         return HttpResponse(status=404)
 
 def home(request):
-  template = loader.get_template('missionStatement.html')
-  return HttpResponse(template.render())
+  return render(request, 'missionStatement.html')
 
 def contributors(request):
-  template = loader.get_template('contributors.html')
-  return HttpResponse(template.render())
+  return render(request, 'contributors.html')
 
 def sponsors(request):
-  template = loader.get_template('sponsors.html')
-  return HttpResponse(template.render())
+  return render(request, 'sponsors.html')
 
 def contact(request):
-  template = loader.get_template('contact.html')
-  return HttpResponse(template.render())
+  return render(request, 'contact.html')
 
 def reviews(request):
-  template = loader.get_template('reviews.html')
-  return HttpResponse(template.render())
-
-def graphing(request):
-  template = loader.get_template('graphing.html')
-  return HttpResponse(template.render())
-
-def barGraphing(request):
-  template = loader.get_template('barGraphing.html')
-  return HttpResponse(template.render())
-
-def lineGraphing(request):
-  template = loader.get_template('lineGraphing.html')
-  return HttpResponse(template.render())
-
-def pieGraphing(request):
-  template = loader.get_template('pieGraphing.html')
-  return HttpResponse(template.render())
+  return render(request, 'reviews.html')
 
 def missionStatement(request):
-  template = loader.get_template('missionStatement.html')
-  return HttpResponse(template.render())
+  return render(request, 'missionStatement.html')
 
 def graphing(request):
-  template = loader.get_template('graphing.html')
-  return HttpResponse(template.render())
+  return render(request, 'graphing.html')
+
+def barGraphing(request):
+  return render(request, 'barGraphing.html')
+
+def lineGraphing(request):
+  return render(request, 'lineGraphing.html')
+
+def pieGraphing(request):
+  return render(request, 'pieGraphing.html')
 
 def histoGraphing(request):
-  template = loader.get_template('histoGraphing.html')
-  return HttpResponse(template.render())
+  return render(request, 'histoGraphing.html')
 
 def bubbleGraphing(request):
-  template = loader.get_template('bubbleGraphing.html')
-  return HttpResponse(template.render())
+  return render(request, 'bubbleGraphing.html')
 
 def boxGraphing(request):
-  template = loader.get_template('boxGraphing.html')
-  return HttpResponse(template.render())
+  return render(request, 'boxGraphing.html')
 
 def dotGraphing(request):
-  template = loader.get_template('dotGraphing.html')
-  return HttpResponse(template.render())
+  return render(request, 'dotGraphing.html')
