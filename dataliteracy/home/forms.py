@@ -3,6 +3,7 @@ from django import forms
 
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from django.forms import ModelForm
 
 
 class SignUpForm(UserCreationForm):
@@ -69,12 +70,18 @@ class SignUpForm(UserCreationForm):
         ('TEACHER', 'Teacher'),
     )
 
-    role = forms.ChoiceField(choices=ROLE_CHOICES)
+    role = forms.ChoiceField(required= 'true', choices=ROLE_CHOICES, label='Role')
 
     class Meta:
         model = User
         fields = ('username', 'first_name', 'last_name', 'email', 'password1', 'password2', 'role' )
         widgets= {
-            'email':forms.TextInput(attrs={'type':'text'}),
-            
+            'email':forms.TextInput(attrs={'type':'text'}),  
         }
+        
+    def save(self, commit=True):
+        user = super().save(commit=False)
+        user.email = self.cleaned_data['email']
+
+        if commit:
+            user.save()

@@ -31,6 +31,51 @@
   </head>
 
   <body>
+    {% if user.is_authenticated %}
+    <!--Inserting the top navbar with id of topNav -->
+    <nav class="navbar">
+      <div class="container">
+        <div>
+          <h1>Viz Data Academy</h1>
+          <div class="menu">
+            <ul>
+              <li>
+                <a href="/home/missionStatement" class="active">Home</a>
+              </li>
+              <li>
+                <a href="#">Lessons</a>
+              </li>
+              <li>
+                <div class="dropdown">
+                  <button class="dropbtn">
+                    <a href="/home/graphing" id="graphing">Graphing</a>
+                  </button>
+                  <div class="dropdown-content">
+                    <a href="/home/bar-graph">Bar Graph</a>
+                    <a href="/home/line-graph">Line Graph</a>
+                    <a href="/home/pie-chart">Pie Chart</a>
+                    <a href="/home/histogram">Histogram</a>
+                    <a href="/home/bubble-graph">Bubble Graph</a>
+                    <a href="/home/box-plot">Box Plot</a>
+                    <a href="/home/scatter-plot">ScatterPlot</a>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <a href="#">Info</a>
+              </li>
+              <li>
+                <a href="{% url 'login' %}">Login</a>
+              </li>
+              <li>
+                <a href="{% url 'signup' %}">Signup</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    {% else %}
     <!--Inserting the top navbar with id of topNav -->
     <nav class="navbar">
       <div class="container">
@@ -107,6 +152,7 @@
         </ul>
       </div>
     </nav>
+    {% endif %}
 
     {% block content %} {% endblock %}
   </body>

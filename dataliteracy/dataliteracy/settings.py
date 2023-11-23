@@ -139,3 +139,5 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 STATICFILES_DIRS= [
     os.path.join(BASE_DIR / "home/static/css/")
 ]
+
+LOGIN_REDIRECT_URL = '/'
