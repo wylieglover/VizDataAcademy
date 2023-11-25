@@ -23,5 +23,8 @@ urlpatterns = [
     path('home/scatter-plot/', views.dotGraphing , name='dot-graph'),
     path('home/graphing/', views.graphing , name='graphing'),
     path('signup/', views.SignUp_View , name='signup'),
+    path('create/', views.create_class , name='create'),
+    path('dashboard/', views.view_class, name="dashboard"),
+
 
 ]

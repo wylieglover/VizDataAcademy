@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block static_head %}
+<link rel="stylesheet" href="{% static 'css/classCreation.css' %}">
+
+{% endblock  %}
+
+{% block content %}
+  <br>
+  <div class="mainBody">
+    <div class="body-board">
+      <div class="body-home">
+          <div>
+            <br>
+          <div class="text-left">
+              <h1>Create a New Class</h1>
+          </div>
+          <div class="form-container">
+              <form method="POST">
+                {% csrf_token %}
+
+                  <div class="input-group">
+                      <label for="title" class="label-text">Title</label>
+                      <br>
+                      <input required name="title" id="title" type="text" class="form-input">
+                  </div>
+                  <br>
+                  <div class="input-group">
+                      <label for="description" class="label-text">Description</label>
+                      <br>
+                      <textarea required name="description" id="description" type="text" class="form-input"></textarea>
+                  </div>
+                  <div class="submit-btn">
+                      <input type="submit" class="submit" value="SUBMIT">  
+                  </div>
+              </form>
+          </div>
+          
+          </div>
+      <div class="text-right">
+          <img class="image-right" src="{% static 'quote1.png' %}" alt="Placeholder">
+      </div>
+  </div>
+</div>
+
+{% endblock  %}

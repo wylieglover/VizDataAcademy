@@ -11,6 +11,7 @@
     <p>Welcome, {{user.role}} {{user.get_username}}</p>
     <a href="{% url 'logout' %}?next={{request.path}}">LOGOUT HERE</a>
   </div>
+</div>
  
 
 {% else %}
