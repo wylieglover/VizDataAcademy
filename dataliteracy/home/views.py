@@ -121,6 +121,11 @@ def join_class(request):
     classroom = Classroom.objects.get(join_code=join_code)
     StudentClassroom.objects.create(user=request.user, classroom=classroom)
 
-    return redirect(f"/classroom/{join_code}/")
+    return redirect(f"/{join_code}/")
   else:
     return render(request, "dashboard.html")
+  
+def course_view(request, class_id):
+  return render(request, "class/insideClass.html", {
+    "classroom": Classroom.objects.get(join_code=class_id)
+  })
