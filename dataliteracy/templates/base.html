@@ -62,7 +62,17 @@
                 </div>
               </li>
               <li>
-                <a href="#">Info</a>
+                <div class="dropdown">
+                  <button class="dropbtn">
+                    <a href="#" id="Info">Info</a>
+                  </button>
+                  <div class="dropdown-content">
+                    <a href="/home/sponsors">Sponsors</a>
+                    <a href="/home/contributors">Contributors</a>
+                    <a href="/home/contact">Contact Us</a>
+                    <a href="/home/reviews">Reviews</a>
+                  </div>
+                </div>
               </li>
               <li>
                 <a href="{% url 'login' %}">Login</a>
