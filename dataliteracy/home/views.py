@@ -126,6 +126,6 @@ def join_class(request):
     return render(request, "dashboard.html")
   
 def course_view(request, class_id):
-  return render(request, "class/insideClass.html", {
+  return render(request, "insideClass.html", {
     "classroom": Classroom.objects.get(join_code=class_id)
   })
