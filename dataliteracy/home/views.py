@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.template import loader
 from django.http import HttpResponse
 from django.views.generic import CreateView, DetailView
@@ -126,6 +126,5 @@ def join_class(request):
     return render(request, "dashboard.html")
   
 def course_view(request, class_id):
-  return render(request, "insideClass.html", {
-    "classroom": Classroom.objects.get(join_code=class_id)
-  })
+  classroom = get_object_or_404(Classroom, join_code=class_id)
+  return render(request, "insideClass.html", {"classroom": classroom})
