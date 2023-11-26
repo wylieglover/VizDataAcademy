@@ -1,0 +1,79 @@
+{% extends "base.html" %} 
+{% load static %} 
+{% block static_head %}
+
+{% endblock static_head %}
+
+{% block content %} 
+
+    <main class="dashboard">
+        <div id="graphOpt">
+            <div id="useGraph"></div>
+        </div>
+        <div class="dataCollection">
+            <h2 class="boxLabel" id="boxTitle">Stock Box</h2>
+            <input type="text" id="updateBoxTitle" placeholder="Change Title" onchange="updateTitle()"/> 
+            <script>
+                function updateTitle(){
+                    let Title = document.getElementById('updateBoxTitle').value;
+                    return document.getElementById('boxTitle').innerHTML = Title;
+                }
+            </script>
+
+            <h2 class="boxLabel" id="numBoxes">Number of BoxPlots</h2>
+            <select id="numBoxes" placeholder="" onchange="refreshBoxCount(this)">
+                <option value="" disable selected>Select</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <div class="boxCount">
+                <container id="numBoxPlot"></container>
+            </div>
+
+            <!--create a select list with options, change graph from there-->
+            <h2 class="boxLabel" id="dataHeader">Data Bounds</h2>
+            <label for="minVal">Min val</label>
+            <input type="text" id="minVal"> <br>
+            <label for="maxVal">Max val</label>
+            <input type="text" id="maxVal"> <br>
+            <label for="entryCount"># of Data points</label>
+            <input type="text" id="entryCount"> <br>
+
+            <div class="boxmin">
+                <container id="boxMin"></container>
+            </div>
+            <div class="boxmax">
+                <container id="boxMax"></container>
+            </div>
+            <div class="countdata">
+                <container id="countData"></container>
+            </div>
+
+            <h2 class="boxLabel" id="typeHeader">Choose Plot Type</h2>
+            <form action="/action_page.php" method="get">
+                <label for="boxChoice">Choose boxType</label>
+                <input list="box_type" name="boxChoice" id="boxChoice" placeholder="Select" onchange="updateBoxStyle(this);updateData()">
+                <datalist id="box_type">
+                    <option value="groupPlot">groupPlot</option>
+                    <option value="stdDev">stdDev</option>
+                    <option value="rainbowPlot">rainbow</option>
+                </datalist>
+            </form>
+
+
+            <h2 class="boxLabel" id="generateDat">Hit Enter to Submit Data</h2>
+            <button class="sendData" id="genData" onclick="">Enter</button>
+
+
+            <div class="barHide"></div>
+
+        </div>
+    </main>
+
+    <script src='https://cdn.plot.ly/plotly-2.4.2.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script>
+    <script src="{% static 'mainBox.js' %}"></script>
+
+{% endblock %}
