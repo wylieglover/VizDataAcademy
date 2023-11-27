@@ -1,5 +1,5 @@
 body{
-    background-color: blue;
+    background-color: #040c24;
 }
 
 .register {
@@ -10,16 +10,17 @@ body{
     transform: translate(-50%, -50%);
     margin: auto;
     align-items: center;
-    background-color: aqua;
+    background-color: #1c2147;
     width: 300px;
     height: 600px;
     padding: 15px;
     border-radius: 20px;
-    
+    color: #fff;
 }
 
 .text-center{
     text-align: center;
+    margin-top: 0;
 }
 
 input[type=text] {
