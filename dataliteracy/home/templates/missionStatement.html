@@ -2,20 +2,6 @@
 {% load static %} 
 
 {% block content %}
-
-{% if user.is_authenticated %}
-
-  <!--Logged In-->
-  <div class="mainBody">
-    <p>Logged In</p>
-    <p>Welcome, {{user.role}} {{user.get_username}}</p>
-    <a href="{% url 'logout' %}?next={{request.path}}">LOGOUT HERE</a>
-  </div>
-</div>
- 
-
-{% else %}
-  <!---Not Logged In- -->
   <div class="mainBody">
 
     <h1 class="pageTitle display-1" id="">
@@ -70,7 +56,5 @@
     </div>
 
   </div>
-
-{% endif %}
 
 {% endblock %}

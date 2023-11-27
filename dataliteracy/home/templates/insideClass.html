@@ -12,15 +12,22 @@
     <div class="title-row">            
             <h1 class="title-text">{{ classroom.title }}</h1>
         </div>
-
         <div class="description-content">
             <!--This is for the right side that contains the class code and description-->
+            {% if user_data.role == 'TEACHER' %}
+            <div class="add-assignment">
+                <h2> YOOOOO </h2>
+            </div>
+            <div class="delete-assignment">
+                <h2> YOOOOO </h2>
+            </div>
+            {% endif %}
+            
             <div class="class-info-box">
                 <div class="code-view">
                     <p class="small-text">Class Code:</p>
                     <p class="large-text"><b>{{ classroom.join_code }}</b></p>
                 </div>
-
                 <div class="decription-view">
                     <p class="large-text"><b>---Description---</b></p>
                     <p class="small-text">{{ classroom.description }}</p>

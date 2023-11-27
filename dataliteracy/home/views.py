@@ -77,7 +77,7 @@ def SignUp_View(request):
       x = UserData.objects.create(user=user, role=role)
       
       login(request, user)
-      return home(request)   
+      return view_class(request)
   else:
     form = SignUpForm()
   return render(request, 'signup.html', {'form': form})
@@ -99,9 +99,9 @@ def create_class(request):
   
 def view_class(request):
   print(request.user.username)
-  #account = UserData.objects.get(user=request.user)
-  #role = account.role
-  #print(role)
+  account = UserData.objects.get(user=request.user)
+  role = account.role
+  print(role)
   if request.user.username == "":
     return HttpResponse("Hello")
 
@@ -110,7 +110,8 @@ def view_class(request):
   classrooms = list(chain(s, t))
 
   return render(request, "dashboard.html" , {
-    "classrooms": classrooms
+    "classrooms": classrooms,
+    "user_data": account
   })
 
 def join_class(request):
@@ -127,4 +128,6 @@ def join_class(request):
   
 def course_view(request, class_id):
   classroom = get_object_or_404(Classroom, join_code=class_id)
-  return render(request, "insideClass.html", {"classroom": classroom})
+  account = UserData.objects.get(user=request.user)
+
+  return render(request, "insideClass.html", {"user_data": account})
