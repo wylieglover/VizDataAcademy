@@ -414,8 +414,43 @@ ul {
     height: max-content;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 10px;
+    margin-top: 40px;
     padding: 5px 20px 5px 20px;
     border-radius: 25px;
     border: solid 2px #fff;
+}
+
+.reviewInput {
+    background-color: #384882;
+    width: 80%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: auto;
+    height: 70%;
+    border-radius: 1%;
+}
+
+.message{
+    margin: 10px;
+    font-size: 25px;
+}
+
+#reviewMessage {
+    height: 70%;
+    font-size: 15px;
+    border-radius: 2px;
+}
+
+.reviewSubmission {
+    width: 30%;
+    height: 40px;
+    margin: auto;
+    background-color: cadetblue;
+    border: 1px solid white;
+    font-weight: bold;
+    color: white;
+    font-size: 20px;
+    border-radius: 2px;
 }
