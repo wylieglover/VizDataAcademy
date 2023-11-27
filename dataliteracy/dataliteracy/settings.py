@@ -60,6 +60,8 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
+CSRF_TRUSTED_ORIGINS = ['https://www.vizdataacademy.com', 'https://vizdataacademy.com']
+
 ROOT_URLCONF = "dataliteracy.urls"
 
 
