@@ -1,2 +1,12 @@
-{% extends "base.html" %} {% load static %} {% block content %} Review view {%
+{% extends "base.html" %} {% load static %} 
+{% block content %}
+<div class="mainBody">
+    <h1 class="pageTitle display-1" id=""><b><u>Review:</b></u></h1>
+    <h2> Leave us a review of the site and tell us about any features you hope to see developed in the future.</h2>
+    <div class="reviewInput">
+        <label class="message">Your review:</label>
+        <textarea id="reviewMessage" placeholder="Write your thoughts here..."></textarea>
+        <button class="reviewSubmission" type="button">Submit Review!</button>
+    </div>
+</div>
 {% endblock %}

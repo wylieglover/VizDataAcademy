@@ -10,7 +10,10 @@ body {
     box-sizing: border-box;
 }
 
-h1,h2,h3,h4 {
+h1,
+h2,
+h3,
+h4 {
     margin: 0;
 }
 
@@ -53,27 +56,47 @@ ul {
     z-index: 3;
     position: fixed;
     width: 100%;
-    height: 6%;
+    height: 50px;
 }
 
 .navbar .container {
-    padding: 1em 2em;
+    /* padding: 1em 2em; */
+    padding-bottom: 0;
     margin: 0 auto;
     width: 100%;
     margin-left: 0;
     margin-right: 0;
 }
 
-.navbar .container > div {
-    display:  grid;
-    grid-template-columns: 15% 75%;
+.hero {
+    margin: 5px;
+    margin-top:10px;
+    padding: 15px;
+    padding-top: 30px;
+    text-decoration: none;
+}
+
+
+#topBarElements {
+    height: 10px;
+}
+
+.menu {
+    height: 35px;
+}
+
+.navbar .container>div {
+    display: flex;
+    flex-direction: row;
+    /* display:  grid;
+    grid-template-columns: 15% 75%; */
     align-items: center;
 }
 
 .navbar .menu,
 .navbar .social-media {
     display: flex;
-    justify-content:  space-between;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -86,6 +109,7 @@ ul {
     display: inline-block;
     margin-right: 10%;
 }
+
 .navbar ul a {
     font-size: 0.8em;
     text-transform: uppercase;
@@ -118,18 +142,38 @@ ul {
 }
 
 
+.left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+
+.right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+
 /*==== Sidebar ======*/
 
 .sidebar {
     position: fixed;
     left: 0;
-    top: 0;
+    top: 10px;
     height: 100%;
-    padding: 5em 2em 0 2em;
-    background: linear-gradient(
-        0deg, #0c1839, #1c2145
-    );
-    overflow-y: scroll;
+    padding: 3em 2em 0 2em;
+    background: linear-gradient(0deg, #040c24, #1c2147);
+    overflow-y: hidden;
     width: 15%;
 }
 
@@ -206,7 +250,7 @@ ul {
     grid-template-columns: 1fr;
 }
 
-.barHide{
+.barHide {
     display: none;
 }
 
@@ -214,13 +258,15 @@ ul {
     display: block;
 }
 
-.dataCollection > * {
+.dataCollection>* {
     text-align: center;
     margin-bottom: 20px;
     margin-top: 10px;
 }
 
-#barNames > *,#compValues > *, .barHide > * {
+#barNames>*,
+#compValues>*,
+.barHide>* {
     margin-bottom: 10px;
 }
 
@@ -228,7 +274,7 @@ ul {
     margin: 20px 20px 20px 20px;
 }
 
-.barHide > * {
+.barHide>* {
     margin-bottom: 30px;
 }
 
@@ -242,17 +288,27 @@ ul {
     overflow: scroll;
 }
 
-.mainBody > h1 {
+.mainBody>h1 {
     font-size: 100px;
     margin: 10px 10px;
-    color: rgb(70, 86, 233)
+    color: rgb(70, 86, 233);
+    background-color: #040c24;
+    height: max-content;
+    width: max-content;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    padding: 20px;
+    border-radius: 35px;
+    border: 2px solid #fff;
+    box-shadow: 10px 20px 20px #040c24;
 }
 
-.subHead > .statementP {
+.subHead>.statementP {
     font-size: 25px;
 }
 
-.subHead > h5 {
+.subHead>h5 {
     font-size: 40px
 }
 
@@ -269,7 +325,7 @@ ul {
 }
 
 .statementP {
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 25px;
     line-height: 25px;
     color: #757575;
@@ -277,7 +333,7 @@ ul {
 }
 
 .statementPR {
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 25px;
     color: #757575;
     text-align: right;
@@ -292,45 +348,109 @@ ul {
     padding: 16px;
     font-size: 16px;
     border: none;
-  }
-  
-  /* The container <div> - needed to position the dropdown content */
-  .dropdown {
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
     position: relative;
     display: inline-block;
-  }
-  
-  /* Dropdown Content (Hidden by Default) */
-  .dropdown-content {
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
     display: none;
     position: absolute;
     background-color: #0c1839;
     z-index: 1;
-  }
-  
-  /* Links inside the dropdown */
-  .dropdown-content a {
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-  }
-  
-  /* Change color of dropdown links on hover */
-  .dropdown-content a:hover {background-color: #00000040;}
-  
-  /* Show the dropdown menu on hover */
-  .dropdown:hover .dropdown-content {display: block;}
-  
-  /* Change the background color of the dropdown button when the dropdown content is shown */
-  .dropdown:hover .dropbtn {background-color: #00000080;}
+}
 
-  #graphing{
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #00000040;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #00000080;
+}
+
+#graphing {
     width: fit-content;
     height: 100px;
-  }
+}
 
-  .portrait{
+.portrait {
     width: 400px;
     height: 600px;
-  }
+}
+
+.logo {
+    position: fixed;
+    width: 6.25%;
+    height: 12.5%;
+    bottom: 100px;
+    left: 85px;
+    border-radius: 20px;
+    opacity: 75%;
+    box-shadow: 10px 20px 10px #02081b;
+}
+
+.contactPiece {
+    background-color: #4d60a1;
+    width: fit-content;
+    height: max-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    padding: 5px 20px 5px 20px;
+    border-radius: 25px;
+    border: solid 2px #fff;
+}
+
+.reviewInput {
+    background-color: #384882;
+    width: 80%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: auto;
+    height: 70%;
+    border-radius: 1%;
+}
+
+.message{
+    margin: 10px;
+    font-size: 25px;
+}
+
+#reviewMessage {
+    height: 70%;
+    font-size: 15px;
+    border-radius: 2px;
+}
+
+.reviewSubmission {
+    width: 30%;
+    height: 40px;
+    margin: auto;
+    background-color: cadetblue;
+    border: 1px solid white;
+    font-weight: bold;
+    color: white;
+    font-size: 20px;
+    border-radius: 2px;
+}

@@ -1,51 +1,60 @@
-{% extends "base.html" %} {% load static %} {% block content %}
-<div class="mainBody">
-  <h1 class="pageTitle display-1" id="">
-    <b><u>Mission Statement</u></b>
-  </h1>
-  <div class="contentSubsection">
-    <div class="subHead" id="progress">
-      <h5 class="subTitle display-5"><u>Current Progress:</u></h5>
-      <p class="statementP">
-        &emsp;&emsp; We are currently in the early stages of development and our
-        current objective is working on deployment of python libraries through
-        the django framework. As of now, we have setup the framework of our
-        application by creating an appropriate environment with Django . We are
-        working through adding in the plotly libraries full functionalities in
-        bringing user inputs to the webpages we've established.
-      </p>
+{% extends "base.html" %} 
+{% load static %} 
+
+{% block content %}
+  <div class="mainBody">
+
+    <h1 class="pageTitle display-1" id="">
+      <b><u>Mission Statement</u></b>
+    </h1>
+
+    <div class="contentSubsection">
+      <div class="subHead" id="progress">
+        <h5 class="subTitle display-5"><u>Current Progress:</u></h5>
+        <p class="statementP">
+          &emsp;&emsp; We are currently in the early stages of development and our
+          current objective is working on deployment of python libraries through
+          the django framework. As of now, we have setup the framework of our
+          application by creating an appropriate environment with Django . We are
+          working through adding in the plotly libraries full functionalities in
+          bringing user inputs to the webpages we've established.
+        </p>
+      </div>
+      <div class="subHead" id="purpose">
+        <h5 class="subTitle display-5"><u>Purpose:</u></h5>
+        <p class="statementP">
+          &emsp;&emsp;As students at Georgia Southern currently enrolled in
+          Professor John Repko's Computer Science Capstone, we have been tasked
+          with developing an application for data visualization and comprehension.
+          Under the guidance of Professors Hui and Allen, we hope to appeal to the
+          kinesthetic learner in offering a digital environment for high school
+          student interact with data and graphs. <br />
+          &emsp;&emsp;Although the current method of teaching someone to
+          understand data isn’t incorrect, we hope to diversify the methods
+          available and appeal to those who’ve struggled with previous styles.
+          There have been programs built like this before; however, the programs
+          have become outdated and clunky compared to modern expectations.
+          <br />
+          &emsp;&emsp; We are currently in the early stages of development and our
+          current objective is working on deployment of python libraries through
+          the django framework.
+        </p>
+      </div>
+
+      <div class="subHead" id="future">
+        <h5 class="subTitle display-5"><u>Future:</u></h5>
+        <p class="statementP">
+          &emsp;&emsp;As students at Georgia Southern currently enrolled in
+          Professor John Repko's Computer Science Capstone, we have been tasked
+          with developing an application for data visualization and comprehension.
+          Under the guidance of Professors Hui and Allen, we hope to appeal to the
+          kinesthetic learner in offering a digital environment for high school
+          student interact with data and graphs. <br />
+        </p>
+      </div>
+
     </div>
-    <div class="subHead" id="purpose">
-      <h5 class="subTitle display-5"><u>Purpose:</u></h5>
-      <p class="statementP">
-        &emsp;&emsp;As students at Georgia Southern currently enrolled in
-        Professor John Repko's Computer Science Capstone, we have been tasked
-        with developing an application for data visualization and comprehension.
-        Under the guidance of Professors Hui and Allen, we hope to appeal to the
-        kinesthetic learner in offering a digital environment for high school
-        student interact with data and graphs. <br />
-        &emsp;&emsp;Although the current method of teaching someone to
-        understand data isn’t incorrect, we hope to diversify the methods
-        available and appeal to those who’ve struggled with previous styles.
-        There have been programs built like this before; however, the programs
-        have become outdated and clunky compared to modern expectations.
-        <br />
-        &emsp;&emsp; We are currently in the early stages of development and our
-        current objective is working on deployment of python libraries through
-        the django framework.
-      </p>
-    </div>
-    <div class="subHead" id="future">
-      <h5 class="subTitle display-5"><u>Future:</u></h5>
-      <p class="statementP">
-        &emsp;&emsp;As students at Georgia Southern currently enrolled in
-        Professor John Repko's Computer Science Capstone, we have been tasked
-        with developing an application for data visualization and comprehension.
-        Under the guidance of Professors Hui and Allen, we hope to appeal to the
-        kinesthetic learner in offering a digital environment for high school
-        student interact with data and graphs. <br />
-      </p>
-    </div>
+
   </div>
-</div>
+
 {% endblock %}

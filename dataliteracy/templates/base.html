@@ -24,90 +24,93 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" type="text/css" href="{% url 'serve-css' %}" />
-
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
     {% block title %}
     <title>Viz Data Academy</title>
     {% endblock %}
   </head>
 
   <body>
-    <!--Inserting the top navbar with id of topNav -->
     <nav class="navbar">
       <div class="container">
-        <div>
-          <h1>Viz Data Academy</h1>
           <div class="menu">
-            <ul>
-              <li>
-                <a href="/home/missionStatement" class="active">Home</a>
-              </li>
-              <li>
-                <a href="#">Lessons</a>
-              </li>
-              <li>
-                <div class="dropdown">
-                  <button class="dropbtn">
-                    <a href="/home/graphing" id="graphing">Graphing</a>
-                  </button>
-                  <div class="dropdown-content">
-                    <a href="/home/bar-graph">Bar Graph</a>
-                    <a href="/home/line-graph">Line Graph</a>
-                    <a href="/home/pie-chart">Pie Chart</a>
-                    <a href="/home/histogram">Histogram</a>
-                    <a href="/home/bubble-graph">Bubble Graph</a>
-                    <a href="/home/box-plot">Box Plot</a>
-                    <a href="/home/scatter-plot">ScatterPlot</a>
+            <h1 class="hero"><a href="/home/missionStatement">Viz Data Academy</a></h1>
+              <ul>
+                  <div class="nav-container">
+                      <div class="left">
+                          <li>
+                              <a href="/home/missionStatement" class="active">Home</a>
+                          </li>
+                          {% if user.is_authenticated %}
+                          <li>
+                              <a href="{% url 'dashboard' %}">Lessons</a>
+                          </li>
+                          {% endif %}
+                          <li>
+                              <div class="dropdown">
+                                  <button class="dropbtn">
+                                      <a href="/home/graphing" id="graphing">Graphing</a>
+                                  </button>
+                                  <div class="dropdown-content">
+                                      <a href="/home/bar-graph">Bar Graph</a>
+                                      <a href="/home/line-graph">Line Graph</a>
+                                      <a href="/home/pie-chart">Pie Chart</a>
+                                      <a href="/home/histogram">Histogram</a>
+                                      <a href="/home/bubble-graph">Bubble Graph</a>
+                                      <a href="/home/box-plot">Box Plot</a>
+                                      <a href="/home/scatter-plot">ScatterPlot</a>
+                                  </div>
+                              </div>
+                          </li>
+                      </div>
+                      <div class="right">
+                          {% if user.is_authenticated %}
+                          <li>
+                            <a href="{% url 'logout' %}?next={{request.path}}" class="navigator">Logout</a>
+                          </li>
+                          {% else %}
+                          <li>
+                              <a href="{% url 'login' %}">Login</a>
+                          </li>
+                          <li>
+                              <a href="{% url 'signup' %}">Signup</a>
+                          </li>
+                          {% endif %}
+                      </div>
                   </div>
-                </div>
-              </li>
-              <li>
-                <a href="#">Info</a>
-              </li>
-              <li>
-                <a href="{% url 'login' %}">Login</a>
-              </li>
-              <li>
-                <a href="{% url 'signup' %}">Signup</a>
-              </li>
-            </ul>
+              </ul>
           </div>
-        </div>
       </div>
-    </nav>
-
-    <nav class="sidebar">
+      </div>
+  </nav>
+  
+  <nav class="sidebar">
       <div class="container">
-        <h3 class="title">Home</h3>
-        <ul>
-          <li>
-            <a href="/home/">
-              <span>Mission Statement</span>
-            </a>
-          </li>
-          <li>
-            <a href="/home/sponsors">
-              <span>Sponsors</span>
-            </a>
-          </li>
-          <li>
-            <a href="/home/contributors">
-              <span>Contributors</span>
-            </a>
-          </li>
-          <li>
-            <a href="/home/contact">
-              <span>Contact Us</span>
-            </a>
-          </li>
-          <li>
-            <a href="/home/reviews">
-              <span>Reviews</span>
-            </a>
-          </li>
-        </ul>
+          <ul>
+              <li>
+                  <a href="/home/sponsors">
+                      <span>Sponsors</span>
+                  </a>
+              </li>
+              <li>
+                  <a href="/home/contributors">
+                      <span>Contributors</span>
+                  </a>
+              </li>
+              <li>
+                  <a href="/home/contact">
+                      <span>Contact Us</span>
+                  </a>
+              </li>
+              <li>
+                  <a href="/home/reviews">
+                      <span>Reviews</span>
+                  </a>
+              </li>
+          </ul>
+          <img src="{% static 'logo.png' %}" class="logo">
       </div>
-    </nav>
-
+  </nav>
     {% block content %} {% endblock %}
   </body>
 </html>

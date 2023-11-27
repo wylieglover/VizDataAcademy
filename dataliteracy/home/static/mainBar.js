@@ -31,7 +31,8 @@ const layout = {
   showlegend: false,
   paper_bgcolor: '#0b122b',
   font: {
-    color: '#6b6f8a'
+    color: '#6b6f8a',
+    size: 15
   }
 };
 Plotly.newPlot('useGraph', barChartData, layout, config);
@@ -181,7 +182,7 @@ function submitDataBar() {
     showlegend: false,
     paper_bgcolor: '#0b122b',
     font: {
-      color: '#6b6f8a'
+      color: '#6b6f8a',
     }
   };
 

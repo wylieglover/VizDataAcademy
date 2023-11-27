@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block static_head %}
+    <link rel="stylesheet" href="{% static 'css/dashB.css' %}">
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="mainBody">
+        <hr>
+        <div class="single-row">
+           
+            <button type="button" class="basic-button" onclick="location.href='{% url 'create' %}'">Create Class</button> 
+            
+            <button type="button" class="basic-button" onclick="joinPopup()">Join Class</button>  
+            <div class="popup" id="popup">
+                <form method="">
+                    <h2>Hello {{user.get_username}}</h2>
+                    <h3>Enter Class Code:</h3>
+                    <input  type="text"  id=join_code placeholder="7 Character Code">
+                    <input type="submit" class="pop-submit" value="Submit" onclick="closeJoinPopup()">
+                </form>
+                
+            </div>  
+        </div>
+        <hr>
+        <div class="class-container">
+            {% for c in classrooms %}
+                <div class="class-cards">
+                    <img class="card-photo" src="{% static 'filler.jpg' %}" alt="">
+                    <div class="card-container">
+                        <h4><b>{{c.classroom.title}}</b></h4> 
+                        <p>{{ c.classroom.description }}</p>
+                        <a href="/{{c.classroom.join_code}}/" >Go to classroom</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <script src="{% static 'popup.js' %}"></script>
+
+{% endblock  %}

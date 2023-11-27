@@ -5,8 +5,12 @@ var data = [{
   }];
   
   var layout = {
-    height: 400,
-    width: 500
+    paper_bgcolor: '#0b122b',
+    font: {
+      color: '#fff',
+      size: 20
+    }
+    
   };
   
   Plotly.newPlot('useGraph', data, layout);
