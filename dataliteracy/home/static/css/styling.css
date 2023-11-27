@@ -58,10 +58,19 @@ ul {
 
 .navbar .container {
     padding: 1em 2em;
+    padding-bottom: 0;
     margin: 0 auto;
     width: 100%;
     margin-left: 0;
     margin-right: 0;
+}
+
+#topBarElements  {
+    height: 10px;
+}
+
+.menu {
+    height: 35px;
 }
 
 .navbar .container > div {
@@ -127,7 +136,7 @@ ul {
     height: 100%;
     padding: 5em 2em 0 2em;
     background: linear-gradient(
-        0deg, #0c1839, #1c2145
+        0deg, #040c24, #1c2147
     );
     overflow-y: scroll;
     width: 15%;
@@ -245,7 +254,17 @@ ul {
 .mainBody > h1 {
     font-size: 100px;
     margin: 10px 10px;
-    color: rgb(70, 86, 233)
+    color: rgb(70, 86, 233);
+    background-color: #040c24;
+    height: max-content;
+    width: max-content;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    padding: 20px;
+    border-radius: 35px;
+    border: 2px solid #fff;
+    box-shadow: 10px 20px 20px #040c24;
 }
 
 .subHead > .statementP {
@@ -333,4 +352,27 @@ ul {
   .portrait{
     width: 400px;
     height: 600px;
+  }
+
+  .logo {
+    position: fixed;
+    width: 6.25%;
+    height: 12.5%;
+    bottom: 100px;
+    left: 85px;
+    border-radius: 20px;
+    opacity: 75%;
+    box-shadow:10px 20px 10px #02081b;
+  }
+
+  .contactPiece {
+    background-color: #4d60a1;
+    width: fit-content;
+    height: max-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    padding: 5px 20px 5px 20px;
+    border-radius: 25px;
+    border: solid 2px #fff;
   }
