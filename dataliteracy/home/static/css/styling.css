@@ -70,7 +70,8 @@ ul {
 
 .hero {
     margin: 5px;
-    padding: 12px;
+    padding: 15px;
+    padding-top: 30px;
 }
 
 
@@ -83,6 +84,8 @@ ul {
 }
 
 .navbar .container>div {
+    display: flex;
+    flex-direction: row;
     /* display:  grid;
     grid-template-columns: 15% 75%; */
     align-items: center;
@@ -134,6 +137,28 @@ ul {
 .profile-img {
     width: 2.5em;
     border-radius: 50%;
+}
+
+
+.left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+
+.right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
 }
 
 

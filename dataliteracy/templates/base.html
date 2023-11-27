@@ -31,128 +31,85 @@
   </head>
 
   <body>
-    {% if user.is_authenticated %}
-    <!--Inserting the top navbar with id of topNav -->
     <nav class="navbar">
       <div class="container">
-        <div>
-          <h1>Viz Data Academy</h1>
           <div class="menu">
-            <ul>
-              <li>
-                <a href="/home/missionStatement" class="active">Home</a>
-              </li>
-              <li>
-                <a href="{% url 'dashboard' %}">Lessons</a>
-              </li>
-              <li>
-                <div class="dropdown">
-                  <button class="dropbtn">
-                    <a href="/home/graphing" id="graphing">Graphing</a>
-                  </button>
-                  <div class="dropdown-content">
-                    <a href="/home/bar-graph">Bar Graph</a>
-                    <a href="/home/line-graph">Line Graph</a>
-                    <a href="/home/pie-chart">Pie Chart</a>
-                    <a href="/home/histogram">Histogram</a>
-                    <a href="/home/bubble-graph">Bubble Graph</a>
-                    <a href="/home/box-plot">Box Plot</a>
-                    <a href="/home/scatter-plot">ScatterPlot</a>
+              <h1 class="hero">Viz Data Academy</h1>
+              <ul>
+                  <div class="nav-container">
+                      <div class="left">
+                          <li>
+                              <a href="/home/missionStatement" class="active">Home</a>
+                          </li>
+                          {% if user.is_authenticated %}
+                          <li>
+                              <a href="{% url 'dashboard' %}">Lessons</a>
+                          </li>
+                          {% endif %}
+                          <li>
+                              <div class="dropdown">
+                                  <button class="dropbtn">
+                                      <a href="/home/graphing" id="graphing">Graphing</a>
+                                  </button>
+                                  <div class="dropdown-content">
+                                      <a href="/home/bar-graph">Bar Graph</a>
+                                      <a href="/home/line-graph">Line Graph</a>
+                                      <a href="/home/pie-chart">Pie Chart</a>
+                                      <a href="/home/histogram">Histogram</a>
+                                      <a href="/home/bubble-graph">Bubble Graph</a>
+                                      <a href="/home/box-plot">Box Plot</a>
+                                      <a href="/home/scatter-plot">ScatterPlot</a>
+                                  </div>
+                              </div>
+                          </li>
+                      </div>
+                      <div class="right">
+                          {% if user.is_authenticated %}
+                          <li>
+                            <a href="{% url 'logout' %}?next={{request.path}}" class="navigator">Logout</a>
+                          </li>
+                          {% else %}
+                          <li>
+                              <a href="{% url 'login' %}">Login</a>
+                          </li>
+                          <li>
+                              <a href="{% url 'signup' %}">Signup</a>
+                          </li>
+                          {% endif %}
+                      </div>
                   </div>
-                </div>
-              </li>
-              <li>
-                <div class="dropdown">
-                  <button class="dropbtn">
-                    <a href="#" id="Info">Info</a>
-                  </button>
-                  <div class="dropdown-content">
-                    <a href="/home/sponsors">Sponsors</a>
-                    <a href="/home/contributors">Contributors</a>
-                    <a href="/home/contact">Contact Us</a>
-                    <a href="/home/reviews">Reviews</a>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <a href="{% url 'login' %}">Login</a>
-              </li>
-              <li>
-                <a href="{% url 'signup' %}">Signup</a>
-              </li>
-            </ul>
+              </ul>
           </div>
-        </div>
       </div>
-    </nav>
-    {% else %}
-    <!--Inserting the top navbar with id of topNav -->
-    <nav class="navbar">
+      </div>
+  </nav>
+  
+  <nav class="sidebar">
       <div class="container">
-        <div class="menu">
-            <h1 class="hero">Viz Data Academy</h1>
-            <ul>
+          <ul>
               <li>
-                <a href="/home/missionStatement" class="active">Home</a>
+                  <a href="/home/sponsors">
+                      <span>Sponsors</span>
+                  </a>
               </li>
               <li>
-                <div class="dropdown">
-                  <button class="dropbtn">
-                    <a href="/home/graphing" id="graphing">Graphing</a>
-                  </button>
-                  <div class="dropdown-content">
-                    <a href="/home/bar-graph">Bar Graph</a>
-                    <a href="/home/line-graph">Line Graph</a>
-                    <a href="/home/pie-chart">Pie Chart</a>
-                    <a href="/home/histogram">Histogram</a>
-                    <a href="/home/bubble-graph">Bubble Graph</a>
-                    <a href="/home/box-plot">Box Plot</a>
-                    <a href="/home/scatter-plot">ScatterPlot</a>
-                  </div>
-                </div>
+                  <a href="/home/contributors">
+                      <span>Contributors</span>
+                  </a>
               </li>
               <li>
-                <a href="#">Info</a>
+                  <a href="/home/contact">
+                      <span>Contact Us</span>
+                  </a>
               </li>
               <li>
-                <a href="{% url 'login' %}">Login</a>
+                  <a href="/home/reviews">
+                      <span>Reviews</span>
+                  </a>
               </li>
-              <li>
-                <a href="{% url 'signup' %}">Signup</a>
-              </li>
-            </ul>
-          </div>
-        </div>
+          </ul>
       </div>
-    </nav>
-
-    <nav class="sidebar">
-      <div class="container">
-        <ul>
-          <li>
-            <a href="/home/sponsors">
-              <span>Sponsors</span>
-            </a>
-          </li>
-          <li>
-            <a href="/home/contributors">
-              <span>Contributors</span>
-            </a>
-          </li>
-          <li>
-            <a href="/home/contact">
-              <span>Contact Us</span>
-            </a>
-          </li>
-          <li>
-            <a href="/home/reviews">
-              <span>Reviews</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    {% endif %}
+  </nav>
 
     {% block content %} {% endblock %}
   </body>
