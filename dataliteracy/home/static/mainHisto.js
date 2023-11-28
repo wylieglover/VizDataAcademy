@@ -43,7 +43,7 @@ function updateBars() {
   for (let i = 0; i < numBars; i++) {
     const barNameInput = document.createElement('input');
     barNameInput.type = 'text';
-    barNameInput.placeholder = `Bar ${i + 1} Name`;
+    barNameInput.placeholder = `Bar ${i + 1} Label`;
     barNamesContainer.appendChild(barNameInput);
 
     const barValueInput = document.createElement('input');

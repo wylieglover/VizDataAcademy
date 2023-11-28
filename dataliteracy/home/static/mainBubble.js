@@ -62,3 +62,29 @@ for (var i = 1; i <= ItemCount; i++) {
   results.appendChild(document.createElement("br"));
 }
 }
+
+function submitCoordinates() {
+  var graphTitle = document.querySelector("#chartName").value;
+  var numPoints = document.querySelector('#numBars').value;
+  const xValues = []
+  const yValues = []
+  const rValues = []
+  for (var i = 1; i <= numPoints; i++ ){
+    var currentX = document.querySelector("#nameNum"+i).value;
+    let add = xValues.push(currentX)
+  }
+  for (var i = 1; i <= numPoints; i++ ){
+    var currentY = document.querySelector("#nameNumY" + i).value;
+    let add = yValues.push(currentY)
+  }
+  for (var i = 1; i <= numPoints; i++ ){
+    var currentR = document.querySelector("#nameNumR" + i).value;
+    let add = rValues.push(currentR)
+  }
+
+  trace1.x = xValues
+  trace1.y = yValues
+  trace1.marker.size = rValues
+  layout.title = document.querySelector('#chartName').value;
+  Plotly.react('useGraph', data, layout, config)
+}
