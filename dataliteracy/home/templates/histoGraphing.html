@@ -4,6 +4,24 @@
   <div id="useGraph">
     <canvas id="histogram"></canvas>
   </div>
+  <div class="dataCollection">
+    <h2 class="dataLabel">Graph Title</h2>
+    <input type="text" id="chartName" placeholder="Graph Name" />
+    <h2 class="dataLabel">Number of Bars</h2>
+    <select id="numBars" onchange="updateBars()">
+      <option value="" disabled selected>Select</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+    <div class="barInfo">
+      <div id="barNamesInput"></div>
+      <div id="barValuesInput"></div>
+    </div>
+    <div class="barHide"></div>
+    <button class="submit" onclick="submitDataBar()">Submit!</button>
+  </div>
 </main>
 
 <script src="https://cdn.plot.ly/plotly-2.4.2.min.js"></script>
