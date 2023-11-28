@@ -29,16 +29,17 @@
         <hr>
         <div class="class-container">
             {% for c in classrooms %}
+            <a href="/{{c.classroom.join_code}}/">
                 <div class="class-cards">
                     <img class="card-photo" src="{% static 'filler.jpg' %}" alt="">
                     <div class="card-container">
                         <h4><b>{{c.classroom.title}}</b></h4> 
                         <p>{{ c.classroom.description }}</p>
-                        <a href="/{{c.classroom.join_code}}/" >Go to classroom</a>
                     </div>
                 </div>
+            </a>
             {% endfor %}
-        </div>
+        </div>    
     </div>
 
     <script src="{% static 'popup.js' %}"></script>
