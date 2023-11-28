@@ -15,12 +15,11 @@ const ogBarTrace1 = {
 
 const ogBarTrace2 = {
   x: ['Jan', 'Feb', 'Mar'],
-  y: [20, 14, 23],
+  y: [20, 12, 23],
   name: 'LA Zoo',
   type: 'bar',
   marker: {
-    color: '#ea335d',
-    opacity: 0.6,
+    color: '#de66b4',
   }
 };
 
@@ -30,9 +29,14 @@ const layout = {
   barmode: 'group',
   showlegend: false,
   paper_bgcolor: '#0b122b',
+  plot_bgcolor: '#0b122b',
   font: {
-    color: '#6b6f8a',
+    color: '#fff',
     size: 15
+  },
+  yaxis: {
+    gridcolor: '#FFFFFF50',
+    gridwidth: .02
   }
 };
 Plotly.newPlot('useGraph', barChartData, layout, config);
@@ -181,8 +185,18 @@ function submitDataBar() {
     barmode: 'group',
     showlegend: false,
     paper_bgcolor: '#0b122b',
+    plot_bgcolor: '#0b122b',
     font: {
-      color: '#6b6f8a',
+      color: '#fff',
+      size: 15
+    },
+    xaxis: {
+      gridcolor: '#FFFFFF75',
+      gridwidth: .02
+    },
+    yaxis: {
+      gridcolor: '#FFFFFF75',
+      gridwidth: .02
     }
   };
 

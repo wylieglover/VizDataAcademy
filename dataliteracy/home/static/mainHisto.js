@@ -13,8 +13,20 @@ var layout = {
   bargroupgap: 0.2,
   barmode: "overlay",
   title: "Sampled Results",
-  xaxis: { title: "Value" },
-  yaxis: { title: "Count" }
+  paper_bgcolor: '#0b122b',
+  plot_bgcolor: '#0b122b',
+  font: {
+    color: '#fff',
+    size: 15
+  },
+  xaxis: {
+    gridcolor: '#FFFFFF75',
+    gridwidth: .02
+  },
+  yaxis: {
+    gridcolor: '#FFFFFF75',
+    gridwidth: .02
+  }
 };
 var data = [trace];
 Plotly.newPlot('useGraph', data, layout);
