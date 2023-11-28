@@ -15,9 +15,18 @@ var trace1 = {
   const layout = {
     title: "",
     paper_bgcolor: '#0b122b',
-    plot_bgcolor: '#00000070',
+    plot_bgcolor: '#0b122b',
     font: {
-      color: '#6b6f8a'
+      color: '#fff',
+      size: 15
+    },
+    xaxis: {
+      gridcolor: '#FFFFFF25',
+      gridwidth: .02
+    },
+    yaxis: {
+      gridcolor: '#FFFFFF25',
+      gridwidth: .02
     }
   };
   Plotly.newPlot('useGraph', data, layout);
