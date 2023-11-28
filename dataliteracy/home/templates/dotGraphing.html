@@ -5,7 +5,7 @@
   </div>
   <div class="dataCollection">
     <h2 class="dataLabel">Scatterplot Title</h1>
-    <input type="text" id="chartName" placeholder="Graph Name" />
+    <input type="text" id="chartName" placeholder="Graph Name" onchange="changeGraphName(this)" />
     <h2 class="dataLabel">Number of Points: </h2>
     <select id="numBars" placeholder='' onchange="updateBars(this)">
         <option value="" disable selected>Select</option>
@@ -24,7 +24,7 @@
         </container>
     <div class="barHide" >
     </div>
-    <button class="submit" onclick="submitDataBar()"> Submit! </button>
+    <button class="submit" onclick="submitCoordinates()"> Submit! </button>
 </div>
 </main>
 

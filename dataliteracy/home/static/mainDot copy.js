@@ -19,30 +19,11 @@ const traceA = {
   }
 };
 
-const traceB = {
-  type: "scatter",
-  mode: "markers",
-  x: [1, 2, 3, 4],
-  y: [5, 10, 15, 20],
-  name: 'Second Highest Mark',
-  marker: {
-    line: {
-      color: 'rgba(165, 196, 50, 1)',
-      width: 0.5,
-    },
-    symbol: 'circle',
-    size: 10
-  },
-  hoverlabel: {
-    bgcolor: 'black',
-  }
-};
-
-var scatterData = [traceA, traceB];
+var scatterData = [traceA];
 
 const layout = {
-  showlegend: false,
-  title: ' ',
+  showlegend: true,
+  title: 'Example Scatterplot',
   xaxis: {
     showgrid: true,
     showline: true,
@@ -104,14 +85,52 @@ for (var i = 1; i <= ItemCount; i++) {
   inputY.placeholder = "Y Value"; //add a placeholder
   inputY.className = "inputText"; // set the CSS class
   inputY.id = "nameNumY" + i;
-  inputR.type = "text";
-  inputR.placeholder = "Point Weight"; //add a placeholder
-  inputR.className = "inputText"; // set the CSS class
-  inputR.id = "nameNumR" + i;
   results.appendChild(label); //append label
   results.appendChild(input); //append input
   results.appendChild(inputY)
-  results.appendChild(inputR)
   results.appendChild(document.createElement("br"));
 }
+}
+
+function changeGraphName(_this) {
+  var graphName = _this.value
+  layout.title = graphName
+  Plotly.react('useGraph', scatterData, layout)
+}
+
+function submitCoordinates() {
+  var graphTitle = document.querySelector("#chartName").value;
+  var numPoints = document.querySelector('#numBars').value;
+  const xValues = []
+  const yValues = []
+  for (var i = 1; i <= numPoints; i++ ){
+    var currentX = document.querySelector("#nameNum"+i).value;
+    let add = xValues.push(currentX)
+  }
+  for (var i = 1; i <= numPoints; i++ ){
+    var currentY = document.querySelector("#nameNumY" + i).value;
+    let add = yValues.push(currentY)
+  }
+
+  const customTrace = {
+    type: "scatter",
+    mode: "markers",
+    x: xValues,
+    y: yValues,
+    name: 'Highest Marks',
+    marker: {
+      line: {
+        color: 'rgba(156, 165, 196, 1)',
+        width: 0.5,
+      },
+      symbol: 'circle',
+      size: 10
+    },
+  };
+
+  var scatterData = [customTrace]
+
+  alert(traceA.x[0])
+  Plotly.react('useGraph', scatterData, layout)
+
 }
