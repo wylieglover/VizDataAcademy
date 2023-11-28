@@ -13,7 +13,7 @@
             <h2 class="dataLabel">Graph Title</h1>
             <input type="text" id="chartName" placeholder="Graph Name" />
             <h2 class="dataLabel">Number of Bars </h2>
-            <select id="numBars" placeholder='' onchange="updateBars(this)">
+            <select class="selector" id="numBars" placeholder='' onchange="updateBars(this)">
                 <option value="" disable selected>Select</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -25,7 +25,7 @@
                 </container>
             </div>
             <h2 class="dataLabel">Number of Comparisons</h2>
-            <select id="numComp" onchange="updateComp(this);updateValues()">
+            <select class="selector" id="numComp" onchange="updateComp(this);updateValues()">
                 <option value="" disable selected>Select</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
