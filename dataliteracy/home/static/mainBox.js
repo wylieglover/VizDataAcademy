@@ -1,4 +1,5 @@
-const config = {responsive: true};
+const config = {responsive: true,
+                editable: true};
 
 const stockY = [];
 for(var i=0; i<50; i++){
@@ -66,7 +67,7 @@ const stockLayout = {
     }
 };
 
-Plotly.newPlot('useGraph', stockData, stockLayout, {editable: true}, config);
+Plotly.newPlot('useGraph', stockData, stockLayout, config);
 
 const divSpace = document.createElement('div');
 divSpace.id='whiteSpace';

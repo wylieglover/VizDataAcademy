@@ -29,7 +29,7 @@ var layout = {
   }
 };
 var data = [trace];
-Plotly.newPlot('useGraph', data, layout);
+Plotly.newPlot('useGraph', data, layout, config);
 
 
 function updateBars() {
