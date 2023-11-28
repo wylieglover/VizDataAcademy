@@ -38,16 +38,8 @@ ul {
 }
 
 ::-webkit-scrollbar {
-    width: 10px;
-}
-
-::-webkit-scrollbar-track {
-    background: #0c1839;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #6b6f8a;
-}
+    display: none;
+  }
 
 /*====== Navbar ======*/
 .navbar {
@@ -235,6 +227,7 @@ ul {
     top: 6%;
     border: 0;
     background-color: #0c1845;
+    margin-bottom: 100%;
     width: 45%;
     height: 70%;
 }
@@ -408,17 +401,22 @@ ul {
     height: 100px;
 }
 
+#graphingList{
+    width: 20%;
+    background: linear-gradient(0deg, #040c2450, #4d60a1);
+}
+
 .portrait {
     width: 400px;
     height: 600px;
 }
 
 .logo {
-    position: fixed;
-    width: 6.25%;
-    height: 12.5%;
+    position: absolute;
+    width: 80%;
+    height: 20%;
     bottom: 100px;
-    left: 85px;
+    left: 18px;
     border-radius: 20px;
     opacity: 75%;
     box-shadow: 10px 20px 10px #02081b;
@@ -457,6 +455,7 @@ ul {
     height: 70%;
     font-size: 15px;
     border-radius: 2px;
+    background-color: rgb(220, 220, 220);
 }
 
 .reviewSubmission {
