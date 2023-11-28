@@ -6,7 +6,7 @@ Before starting, make sure you have at least these components installed on your 
 - Python
 - python-dotenv
 - Django
-
+ 
 Start by cloning this repository into a local folder/directory:
 ```sh
 git clone https://github.com/wylieglover/dataliteracy
