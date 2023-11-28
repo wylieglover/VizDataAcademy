@@ -8,5 +8,13 @@
 <body>
     <p>You been logged out</p>
     <a href="{% url 'login' %}"> Click here to Login</a>
+    
+    {% if next %}
+    {% if user.is_authenticated  %}
+        <p>You dont have permission for this page</p>
+    {% else %}
+        <p>Please Login to gain access</p>
+    {% endif %}
+{% endif %}
 </body>
 </html>

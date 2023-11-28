@@ -1,19 +1,19 @@
-.body-board{
+.body-board {
     background-color: #274c43;
     border: 16px solid #331800;
     height: 700PX;
     min-height: 90%;
 }
 
-.body-home{
+.body-home {
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin-top: 25px;
     margin-left: 20px;
-    column-gap: 45px;    
-} 
+    column-gap: 45px;
+}
 
-.text-left{
+.text-left {
     margin-left: 5%;
     display: table-cell;
     vertical-align: middle;
@@ -24,24 +24,25 @@
     max-width: 100%;
 }
 
-.text-right{
+.text-right {
     margin-right: 10%;
     width: 95%;
-    height:95%;
+    height: 95%;
     object-fit: cover;
 }
 
-.form-container{
+.form-container {
     width: 80%;
 }
 
-.label-text{
+.label-text {
     text-align: left;
     font-size: 30px;
     color: white;
 }
 
-input[type=text], textarea{
+input[type=text],
+textarea {
     display: inline-block;
     color: white;
     width: 100%;
@@ -55,13 +56,13 @@ input[type=text], textarea{
 }
 
 
-textarea{
+textarea {
     max-height: 200px;
     min-height: 80%;
     min-width: 100%;
 }
 
-input[type=submit]{
+input[type=submit] {
     width: 100%;
     color: rgb(224, 149, 35);
     padding: 10px;
@@ -73,12 +74,11 @@ input[type=submit]{
     cursor: pointer;
 }
 
-.submit-btn{
+.submit-class {
     width: 100%;
-
 }
 
-.image-right{
+.image-right {
     max-width: 98%;
     height: 100%;
-  }
+}
