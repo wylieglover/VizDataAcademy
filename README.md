@@ -6,12 +6,12 @@ Before starting, make sure you have at least these components installed on your 
 - Python
 - python-dotenv
 - Django
-
+ 
 Start by cloning this repository into a local folder/directory:
 ```sh
 git clone https://github.com/wylieglover/dataliteracy
 ```
-
+ 
 Next, rename the file ```.env.example```  to ```.env```
 
 Inside this file, assign ```DJANGO_ALLOWED_HOSTS``` with your local IP (EX: 127.0.0.1 or localhost)

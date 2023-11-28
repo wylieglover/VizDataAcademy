@@ -3,6 +3,29 @@
   <div id="useGraph">
     <canvas id="bubblegraph"></canvas>
   </div>
+  <div class="dataCollection">
+    <h2 class="dataLabel">Chart Title</h1>
+    <input type="text" id="chartName" placeholder="Graph Name" />
+    <h2 class="dataLabel">Number of Points/Bubbles: </h2>
+    <select id="numBars" placeholder='' onchange="updateBars(this)">
+        <option value="" disable selected>Select</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </select>
+    <br>
+        <container id="barNames">
+        </container>
+    <div class="barHide" >
+    </div>
+    <button class="submit" onclick="submitCoordinates()"> Submit! </button>
+</div>
 </main>
 
 <script src="https://cdn.plot.ly/plotly-2.4.2.min.js"></script>

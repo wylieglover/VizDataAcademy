@@ -1,36 +1,70 @@
 const config = {responsive: true};
 
-var trace1 = {
+const traceA = {
+  type: "scatter",
+  mode: "markers",
   x: [1, 2, 3, 4],
-  y: [10, 11, 12, 13],
-  mode: 'markers',
+  y: [5, 10, 15, 20],
+  name: 'Highest Marks',
   marker: {
-    size: [40, 60, 80, 100]
+    line: {
+      color: 'rgba(156, 165, 196, 1)',
+      width: 0.5,
+    },
+    symbol: 'circle',
+    size: 10
+  },
+  hoverlabel: {
+    bgcolor: 'black',
   }
-}
+};
 
-var data = [trace1];
+var scatterData = [traceA];
 
-var layout = {
-  title: 'Marker Size',
-  showlegend: false,
+const layout = {
+  showlegend: true,
+  title: 'Example Scatterplot',
+  xaxis: {
+    showgrid: true,
+    showline: true,
+    linecolor: 'rgb(200, 0, 0)',
+    ticks: 'outside',
+    tickcolor: 'rgb(200, 0, 0)',
+    tickwidth: 4
+  },
+  margin: {
+    l: 120,
+    r: 50,
+    b: 90,
+    t: 120,
+    pad: 4
+  },
+  legend: {
+    bgcolor: 'rgb(0,0,0,0)',
+    borderwidth: 1,
+    bordercolor: 'black',
+    orientation: 'h',
+    xanchor: 'center',
+    x: 0.5,
+    font: {
+      size: 12,
+    }
+  },
   paper_bgcolor: '#0b122b',
   plot_bgcolor: '#0b122b',
   font: {
     color: '#fff',
     size: 15
   },
-  xaxis: {
-    gridcolor: '#FFFFFF75',
+  yaxis: {
+    gridcolor: '#FFFFFF50',
     gridwidth: .02
   },
-  yaxis: {
-    gridcolor: '#FFFFFF75',
-    gridwidth: .02
-  }
+  scattermode:'group',
+  hovermode: 'closest',
 };
 
-Plotly.newPlot('useGraph', data, layout, config);
+Plotly.newPlot('useGraph', scatterData, layout, config)
 
 function updateBars(_this) {
   var ItemCount = +_this.value
@@ -41,7 +75,7 @@ for (var i = 1; i <= ItemCount; i++) {
   var label = document.createElement("label") //create label
   var inputR = document.createElement('input')
   var inputY = document.createElement('input')
-  label.innerText = 'Bubble ' + i
+  label.innerText = 'Point ' + i
   //label.className = "inputText"
   input.type = "text";
   input.placeholder = "X Value"; //add a placeholder
@@ -51,16 +85,17 @@ for (var i = 1; i <= ItemCount; i++) {
   inputY.placeholder = "Y Value"; //add a placeholder
   inputY.className = "inputText"; // set the CSS class
   inputY.id = "nameNumY" + i;
-  inputR.type = "text";
-  inputR.placeholder = "Point Weight"; //add a placeholder
-  inputR.className = "inputText"; // set the CSS class
-  inputR.id = "nameNumR" + i;
   results.appendChild(label); //append label
   results.appendChild(input); //append input
   results.appendChild(inputY)
-  results.appendChild(inputR)
   results.appendChild(document.createElement("br"));
 }
+}
+
+function changeGraphName(_this) {
+  var graphName = _this.value
+  layout.title = graphName
+  Plotly.react('useGraph', scatterData, layout)
 }
 
 function submitCoordinates() {
@@ -68,7 +103,6 @@ function submitCoordinates() {
   var numPoints = document.querySelector('#numBars').value;
   const xValues = []
   const yValues = []
-  const rValues = []
   for (var i = 1; i <= numPoints; i++ ){
     var currentX = document.querySelector("#nameNum"+i).value;
     let add = xValues.push(currentX)
@@ -77,14 +111,26 @@ function submitCoordinates() {
     var currentY = document.querySelector("#nameNumY" + i).value;
     let add = yValues.push(currentY)
   }
-  for (var i = 1; i <= numPoints; i++ ){
-    var currentR = document.querySelector("#nameNumR" + i).value;
-    let add = rValues.push(currentR)
-  }
 
-  trace1.x = xValues
-  trace1.y = yValues
-  trace1.marker.size = rValues
-  layout.title = document.querySelector('#chartName').value;
-  Plotly.react('useGraph', data, layout, config)
+  const customTrace = {
+    type: "scatter",
+    mode: "markers",
+    x: xValues,
+    y: yValues,
+    name: 'Highest Marks',
+    marker: {
+      line: {
+        color: 'rgba(156, 165, 196, 1)',
+        width: 0.5,
+      },
+      symbol: 'circle',
+      size: 10
+    },
+  };
+
+  var scatterData = [customTrace]
+
+  alert(traceA.x[0])
+  Plotly.react('useGraph', scatterData, layout)
+
 }

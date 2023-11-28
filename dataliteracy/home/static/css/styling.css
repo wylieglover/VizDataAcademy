@@ -38,16 +38,8 @@ ul {
 }
 
 ::-webkit-scrollbar {
-    width: 10px;
-}
-
-::-webkit-scrollbar-track {
-    background: #0c1839;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #6b6f8a;
-}
+    display: none;
+  }
 
 /*====== Navbar ======*/
 .navbar {
@@ -68,14 +60,29 @@ ul {
     margin-right: 0;
 }
 
-.hero {
-    margin: 5px;
-    margin-top:10px;
-    padding: 15px;
-    padding-top: 30px;
+#hero-text {
     text-decoration: none;
+    font-size: 100px;
 }
 
+.haha {
+    margin-top: 12.5px;
+    display: flex;
+    flex-direction: row;
+    width: 17.5%;
+    align-items: center;
+    height: 50px;
+    justify-content: center;
+    align-content: center;
+}
+
+.main-logo {
+    left: 20px;
+}
+
+.image-container {
+    margin: 5px;
+}
 
 #topBarElements {
     height: 10px;
@@ -220,6 +227,7 @@ ul {
     top: 6%;
     border: 0;
     background-color: #0c1845;
+    margin-bottom: 100%;
     width: 45%;
     height: 70%;
 }
@@ -377,6 +385,7 @@ ul {
     background-color: #00000040;
 }
 
+
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
     display: block;
@@ -392,17 +401,22 @@ ul {
     height: 100px;
 }
 
+#graphingList{
+    width: 20%;
+    background: linear-gradient(0deg, #040c2450, #4d60a1);
+}
+
 .portrait {
     width: 400px;
     height: 600px;
 }
 
 .logo {
-    position: fixed;
-    width: 6.25%;
-    height: 12.5%;
+    position: absolute;
+    width: 80%;
+    height: 20%;
     bottom: 100px;
-    left: 85px;
+    left: 18px;
     border-radius: 20px;
     opacity: 75%;
     box-shadow: 10px 20px 10px #02081b;
@@ -432,7 +446,7 @@ ul {
     border-radius: 1%;
 }
 
-.message{
+.message {
     margin: 10px;
     font-size: 25px;
 }
@@ -441,6 +455,7 @@ ul {
     height: 70%;
     font-size: 15px;
     border-radius: 2px;
+    background-color: rgb(220, 220, 220);
 }
 
 .reviewSubmission {
@@ -453,4 +468,9 @@ ul {
     color: white;
     font-size: 20px;
     border-radius: 2px;
+}
+
+.inputText {
+    margin-left: 5px;
+    margin-right: 5px;
 }

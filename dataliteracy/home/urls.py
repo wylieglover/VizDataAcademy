@@ -4,13 +4,12 @@ from . import views
 #
 urlpatterns = [
     #Redirect from www.vizdataacademy.com to www.vizdataacademy.com/home
-    path('', RedirectView.as_view(url='/home', permanent=True), name='home_redirect'),
+    path('', RedirectView.as_view(url='home/', permanent=True), name='home_redirect'),
     #Redirect from vizdataacademy.com to vizdataacademy.com/home
-    path('', RedirectView.as_view(url='/home', permanent=True), name='home_redirect_no_www'),
+    path('', RedirectView.as_view(url='home/', permanent=True), name='home_redirect_no_www'),
     path('home/', views.home, name='home'), 
     path('serve-css/', views.serve_css, name='serve-css'),
     path('home/contributors/', views.contributors, name='contributors'),
-    path('home/missionStatement/', views.missionStatement , name='missionStatement'),
     path('home/contact/', views.contact , name='contact'),
     path('home/reviews/', views.reviews , name='reviews'),
     path('home/sponsors/', views.sponsors , name='sponsors'),
@@ -26,7 +25,4 @@ urlpatterns = [
     path('create/', views.create_class , name='create'),
     path('dashboard/', views.view_class, name="dashboard"),
     path("<str:class_id>/", views.course_view, name="course"),
-
-
-
 ]

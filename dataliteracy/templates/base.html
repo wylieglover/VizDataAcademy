@@ -25,6 +25,8 @@
     />
     <link rel="stylesheet" type="text/css" href="{% url 'serve-css' %}" />
     <link rel="shortcut icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     {% block title %}
     <title>Viz Data Academy</title>
     {% endblock %}
@@ -34,12 +36,15 @@
     <nav class="navbar">
       <div class="container">
           <div class="menu">
-            <h1 class="hero"><a href="/home/missionStatement">Viz Data Academy</a></h1>
-              <ul>
+                <a class="haha" href="/home">
+                    <h3 style="font-size: 20px; margin: 0;">Viz Data Academy</h3>
+                    <div class="image-container"><i class="fa-solid fa-chart-line fa-beat main-logo" style="color: #ffffff;"></i></div>
+                </a>
+                <ul>
                   <div class="nav-container">
                       <div class="left">
                           <li>
-                              <a href="/home/missionStatement" class="active">Home</a>
+                              <a href="/home">Home</a>
                           </li>
                           {% if user.is_authenticated %}
                           <li>
@@ -47,7 +52,7 @@
                           </li>
                           {% endif %}
                           <li>
-                              <div class="dropdown">
+                                <div class="dropdown">
                                   <button class="dropbtn">
                                       <a href="/home/graphing" id="graphing">Graphing</a>
                                   </button>

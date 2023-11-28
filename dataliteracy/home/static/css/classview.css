@@ -4,58 +4,58 @@
     height: 125px;
     background-color: blue;
     border-radius: 6px;
-    border: 2px; 
+    border: 2px;
     margin: 15px 20px 25px 20px;
 }
 
-.title-text{
+.title-text {
     margin-left: 2%;
     font-size: 70px;
     font-family: 'Monaco';
     color: white;
 }
 
-.description-content{
+.description-content {
     display: grid;
     grid-template-columns: 400px 1fr;
 }
 
-.class-info-box{
+.class-info-box {
     display: grid;
     grid-template-rows: 100px 1fr;
     row-gap: 5px;
     margin: 10px 20px 25px 10px;
 }
 
-.code-view{    
+.code-view {
     height: 75px;
     margin: 10px 0;
     text-align: center;
     min-width: 100%;
     border-radius: 6px;
-    border: 2px;  
-    background-color: aqua;  
+    border: 2px;
+    background-color: aqua;
 }
 
-.decription-view{
+.decription-view {
     background-color: aqua;
     text-align: center;
     min-width: 100%;
     min-height: 100%;
-    overflow-wrap: break-word; 
+    overflow-wrap: break-word;
 
-}   
+}
 
-.large-text{
+.large-text {
     padding: 0;
     margin: 0;
     font-size: 30px;
     font-family: 'Monaco';
     text-align: center;
-  
+
 }
 
-.small-text{
+.small-text {
     font-family: 'Monaco';
     text-align: left;
     padding: 0;
@@ -64,30 +64,29 @@
     min-width: 100%;
 }
 
-.class-cards{
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+.class-cards {
+    box-shadow: 10px 20px 10px #02081b;
+    border-radius: 10px;
     transition: 0.3s;
-    min-height:60%;
-    min-width: 75%;;
+    min-height: 60%;
+    min-width: 75%;
+    ;
     margin: 5% 15% 5% 15%;
 }
 
-.class-container{
+.class-container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 3fr 3fr 3fr;
 }
 
-.card-photo{
+.card-photo {
     width: 100%;
 }
 
-.card-container{
+.card-container {
     padding: 2px 16px;
 }
 
-.class-cards:hover{
-    box-shadow: 0 8px 16px 0 red;
+.class-cards:hover {
+    box-shadow: 10px 20px 20px #040c24;
 }
-
-
-

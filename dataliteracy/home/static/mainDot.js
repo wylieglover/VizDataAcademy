@@ -41,7 +41,6 @@ const traceB = {
 var scatterData = [traceA, traceB];
 
 const layout = {
-  autosize: false,
   showlegend: false,
   title: ' ',
   xaxis: {
@@ -70,8 +69,16 @@ const layout = {
       size: 12,
     }
   },
-  paper_bgcolor: 'rgba(0,0,0,0)',
-  plot_bgcolor: '#8B9BBD',
+  paper_bgcolor: '#0b122b',
+  plot_bgcolor: '#0b122b',
+  font: {
+    color: '#fff',
+    size: 15
+  },
+  yaxis: {
+    gridcolor: '#FFFFFF50',
+    gridwidth: .02
+  },
   scattermode:'group',
   hovermode: 'closest',
 };

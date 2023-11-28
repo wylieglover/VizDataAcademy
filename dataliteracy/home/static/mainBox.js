@@ -1,4 +1,5 @@
-const config = {responsive: true};
+const config = {responsive: true,
+                editable: true};
 
 const stockY = [];
 for(var i=0; i<50; i++){
@@ -22,7 +23,6 @@ const stockData = [{
 
 const stockLayout = {
     title: 'Stock Data:',
-    autosize: true,
     hovermode: 'closest',
     boxmode: 'group',
 
@@ -48,9 +48,26 @@ const stockLayout = {
             family: 'Courier New',
         }
     },
+    paper_bgcolor: '#0b122b',
+    plot_bgcolor: '#0b122b',
+    font: {
+      color: '#fff',
+      size: 15
+    },
+    xaxis: {
+      gridcolor: '#FFFFFF50',
+      gridwidth: .02
+    },
+    yaxis: {
+      gridcolor: '#FFFFFF50',
+      gridwidth: .02
+    },
+    marker: {
+      color: '#FFFFFF75'
+    }
 };
 
-Plotly.newPlot('useGraph', stockData, stockLayout, {editable: true}, config);
+Plotly.newPlot('useGraph', stockData, stockLayout, config);
 
 const divSpace = document.createElement('div');
 divSpace.id='whiteSpace';
