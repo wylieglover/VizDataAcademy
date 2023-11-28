@@ -20,9 +20,10 @@
                 }
             </script>
 
-            <h2 class="boxLabel" id="numBoxes">Number of BoxPlots</h2>
+            <h2 class="boxLabel" id="numBox">Number of BoxPlots</h2>
             <select id="numBoxes" placeholder="" onchange="refreshBoxCount(this)">
                 <option value="" disable selected>Select</option>
+                <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
@@ -32,26 +33,7 @@
                 <container id="numBoxPlot"></container>
             </div>
 
-            <!--create a select list with options, change graph from there-->
-            <h2 class="boxLabel" id="dataHeader">Data Bounds</h2>
-            <label for="minVal">Min val</label>
-            <input type="text" id="minVal"> <br>
-            <label for="maxVal">Max val</label>
-            <input type="text" id="maxVal"> <br>
-            <label for="entryCount"># of Data points</label>
-            <input type="text" id="entryCount"> <br>
-
-            <div class="boxmin">
-                <container id="boxMin"></container>
-            </div>
-            <div class="boxmax">
-                <container id="boxMax"></container>
-            </div>
-            <div class="countdata">
-                <container id="countData"></container>
-            </div>
-
-            <h2 class="boxLabel" id="typeHeader">Choose Plot Type</h2>
+            <h2 class="boxLabel" id="typeHeader">Choose Plot type</h2>
             <form action="/action_page.php" method="get">
                 <label for="boxChoice">Choose boxType</label>
                 <input list="box_type" name="boxChoice" id="boxChoice" placeholder="Select" onchange="updateBoxStyle(this);updateData()">
@@ -61,6 +43,25 @@
                     <option value="rainbowPlot">rainbow</option>
                 </datalist>
             </form>
+            <div class="bData">
+                <container id="boxData"></container>
+            </div>
+            <div class="boxMin">
+                <container id="minData"></container>
+            </div>
+            <div class="boxMax">
+                <container id="maxData"></container>
+            </div>
+            <div class="boxCount">
+                <container id="countData"></container>
+            </div>
+
+            <!--create a select list with options, change graph from there-->
+
+
+            <!-- <label for="submitData">Submit Data</label> -->
+            <!-- <button id="submitData" onclick="updateData()">Submit</button> -->
+
 
 
             <h2 class="boxLabel" id="generateDat">Hit Enter to Submit Data</h2>
