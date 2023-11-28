@@ -47,6 +47,23 @@ const stockLayout = {
             family: 'Courier New',
         }
     },
+    paper_bgcolor: '#0b122b',
+    plot_bgcolor: '#0b122b',
+    font: {
+      color: '#fff',
+      size: 15
+    },
+    xaxis: {
+      gridcolor: '#FFFFFF50',
+      gridwidth: .02
+    },
+    yaxis: {
+      gridcolor: '#FFFFFF50',
+      gridwidth: .02
+    },
+    marker: {
+      color: '#FFFFFF75'
+    }
 };
 
 Plotly.newPlot('useGraph', stockData, stockLayout, {editable: true}, config);
