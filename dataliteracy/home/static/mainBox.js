@@ -22,7 +22,6 @@ const stockData = [{
 
 const stockLayout = {
     title: 'Stock Data:',
-    autosize: true,
     hovermode: 'closest',
     boxmode: 'group',
 
