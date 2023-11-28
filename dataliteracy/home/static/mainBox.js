@@ -1,5 +1,4 @@
-const config = {responsive: true,
-                editable: true};
+const config = {responsive: true};
 
 const stockY = [];
 for(var i=0; i<50; i++){
@@ -23,6 +22,7 @@ const stockData = [{
 
 const stockLayout = {
     title: 'Stock Data:',
+    autosize: true,
     hovermode: 'closest',
     boxmode: 'group',
 
@@ -48,26 +48,9 @@ const stockLayout = {
             family: 'Courier New',
         }
     },
-    paper_bgcolor: '#0b122b',
-    plot_bgcolor: '#0b122b',
-    font: {
-      color: '#fff',
-      size: 15
-    },
-    xaxis: {
-      gridcolor: '#FFFFFF50',
-      gridwidth: .02
-    },
-    yaxis: {
-      gridcolor: '#FFFFFF50',
-      gridwidth: .02
-    },
-    marker: {
-      color: '#FFFFFF75'
-    }
 };
 
-Plotly.newPlot('useGraph', stockData, stockLayout, config);
+Plotly.newPlot('useGraph', stockData, stockLayout, {editable: true}, config);
 
 const divSpace = document.createElement('div');
 divSpace.id='whiteSpace';
@@ -289,7 +272,6 @@ const boxPlotTrace5 = [{
 
 const numOfBox = document.querySelector('#numBoxes').value;
 const newData = [boxPlotTrace1];
-
 if(numOfBox>= 2){
     newData.push(boxPlotTrace2);
 }if (numOfBox>= 3) {
@@ -301,7 +283,5 @@ if(numOfBox>= 2){
 }
 
 function graphNewData(){
-    var printOut = newData.length;
-    console.log(printOut);
     Plotly.newPlot('useGraph', newData, updatedLayout, config);
-};
+}
