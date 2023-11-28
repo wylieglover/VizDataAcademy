@@ -37,7 +37,6 @@ DEBUG = bool(os.environ.get("DEBUG", default=1))
 
 ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", '').split()
 
-APPEND_SLASH=False
 
 # Application definition
 
