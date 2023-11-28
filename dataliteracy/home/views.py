@@ -37,9 +37,6 @@ def contact(request):
 def reviews(request):
   return render(request, 'reviews.html')
 
-def missionStatement(request):
-  return render(request, 'missionStatement.html')
-
 def graphing(request):
   return render(request, 'graphing.html')
 
