@@ -5,7 +5,7 @@ services:
     container_name: dataliteracy
     restart: unless-stopped
     build: .
-    command: python manage.py migrate && python manage.py runserver 0.0.0.0:8000
+    command: bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
     volumes:
       - .:/usr/src/app/
     ports:
