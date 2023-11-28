@@ -12,13 +12,15 @@ Start by cloning this repository into a local folder/directory:
 git clone https://github.com/wylieglover/dataliteracy
 ```
  
-Next, rename the file ```.env.example```  to ```.env```
-
-Inside this file, assign ```DJANGO_ALLOWED_HOSTS``` with your local IP (EX: 127.0.0.1 or localhost)
+Inside the file ```.env```, assign ```DJANGO_ALLOWED_HOSTS``` with your local IP (EX: 127.0.0.1 or localhost)
 
 ![Screenshot_1](https://github.com/wylieglover/dataliteracy/assets/70774631/e2893d53-0f98-406d-ad6c-1e9e6eb7486a)
 
-You can now naviagte to the folder/directory with the file ```manage.py``` and run this command in your console:
+You can now navigate to the folder/directory with the file ```manage.py``` and migrate files:
+```sh
+python manage.py migrate
+```
+Then finally, run the server:
 ```sh
 python manage.py runserver
 ```

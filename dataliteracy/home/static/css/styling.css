@@ -312,10 +312,6 @@ ul {
     box-shadow: 10px 20px 20px #040c24;
 }
 
-.subHead>.statementP {
-    font-size: 25px;
-}
-
 .subHead>h5 {
     font-size: 40px
 }
@@ -335,18 +331,25 @@ ul {
 .statementP {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 25px;
-    line-height: 25px;
-    color: #757575;
-    margin-top: 20px;
+    color: #FFF;
+    /* margin-top: 20px; */
+    /* background-color: #040c24;
+    width: 800px; */
+    margin-left: auto;
+    margin-right: auto;
+    display:grid;
+    border: 2px solid #fff;
+    border-radius: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
-.statementPR {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 25px;
-    color: #757575;
-    text-align: right;
-    margin-right: 300px;
-    border: 10px;
+.statementContainer {
+    background-color: #040c24;
+    width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
 }
 
 /* Dropdown Button */
@@ -406,10 +409,6 @@ ul {
     background: linear-gradient(0deg, #040c2450, #4d60a1);
 }
 
-.portrait {
-    width: 400px;
-    height: 600px;
-}
 
 .logo {
     position: absolute;
@@ -473,4 +472,65 @@ ul {
 .inputText {
     margin-left: 5px;
     margin-right: 5px;
+}
+
+.portraitContainer {
+    border: 2px solid #354680;
+    width: 400px;
+    height: 600px;
+    background-color: #182555;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    box-shadow: 10px 20px 20px #040c24;
+}
+
+.portraitContainer>h3{
+    margin-top: 10px;
+    font-size: 22px;
+}
+
+/* .contentSubsection {
+    align-items: center;
+} */
+
+.portrait {
+    width: 300px;
+    height: 450px;
+    border-radius: 10px;
+    margin: 40px 25px 75px 25px;
+    border: 2px solid #253469;
+}
+
+#chartName {
+    height: 30px;
+    border-radius: 10px;
+    border: 4px solid #6c7fbd;
+    background-color: #e6e6e6;
+}
+
+.inputText {
+    margin-left: 10px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    border-radius: 1vh;
+    height: 30px;
+}
+
+.label {
+    margin-top: 25px;
+}
+
+.selector {
+    background-color: #e6e6e6;
+    border-radius: 1vh;
+    height: 25px;
+}
+
+.submit {
+    background-color: cadetblue;
+    border-color: cadetblue;
+    border-radius: 1vh;
+    width: 200px;
+    height: 30px;
 }
