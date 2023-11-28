@@ -27,7 +27,7 @@ for (var i = 1; i <= ItemCount; i++) {
   var label = document.createElement("label") //create label
   var inputR = document.createElement('input')
   var inputY = document.createElement('input')
-  label.innerText = 'Name ' + i
+  label.innerText = 'Bubble ' + i
   //label.className = "inputText"
   input.type = "text";
   input.placeholder = "X Value"; //add a placeholder
