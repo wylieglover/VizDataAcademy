@@ -25,7 +25,4 @@ urlpatterns = [
     path('create/', views.create_class , name='create'),
     path('dashboard/', views.view_class, name="dashboard"),
     path("<str:class_id>/", views.course_view, name="course"),
-
-
-
 ]
