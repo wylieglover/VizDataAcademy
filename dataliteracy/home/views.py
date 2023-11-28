@@ -110,8 +110,7 @@ def view_class(request):
   classrooms = list(chain(s, t))
 
   return render(request, "dashboard.html" , {
-    "classrooms": classrooms,
-    "user_data": account
+    "classrooms": classrooms
   })
 
 def join_class(request):
@@ -128,6 +127,10 @@ def join_class(request):
   
 def course_view(request, class_id):
   classroom = get_object_or_404(Classroom, join_code=class_id)
-  account = UserData.objects.get(user=request.user)
+  user = UserData.objects.get(user=request.user)
 
-  return render(request, "insideClass.html", {"user_data": account})
+  context = {
+    "classroom": classroom,
+    "user_data": user,
+  }
+  return render(request, "insideClass.html", context)
