@@ -534,3 +534,7 @@ ul {
     width: 200px;
     height: 30px;
 }
+
+#quiz>*{
+    text-align: left;
+}

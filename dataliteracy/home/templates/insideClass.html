@@ -27,28 +27,27 @@
 
             <div class="flex-assignments">
                 <div class="class-container">
-                    <div class="class-cards">
-                        <img class="card-photo" src="{% static 'filler.jpg' %}" alt="Placeholder">
-                        <div class="card-container">
-                            <h4><b>Assignment 1</b></h4> 
-                            <p>Architect & Engineer</p>
+                    <a href="/{{classroom.join_code}}/lesson1/">
+                      <div class="class-cards">
+                                <img class="card-photo" src="{% static 'filler.jpg' %}" alt="">
+                                <div class="card-container">
+                                    <h4><b>{{classroom.title}}</b></h4> 
+                                    <p>{{classroom.description }}</p>
+                                </div>
                         </div>
-                    </div>
-                    <div class="class-cards">
-                        <img class="card-photo" src="{% static 'filler.jpg' %}" alt="Placeholder">
-                        <div class="card-container">
-                            <h4><b>Assignment 2</b></h4> 
-                            <p>Architect & Engineer</p>
-                        </div>
-                    </div>
-                    <div class="class-cards">
-                        <img class="card-photo" src="{% static 'filler.jpg' %}" alt="Placeholder">
-                        <div class="card-container">
-                            <h4><b>Assignment 2</b></h4> 
-                            <p>Architect & Engineer</p>
-                        </div>
-                    </div>
+                     </a>
                 </div>
+                <div class="class-container">
+                    <a href="/{{classroom.join_code}}/lesson1/">
+                      <div class="class-cards">
+                                <img class="card-photo" src="{% static 'filler.jpg' %}" alt="">
+                                <div class="card-container">
+                                    <h4><b>{{classroom.title}}</b></h4> 
+                                    <p>{{classroom.description }}</p>
+                                </div>
+                        </div>
+                     </a>
+                </div>    
             </div>
         </div>
     </div>

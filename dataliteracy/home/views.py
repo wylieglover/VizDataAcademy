@@ -61,6 +61,9 @@ def boxGraphing(request):
 def dotGraphing(request):
   return render(request, 'dotGraphing.html')
 
+def lesson1(request,class_id):
+  return render(request, 'lesson1.html')
+
 def SignUp_View(request):
   if request.method == 'POST':
     form = SignUpForm(request.POST)
