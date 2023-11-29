@@ -16,9 +16,11 @@
             <!--This is for the right side that contains the class code and description-->
             <div class="class-info-box">
                 <div class="add-features">
-                    <div class="add-assign">
-                        <p class="center-text">Create Assignment</p>
-                    </div>
+                    <a href="/{{classroom.join_code}}/new/">
+                        <div class="add-assign">
+                            <p class="center-text">Create Assignment</p>
+                        </div>
+                    </a>    
                     <div class="add-student">
                         <p class="center-text2">Students</p>
                     </div>
@@ -34,7 +36,7 @@
             </div>
 
             <div class="flex-assignments">
-                <div class="class-container">
+                <div class="class-container2">
                     <a href="/{{classroom.join_code}}/lesson1/">
                       <div class="class-cards">
                                 <img class="card-photo" src="{% static 'filler.jpg' %}" alt="">
@@ -45,7 +47,7 @@
                         </div>
                      </a>
                 </div>
-                <div class="class-container">
+                <div class="class-container2">
                     <a href="/{{classroom.join_code}}/lesson1/">
                       <div class="class-cards">
                                 <img class="card-photo" src="{% static 'filler.jpg' %}" alt="">
