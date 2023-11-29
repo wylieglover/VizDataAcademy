@@ -118,8 +118,11 @@ function rainbowPlot(){
 function updateData(){
     const boxNum = document.querySelector('#numBoxes').value;
     var minResults = [];
+    minResults.id = 'minResult';
     var maxResult = [];
+    maxResult.id='maxResult';
     var countResult = [];
+    countResult.id='countResult';
     var barHide = document.querySelector(".barHide");
     var results = document.querySelector('#boxData');
 
@@ -142,7 +145,7 @@ function updateData(){
         maxLabel.innerText = 'Box #' + i + " Max: ";
         maxInput.type = 'text';
         maxInput.placeholder='Max'
-        maxInput.id='rangeMax' + i;
+        maxInput.id='maxVal' + i;
         maxInput.className='inputText';
         results.appendChild(maxLabel);
         results.appendChild(maxInput);
@@ -154,7 +157,7 @@ function updateData(){
         countLabel.innerText='Box #' + i + " DP: ";
         countInput.type='text';
         countInput.placeholder='Count'
-        countInput.id='numDataEntry' + i;
+        countInput.id='countVal' + i;
         countInput.className='inputText';
         results.appendChild(countLabel);
         results.appendChild(countInput);
@@ -162,7 +165,6 @@ function updateData(){
         results.appendChild(document.createElement('br'));
         let addCount = countResult.push(countInput.value);
     }
-    console.log(minResults[0]);
 };
 
 const datRange = [];
@@ -176,18 +178,20 @@ function submitData(){
 
     //count[i] should be pulling from boxData & grabbing entry for count
     for(var i=0; i<countBoxes; i++){
-        var min = document.querySelector('#minResults'+i).value;
-        var max = document.querySelector('#maxResult'+i).value;
-        var count = document.querySelector('#countResult'+i).value;
+        var min = document.querySelector('#minVal'+i).value;
+        var max = document.querySelector('#maxVal'+i).value;
+        var count = document.querySelector('#countVal'+i).value;
+        console.log('min: ' + min + '   Max: ' + max + "  count: " + count);
+        var floorMax = Math.floor(max);
+        var ceilingMin = Math.ceil(min);
         var curRange = [];
-        for(var j=0; j<count[i]; j++){
-            curRange.push(Math.random() * (min[countBoxes] - max[countBoxes]) + min[countBoxes]);
+        for(var j=0; j<count; j++){
+            var randVal = Math.floor(Math.random() * (floorMax - ceilingMin + 1) + ceilingMin);
+            curRange.push(randVal);
         }
         //need to store all values of curRange in to value.
         let add = datRange.push(curRange);
-        //curRange = [];
     }
-
 };
 
 const updatedLayout = {
@@ -219,7 +223,7 @@ const updatedLayout = {
         }
     },
 };
-const boxPlotTrace1 = [{
+var boxPlotTrace1 = [{
     y: datRange[0],
     type: 'box',
     boxpoints: 'all',
@@ -229,7 +233,7 @@ const boxPlotTrace1 = [{
     outlierColor: 'blue',
     padding: 12,
 }];
-const boxPlotTrace2 = [{
+var boxPlotTrace2 = [{
     y: datRange[1],
     type: 'box',
     boxpoints: 'all',
@@ -239,7 +243,7 @@ const boxPlotTrace2 = [{
     outlierColor: 'red',
     padding: 12,
 }];
-const boxPlotTrace3 = [{
+var boxPlotTrace3 = [{
     y: datRange[3],
     type: 'box',
     boxpoints: 'all',
@@ -249,7 +253,7 @@ const boxPlotTrace3 = [{
     outlierColor: 'red',
     padding: 12,
 }];
-const boxPlotTrace4 = [{
+var boxPlotTrace4 = [{
     y: datRange[4],
     type: 'box',
     boxpoints: 'all',
@@ -259,7 +263,7 @@ const boxPlotTrace4 = [{
     outlierColor: 'red',
     padding: 12,
 }];
-const boxPlotTrace5 = [{
+var boxPlotTrace5 = [{
     y: datRange[5],
     type: 'box',
     boxpoints: 'all',
@@ -270,18 +274,18 @@ const boxPlotTrace5 = [{
     padding: 12,
 }];
 
-const numOfBox = document.querySelector('#numBoxes').value;
-const newData = [boxPlotTrace1];
-if(numOfBox>= 2){
-    newData.push(boxPlotTrace2);
-}if (numOfBox>= 3) {
-    newData.push(boxPlotTrace3);
-}if(numOfBox>= 4){
-    newData.push(boxPlotTrace4);
-}if(numOfBox>=5){
-    newData.push(boxPlotTrace5);
-}
-
 function graphNewData(){
+    var numOfBox = document.querySelector('#numBoxes').value;
+    var newData = [boxPlotTrace1];
+    if(numOfBox>= 2){
+        let add=newData.push(boxPlotTrace2);
+    }if (numOfBox>= 3) {
+        let add=newData.push(boxPlotTrace3);
+    }if(numOfBox>= 4){
+        let add=newData.push(boxPlotTrace4);
+    }if(numOfBox>=5){
+        let add=newData.push(boxPlotTrace5);
+    }
+
     Plotly.newPlot('useGraph', newData, updatedLayout, config);
 }
