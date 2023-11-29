@@ -1,3 +1,8 @@
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .title-row {
     display: flex;
     flex-direction: row;
@@ -79,10 +84,12 @@
     margin: 5% 15% 5% 15%;
 }
 
-.class-container2 {
+.class-container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: fit-content;
+    width: 35%;
 }
+
 
 .card-photo {
     width: 100%;

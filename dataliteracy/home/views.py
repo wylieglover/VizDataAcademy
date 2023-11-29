@@ -55,9 +55,6 @@ def histoGraphing(request):
 def bubbleGraphing(request):
   return render(request, 'bubbleGraphing.html')
 
-def quizViewing(request):
-  return render(request, 'quiz1.html')
-
 def boxGraphing(request):
   return render(request, 'boxGraphing.html')
 
@@ -66,6 +63,9 @@ def dotGraphing(request):
 
 def lesson1(request,class_id):
   return render(request, 'lesson1.html')
+
+def lesson2(request, class_id):
+  return render(request, 'lesson2.html')
 
 def SignUp_View(request):
   if request.method == 'POST':

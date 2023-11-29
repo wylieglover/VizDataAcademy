@@ -4,6 +4,7 @@
 {% block static_head %}
     <link rel="stylesheet" href="{% static 'css/classview.css' %}">
 
+
 {% endblock  %}
 
 {% block content %}
@@ -35,25 +36,23 @@
                 </div>
             </div>
 
-            <div class="flex-assignments">
-                <div class="class-container2">
+            <div class="flex-container">
+                <div class="class-container">
                     <a href="/{{classroom.join_code}}/lesson1/">
                       <div class="class-cards">
-                                <img class="card-photo" src="{% static 'filler.jpg' %}" alt="">
+                                <img class="card-photo" src="{% static 'lesson1.jpeg' %}" alt="">
                                 <div class="card-container">
-                                    <h4><b>{{classroom.title}}</b></h4> 
-                                    <p>{{classroom.description }}</p>
+                                    <h4><b>Lesson 1</b></h4> 
                                 </div>
                         </div>
                      </a>
                 </div>
-                <div class="class-container2">
-                    <a href="/{{classroom.join_code}}/lesson1/">
+                <div class="class-container">
+                    <a href="/{{classroom.join_code}}/lesson2/">
                       <div class="class-cards">
-                                <img class="card-photo" src="{% static 'filler.jpg' %}" alt="">
+                                <img class="card-photo" src="{% static 'lesson2.jpeg' %}" alt="">
                                 <div class="card-container">
-                                    <h4><b>{{classroom.title}}</b></h4> 
-                                    <p>{{classroom.description }}</p>
+                                    <h4><b>Lesson 2</b></h4> 
                                 </div>
                         </div>
                      </a>

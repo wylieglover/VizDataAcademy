@@ -28,5 +28,5 @@ urlpatterns = [
     path("<str:class_id>/", views.course_view, name="course"),
     path("<str:class_id>/new/", views.create_assignment, name="newAssignment"),
 
-    path('home/quiz1', views.quizViewing, name='quiz1'),
+    path('<str:class_id>/lesson2/', views.lesson2, name='lesson2'),
 ]

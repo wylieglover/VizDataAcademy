@@ -39,7 +39,7 @@ ul {
 
 ::-webkit-scrollbar {
     display: none;
-  }
+}
 
 /*====== Navbar ======*/
 .navbar {
@@ -337,7 +337,7 @@ ul {
     width: 800px; */
     margin-left: auto;
     margin-right: auto;
-    display:grid;
+    display: grid;
     border: 2px solid #fff;
     border-radius: 2px;
     padding-left: 10px;
@@ -404,7 +404,7 @@ ul {
     height: 100px;
 }
 
-#graphingList{
+#graphingList {
     width: 20%;
     background: linear-gradient(0deg, #040c2450, #4d60a1);
 }
@@ -485,7 +485,7 @@ ul {
     box-shadow: 10px 20px 20px #040c24;
 }
 
-.portraitContainer>h3{
+.portraitContainer>h3 {
     margin-top: 10px;
     font-size: 22px;
 }
@@ -535,6 +535,6 @@ ul {
     height: 30px;
 }
 
-#quiz>*{
+#quiz>* {
     text-align: left;
 }
