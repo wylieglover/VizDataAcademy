@@ -14,9 +14,22 @@
             <input type="text" id="chartName" placeholder="X-Axis" />
             <h2 class="dataLabel">Y-Axis Label</h1>
             <input type="text" id="chartName" placeholder="Y-Axis" />
-            <h2 class="dataLabel">Number of Points per Line </h2>
+            <h2 class="dataLabel">Number of Lines </h2>
             <select id="numLines" placeholder='' onchange="updateLines(this)">
                 <option value="" disable selected>Select</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+            </select>
+            <div class="barInfo">
+                <div id="barNamesInput"></div>
+            </div>
+            <label for="numLines"><h2>Number of Points per line</h2></label>
+            <select id="valLines" placeholder='' onchange="updateValues(this)">
+                <option value="" disable selected>Select</option>
+                        <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
@@ -26,31 +39,9 @@
                         <option value="8">8</option>
                         <option value="9">9</option>
                         <option value="10">10</option>
-                        <option value="11">11</option>
-                        <option value="12">12</option>
-                        <option value="13">13</option>
-                        <option value="14">14</option>
-                        <option value="15">15</option>
-                        <option value="16">16</option>
-                        <option value="17">17</option>
-                        <option value="18">18</option>
-                        <option value="19">19</option>
-                        <option value="20">20</option>
             </select>
-            <div class="barInfo">
-                <container id="barNames">
-                </container>
-            </div>
-            <h2 class="dataLabel">Number of Comparisons</h2>
-            <select id="numComp" onchange="updateComp(this);updateValues()">
-                <option value="" disable selected>Select</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select>
-            <div class="compInfo">
-                <container id="compValues"></container>
+            <div class="lineValues">
+                <div id="lineInput"></div>
             </div>
             <div class="barHide" >
             </div>

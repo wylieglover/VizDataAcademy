@@ -23,7 +23,10 @@ urlpatterns = [
     path('home/graphing/', views.graphing , name='graphing'),
     path('signup/', views.SignUp_View , name='signup'),
     path('create/', views.create_class , name='create'),
-    path('dashboard/', views.view_class, name="dashboard"),
+    path('dashboard/', views.view_class, name="dashboard"), 
+    path('<str:class_id>/lesson1/', views.lesson1, name='lesson1'),
     path("<str:class_id>/", views.course_view, name="course"),
+    path("<str:class_id>/new/", views.create_assignment, name="newAssignment"),
+
     path('home/quiz1', views.quizViewing, name='quiz1'),
 ]

@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block static_head %}
+    <link rel="stylesheet" href="{% static 'css/createAssignment.css' %}">
+{% endblock  %}
+
+{% block content %}
+
+<div class="mainBody">
+   <div class="create-board">
+        <div class="left-board">
+            <div class="row-single">
+                <h1 class="text-left">Create Assignment</h1>            
+            </div>
+            
+            <div class="form-container">
+                <form method="POST">
+                    {% csrf_token %}
+                    <div>
+                        <label for="title" >Title</label>
+                        <br>
+                        <input required name="title" id="title" type="text" >
+                    </div>
+                    <br>
+                    <div>
+                        <label for="description" >Description</label>
+                        <br>
+                        <textarea required name="description" id="description" type="text"></textarea>
+                    </div>
+                    <div>
+                        <label for="template" >Choose Template</label>
+                        <br>
+                        <select name="template" id="template">                            
+                            <option value="selected">Please Select an Option</option>
+                            <option value="template1">Template 1</option>
+                            <option value="template2">Template 2</option>
+                            <option value="template3">Template 3</option>
+                        </select>
+                    </div>
+                    <div class="submit-btn">
+                        <input type="submit" class="submit" value="SUBMIT">  
+                    </div>
+                </form>
+            </div>
+        </div>
+       <div class="right-board">
+        <div>
+            <img class="image-right" src="{% static 'quote1.png' %}" alt="Placeholder">
+        </div>
+    </div>      
+    </div> 
+
+    
+
+</div>
+    
+
+{% endblock  %}

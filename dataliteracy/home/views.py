@@ -64,6 +64,9 @@ def boxGraphing(request):
 def dotGraphing(request):
   return render(request, 'dotGraphing.html')
 
+def lesson1(request,class_id):
+  return render(request, 'lesson1.html')
+
 def SignUp_View(request):
   if request.method == 'POST':
     form = SignUpForm(request.POST)
@@ -134,3 +137,12 @@ def course_view(request, class_id):
     "user_data": user,
   }
   return render(request, "insideClass.html", context)
+
+def create_assignment(request, class_id):
+  classroom = get_object_or_404(Classroom, join_code=class_id)
+  account = UserData.objects.get(user=request.user)
+
+  return render(request, "createAssignment.html", {
+    "user_data": account,
+    "classroom": classroom
+    })
