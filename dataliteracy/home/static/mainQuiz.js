@@ -51,23 +51,24 @@ Plotly.newPlot('useGraph', quizData, stockLayout);
 
 //have some function that gathers all answers and alert() a percentage of right answers
 
-const q1Answer = document.querySelector('#question1');
-const q2Answer = document.querySelector('#question2');
-const q3Answer = document.querySelector('#question3');
-const q4Answer = document.querySelector('#question4');
-const q5Answer = document.querySelector('#question5');
-
 function validateQ1(_this){
-    q1Answer = _this.value;
-    if(ansChoice == 2){
-        console.log('Right answer');
+    const q1Answer = _this.value;
+    const q1Result = document.querySelector('#question1');
+    q1Result.innerHTML='';
+    var q1Input = document.createElement('p');
+    q1Input.innerHTML=_this.value;
+    //q1Result.appendChild(q1Input);
+    q1Result.innerHTML=_this.value;
+    if(q1Answer == 2){
+        console.log('Right answer ');
+        var test = document.getElementById('q1Result').value;
+        console.log(test + "    hello");
     }else{
         console.log('Wrong answer');
     }
 };
-
 function validateQ2(_this){
-    q2Answer = _this.value;
+    const q2Answer = _this.value;
     if(q2Answer == 32){
         console.log('right answer');
     }else{
@@ -75,7 +76,7 @@ function validateQ2(_this){
     }
 };
 function validateQ3(_this){
-    q3Answer = _this.value;
+    const q3Answer = _this.value;
 
     if(q3Answer == 1){
         console.log('right answer');
@@ -84,18 +85,23 @@ function validateQ3(_this){
     }
 };
 function validateQ4(_this){
-    q4Answer = _this.value;
+    const q4Answer = _this.value;
     if(q4Answer == 3){
         console.log('right answer');
     }else{
         console.log('wrong answer');
     }
 };
+
 function validateQ5(_this){
-    q5Answer = _this.value;
+    const q5Answer = _this.value;
     if(q5Answer == 25){
-        console.log('right answer');
+        console.log('right answer ');
     }else{
         console.log('wrong answer');
     }
+};
+
+function displayGrade(){
+    //var q1 = q1Result.value;
 };
