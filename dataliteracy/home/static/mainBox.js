@@ -79,11 +79,9 @@ function refreshBoxCount(_this) {
 };
 
 function updateBoxStyle(_this){
-    var userChoice = _this.value;
-
-    if(userChoice == 1){
+    if(_this.value == 1){
         return groupPlot();
-    }if (userChoice == 2) {
+    }if (_this.value == 2) {
         return mean_StdDev();
     } else {
         return rainbowPlot();
@@ -101,8 +99,7 @@ function groupPlot(){
         var label = document.createElement('label');
         label.innerHTML='Label ' + i;
         for(var j=0; j<size; j++){
-            var random = Math.floor(Math.random() * (max - min) + min);
-            var output = document.createElement('output'); //needs to be a value that gets assigned randvalue
+            var random = Math.floor(Math.random() * (max - min) + min); //needs to be a value that gets assigned randvalue
             x[j] = random;
         }
         outerInput.appendChild(x);
@@ -138,7 +135,7 @@ function updateData(){
         results.appendChild(minLabel);
         results.appendChild(minInput);
         results.appendChild(document.createElement('br'));
-        minResults.push(minInput.value);
+        let addMin = minResults.push(minInput.value);
 
         var maxLabel = document.createElement('label');
         var maxInput = document.createElement('input');
@@ -150,7 +147,7 @@ function updateData(){
         results.appendChild(maxLabel);
         results.appendChild(maxInput);
         results.appendChild(document.createElement('br'));
-        maxResult.push(maxInput.value);
+        let addMax = maxResult.push(maxInput.value);
 
         var countLabel = document.createElement('label');
         var countInput = document.createElement('input');
@@ -163,24 +160,27 @@ function updateData(){
         results.appendChild(countInput);
         results.appendChild(document.createElement('br'));
         results.appendChild(document.createElement('br'));
-        countResult.push(countInput.value);
+        let addCount = countResult.push(countInput.value);
     }
-
-    return submitData(minResults, maxResult, countResult);
+    console.log(minResults[0]);
 };
 
 const datRange = [];
-function submitData(min, max, count){
+function submitData(){
     var countBoxes = document.querySelector('#numBoxes').value;
     const nameBoxes = [];
     for(var i=0; i<countBoxes; i++){
         var curName = document.querySelector('#numName'+i);
         let add = nameBoxes.push(curName);
     }
-    //const datRange = [];
+
+    //count[i] should be pulling from boxData & grabbing entry for count
     for(var i=0; i<countBoxes; i++){
+        var min = document.querySelector('#minResults'+i).value;
+        var max = document.querySelector('#maxResult'+i).value;
+        var count = document.querySelector('#countResult'+i).value;
         var curRange = [];
-        for(var j=0; j<count[i].value; j++){
+        for(var j=0; j<count[i]; j++){
             curRange.push(Math.random() * (min[countBoxes] - max[countBoxes]) + min[countBoxes]);
         }
         //need to store all values of curRange in to value.
