@@ -50,11 +50,6 @@ const stockLayout = {
 Plotly.newPlot('useGraph', quizData, stockLayout);
 
 //have some function that gathers all answers and alert() a percentage of right answers
-//    const q1Result = document.querySelector('#question1');
-    //q1Result.innerHTML='';
-    //var q1Input = document.createElement('p');
-    //q1Input.innerHTML=_this.value;
-    //q1Result.appendChild(q1Input)
 
 var q1Flag = false;
 var q2Flag = false;

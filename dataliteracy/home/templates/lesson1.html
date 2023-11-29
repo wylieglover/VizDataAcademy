@@ -12,72 +12,63 @@
                 <h3>Question 1:<br/></h3>
                 <h5>In what year do the populations first overlap?</h5>
                     <div class="answers">
-                        <input type="radio" id="a" class="answer" value="" name="question1"> <!--Enter answer value to value-->
-                        <label for="html">1965</label><br>
-                        <input type="radio" id="b" class="answer" value="" name="question1"> <!--Enter answer value to value-->
-                        <label for="html">1980</label><br>
-                        <input type="radio" id="c" class="answer" value="" name="question1"> <!--Enter answer value to value-->
-                        <label for="html">1968</label><br>
-                        <input type="radio" id="d" class="answer" value="" name="question1"> <!--Enter answer value to value-->
-                        <label for="html">1982</label><br>
+                        <select id="quest1Answer" placeholder="" onchange="validateQ1(this)">
+                            <option value="" disable selected>Options</option>
+                            <option value="1">1965</option>
+                            <option value="2">1980</option>
+                            <option value="3">1968</option>
+                            <option value="4">1982</option>
+                        </select><br>
                     </div>
             </div>
             <div class="question" id="question2">
                 <h3>Question 2:<br/></h3>
-                <h5>In what year do the populations first overlap?</h5>
+                <h5>In what year is the peak population for Wolves?</h5>
                     <div class="answers">
-                        <input type="radio" id="a" class="answer" value="" name="question2"> <!--Enter answer value to value-->
-                        <label for="html">1965</label><br>
-                        <input type="radio" id="b" class="answer" value="" name="question2"> <!--Enter answer value to value-->
-                        <label for="html">1980</label><br>
-                        <input type="radio" id="c" class="answer" value="" name="question2"> <!--Enter answer value to value-->
-                        <label for="html">1968</label><br>
-                        <input type="radio" id="d" class="answer" value="" name="question2"> <!--Enter answer value to value-->
-                        <label for="html">1982</label><br>
+                        <select id="quest2Answer" placeholder="" onchange="validateQ2(this)">
+                            <option value="" disable selected>Options</option>
+                            <option value="1">1960</option>
+                            <option value="2">1980</option>
+                            <option value="3">2000</option>
+                            <option value="4">1998</option>
+                        </select><br>
                     </div>
             </div>
             <div class="question" id="question3">
                 <h3>Question 3:<br/></h3>
-                <h5>In what year do the populations first overlap?</h5>
+                <h5>In what year is the Moose population 1450?</h5>
                     <div class="answers">
-                        <input type="radio" id="a" class="answer" value="" name="question3"> <!--Enter answer value to value-->
-                        <label for="html">1965</label><br>
-                        <input type="radio" id="b" class="answer" value="" name="question3"> <!--Enter answer value to value-->
-                        <label for="html">1980</label><br>
-                        <input type="radio" id="c" class="answer" value="" name="question3"> <!--Enter answer value to value-->
-                        <label for="html">1968</label><br>
-                        <input type="radio" id="d" class="answer" value="" name="question3"> <!--Enter answer value to value-->
-                        <label for="html">1982</label><br>
+                        <select id="quest3Answer" placeholder="" onchange="validateQ3(this)">
+                            <option value="" disable selected>Options</option>
+                            <option value="1">1993</option>
+                            <option value="2">1985</option>
+                            <option value="3">1990</option>
+                            <option value="4">2000</option>
+                        </select><br>
                     </div>
             </div>
             <div class="question" id="question4">
                 <h3>Question 4:<br/></h3>
-                <h5>In what year do the populations first overlap?</h5>
+                <h5>How many years apart are the peak populations for wolves & moose?</h5>
                     <div class="answers">
-                        <input type="radio" id="a" class="answer" value="" name="question4"> <!--Enter answer value to value-->
-                        <label for="html">1965</label><br>
-                        <input type="radio" id="b" class="answer" value="" name="question4"> <!--Enter answer value to value-->
-                        <label for="html">1980</label><br>
-                        <input type="radio" id="c" class="answer" value="" name="question4"> <!--Enter answer value to value-->
-                        <label for="html">1968</label><br>
-                        <input type="radio" id="d" class="answer" value="" name="question4"> <!--Enter answer value to value-->
-                        <label for="html">1982</label><br>
+                        <label for="quest4Answer">Answer Here:</label>
+                        <input type="text" id="quest4Answer" onchange='validateQ4(this)' placeholder="Answer..." />
                     </div>
             </div>
             <div class="question" id="question5">
                 <h3>Question 5:<br/></h3>
-                <h5>What is the maximum population of moose in this time interval?</h5>
+                <h5>What is the maximum population of wolves in this time interval?</h5>
                     <div class="answers">
-                        <label for="writtenResponse">Answer Here:</label>
-                        <input id='writtenResponse' type="text" class="inputText" value="" placeholder="Answer...">
+                        <label for="quest5Answer">Answer Here:</label>
+                        <input id='quest5Answer' type="text" class="inputText" onchange="validateQ5(this)" placeholder="Answer...">
                     </div>
             </div>
-            <button 
+            <button class="submit" onclick="submitLesson()">Submit Quiz</button>
         </div>
     </main>
     
     <script src='https://cdn.plot.ly/plotly-2.4.2.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script>
-    <script src="{% static 'mainLine.js' %}"></script>
+    <script src="{% static 'mainLesson1.js' %}"></script>
   
   {% endblock  %}
