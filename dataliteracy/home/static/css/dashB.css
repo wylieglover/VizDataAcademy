@@ -1,36 +1,36 @@
-.class-cards{
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+.class-cards {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
-    min-height:60%;
-    min-width: 75%;;
+    min-height: 60%;
+    min-width: 75%;
     margin: 5% 15% 5% 15%;
 }
 
-.class-container{
+.class-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
 
-.card-photo{
+.card-photo {
     width: 100%;
 }
 
-.card-container{
+.card-container {
     padding: 2px 16px;
 }
 
-.class-cards:hover{
+.class-cards:hover {
     box-shadow: 0 8px 16px 0 red;
 }
 
-.single-row{
+.single-row {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.basic-button{
-    width:20%;
+.basic-button {
+    width: 20%;
     height: 50px;
     margin: 7px 25px 20px 10px;
     color: rgb(59, 152, 240);
@@ -42,18 +42,22 @@
     font-family: 'Roboto';
 }
 
-popup-container{
+popup-container {
     width: 100%;
     height: 100%;
     background-color: white;
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
 
-.popup{
+.popup {
+    border: 16px solid black;
+
     width: 400px;
-    background-color: aqua;
+    background-color: white;
+    color: black;
     border-radius: 6px;
     position: absolute;
     top: 0;
@@ -65,13 +69,13 @@ popup-container{
     transition: transform 0.4s, top 0.4s;
 }
 
-.join-popup{
+.join-popup {
     visibility: visible;
     top: 50%;
     transform: translate(-50%, -50%) scale(1);
 }
 
-.popup h2{
+.popup h2 {
     font-size: 38px;
     font-weight: 500;
     margin: 30px 0 10px;
@@ -88,19 +92,19 @@ popup-container{
     font-size: 18px;
     border-radius: 4px;
     cursor: pointer;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-.popup input[type=text]{
+.popup input[type=text] {
     width: 100%;
     margin-top: 15px;
     background: #6fd649;
-    color: #fff;
+    color: black;
     border: 0;
     outline: none;
     font-size: 18px;
     border-radius: 4px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 img {

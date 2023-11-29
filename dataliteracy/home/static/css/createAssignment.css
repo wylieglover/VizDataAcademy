@@ -1,4 +1,4 @@
-.create-board{
+.create-board {
     display: grid;
     grid-template-columns: 1fr 1fr;
     background-color: #274c43;
@@ -7,46 +7,47 @@
     height: 100%;
 }
 
-.left-board{
+.left-board {
     align-items: center;
     justify-content: center;
     width: 100%;
 }
 
-.row-single{
+.row-single {
     text-align: center;
     margin: 25px;
     margin-bottom: 10px;
 }
 
-.right-board{
+.right-board {
     width: 90%;
 }
 
-.text-right{
+.text-right {
     width: 50%;
-    height:50%;
+    height: 50%;
     margin-bottom: 0;
     object-fit: cover;
 }
 
-label{
+label {
     font-size: 50px;
     margin-left: 0px;
     color: white;
     font-family: 'Lucida Sans';
 }
 
-textarea, input[type=text]{
-   width: 100%;
-   resize: none;
+textarea,
+input[type=text] {
+    width: 100%;
+    resize: none;
 }
 
-textarea{
+textarea {
     height: 80px;
 }
 
-.text-left{
+.text-left {
     margin: 0px 5%;
     margin-bottom: 50px;
     font-size: 50px;
@@ -56,7 +57,7 @@ textarea{
 
 }
 
-.main-title{
+.main-title {
     margin-top: 30px;
     font-size: 50px;
     color: white;
@@ -64,7 +65,9 @@ textarea{
     font-family: 'Lucida Sans';
 }
 
-input[type=text], textarea, select{
+input[type=text],
+textarea,
+select {
     display: inline-block;
     color: white;
     width: 100%;
@@ -79,7 +82,7 @@ input[type=text], textarea, select{
 }
 
 
-input[type=submit]{
+.submit-assignment {
     width: 100%;
     color: white;
     padding: 10px;
@@ -93,12 +96,9 @@ input[type=submit]{
 
 }
 
-input[type=submit]:hover{
+.submit-assignment:hover {
     background-color: white;
     color: black;
     transition: .5s;
     font-family: 'Lucida Sans';
 }
-
-
-
