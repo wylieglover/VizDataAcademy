@@ -51,8 +51,14 @@ Plotly.newPlot('useGraph', quizData, stockLayout);
 
 //have some function that gathers all answers and alert() a percentage of right answers
 
+const q1Answer = document.querySelector('#question1');
+const q2Answer = document.querySelector('#question2');
+const q3Answer = document.querySelector('#question3');
+const q4Answer = document.querySelector('#question4');
+const q5Answer = document.querySelector('#question5');
+
 function validateQ1(_this){
-    const ansChoice = _this.value;
+    q1Answer = _this.value;
     if(ansChoice == 2){
         console.log('Right answer');
     }else{
@@ -61,7 +67,7 @@ function validateQ1(_this){
 };
 
 function validateQ2(_this){
-    const q2Answer = _this.value;
+    q2Answer = _this.value;
     if(q2Answer == 32){
         console.log('right answer');
     }else{
@@ -69,7 +75,7 @@ function validateQ2(_this){
     }
 };
 function validateQ3(_this){
-    const q3Answer = _this.value;
+    q3Answer = _this.value;
 
     if(q3Answer == 1){
         console.log('right answer');
@@ -78,7 +84,7 @@ function validateQ3(_this){
     }
 };
 function validateQ4(_this){
-    const q4Answer = _this.value;
+    q4Answer = _this.value;
     if(q4Answer == 3){
         console.log('right answer');
     }else{
@@ -86,7 +92,7 @@ function validateQ4(_this){
     }
 };
 function validateQ5(_this){
-    const q5Answer = _this.value;
+    q5Answer = _this.value;
     if(q5Answer == 25){
         console.log('right answer');
     }else{
