@@ -134,3 +134,12 @@ def course_view(request, class_id):
     "user_data": user,
   }
   return render(request, "insideClass.html", context)
+
+def create_assignment(request, class_id):
+  classroom = get_object_or_404(Classroom, join_code=class_id)
+  account = UserData.objects.get(user=request.user)
+
+  return render(request, "createAssignment.html", {
+    "user_data": account,
+    "classroom": classroom
+    })
