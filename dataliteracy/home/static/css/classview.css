@@ -2,7 +2,8 @@
     display: flex;
     flex-direction: row;
     height: 125px;
-    background-color: blue;
+    background-color: white;
+    color: black;
     border-radius: 6px;
     border: 2px;
     margin: 15px 20px 25px 20px;
@@ -12,7 +13,7 @@
     margin-left: 2%;
     font-size: 70px;
     font-family: 'Monaco';
-    color: white;
+    color: black;
 }
 
 .description-content {
@@ -34,11 +35,15 @@
     min-width: 100%;
     border-radius: 6px;
     border: 2px;
-    background-color: aqua;
+    background-color: white;
+    color: black;
+
 }
 
 .decription-view {
-    background-color: aqua;
+    background-color: white;
+    color: black;
+
     text-align: center;
     min-width: 100%;
     min-height: 100%;
@@ -51,6 +56,8 @@
     font-size: 30px;
     font-family: 'Monaco';
     text-align: center;
+    color: black;
+
 }
 
 .small-text {
@@ -60,6 +67,8 @@
     margin: 5px 5px;
     font-size: 20px;
     min-width: 100%;
+    color: black;
+
 }
 
 .class-cards {
@@ -113,6 +122,8 @@
     display: table-cell;
     vertical-align: middle;
     padding-left: 10px;
+    color: black;
+
 }
 
 .center-text {
@@ -123,6 +134,8 @@
     font-weight: 800;
     font-family: 'Lucida Sans';
     text-align: center;
+    color: black;
+
 }
 
 .center-text2 {
@@ -132,4 +145,6 @@
     font-weight: 800;
     font-family: 'Lucida Sans';
     text-align: center;
+    color: black;
+
 }
