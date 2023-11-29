@@ -50,58 +50,74 @@ const stockLayout = {
 Plotly.newPlot('useGraph', quizData, stockLayout);
 
 //have some function that gathers all answers and alert() a percentage of right answers
+//    const q1Result = document.querySelector('#question1');
+    //q1Result.innerHTML='';
+    //var q1Input = document.createElement('p');
+    //q1Input.innerHTML=_this.value;
+    //q1Result.appendChild(q1Input)
+
+var q1Flag = false;
+var q2Flag = false;
+var q3Flag = false;
+var q4Flag = false;
+var q5Flag = false;
 
 function validateQ1(_this){
-    const q1Answer = _this.value;
-    const q1Result = document.querySelector('#question1');
-    q1Result.innerHTML='';
-    var q1Input = document.createElement('p');
-    q1Input.innerHTML=_this.value;
-    //q1Result.appendChild(q1Input);
-    q1Result.innerHTML=_this.value;
-    if(q1Answer == 2){
-        console.log('Right answer ');
-        var test = document.getElementById('q1Result').value;
-        console.log(test + "    hello");
+    if(_this.value == 2){
+        q1Flag = true;
     }else{
-        console.log('Wrong answer');
+        q1Flag = false;
     }
 };
 function validateQ2(_this){
-    const q2Answer = _this.value;
-    if(q2Answer == 32){
-        console.log('right answer');
+    if(_this.value == 32){
+        q2Flag = true;
     }else{
-        console.log('wrong answer');
+        q2Flag = false;
     }
 };
 function validateQ3(_this){
-    const q3Answer = _this.value;
-
-    if(q3Answer == 1){
-        console.log('right answer');
+    if(_this.value == 1){
+        q3Flag = true;
     }else{
-        console.log('wrong answer');
+        q3Flag = false;
     }
 };
 function validateQ4(_this){
-    const q4Answer = _this.value;
-    if(q4Answer == 3){
-        console.log('right answer');
+    if(_this.value == 3){
+        q4Flag = true;
     }else{
-        console.log('wrong answer');
+        q4Flag = false;
     }
 };
 
 function validateQ5(_this){
-    const q5Answer = _this.value;
-    if(q5Answer == 25){
-        console.log('right answer ');
+    if(_this.value == 25){
+        q5Flag = true;
     }else{
-        console.log('wrong answer');
+        q5Flag = false;;
     }
 };
 
+function submitQuiz(){
+    var grade = 0;
+    if(q1Flag == true){
+        grade += 20;
+    }
+    if(q2Flag == true){
+        grade += 20;
+    }
+    if(q3Flag == true){
+        grade += 20;
+    }
+    if(q4Flag == true){
+        grade += 20;
+    }
+    if(q5Flag == true){
+        grade += 20;
+    }
+    alert('You got a ' + grade +'%');
+};
 function displayGrade(){
     //var q1 = q1Result.value;
 };
