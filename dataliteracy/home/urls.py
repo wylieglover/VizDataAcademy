@@ -26,5 +26,6 @@ urlpatterns = [
     path('dashboard/', views.view_class, name="dashboard"), 
     path('<str:class_id>/lesson1/', views.lesson1, name='lesson1'),
     path("<str:class_id>/", views.course_view, name="course"),
+    path("<str:class_id>/new/", views.create_assignment, name="newAssignment"),
 
 ]
