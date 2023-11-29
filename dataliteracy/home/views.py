@@ -55,6 +55,9 @@ def histoGraphing(request):
 def bubbleGraphing(request):
   return render(request, 'bubbleGraphing.html')
 
+def quizViewing(request):
+  return render(request, 'quiz1.html')
+
 def boxGraphing(request):
   return render(request, 'boxGraphing.html')
 

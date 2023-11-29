@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% load static %}
+{% block static_head %}
+
+{% endblock static_head %}
+
+{% block content %}
+<main class="dashboard">
+    <div id="graphOpt">
+        <div id="useGraph"></div>
+    </div>
+    <div class="dataCollection">
+        <h2 class="quizLabel">Quiz 1</h2>
+
+        <h4 class="dataLabel">Question 1</h4>
+        <p style="color:white">How many Comparisons are there?</p>
+        <select class="selector" id="question1" placeholder="" onchange="validateQ1(this)">
+            <option value="" disable selected>Answers</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+        <div class="ques1Info">
+            <container id="question1"></container>
+        </div>
+
+        <h4 class="dataLabel">Question 2</h4>
+        <p style="color:white">What is the highest value in the graph?</p>
+        <input type="text" id="quest2Answer" placeholder="Max:" onchange="validateQ2(this)" />
+        <div class="ques2Info">
+            <container id="question2"></container>
+        </div>
+
+        <h4 class="dataLabel">Question 3</h4>
+        <p style="color:white">What is measured by the X-Axis?</p>
+        <select class="selector" id="quest3" placeholder="" onchange="validateQ3(this)">
+            <option value=""disable selected>Answer</option>
+            <option value="1">Data Entry Points</option>
+            <option value="2">Who Knows?</option>
+            <option value="3">Values of Data Points</option>
+        </select>
+        <div class="ques3Info">
+            <container id="question3"></container>
+        </div>
+
+        <h4 class="dataLabel">Question 4</h4>
+        <p style="color: white">Which of the 3 bar entries has the highest average value?</p>
+        <select class="selector" id="quest4" placeholder="" onchange="validateQ4(this)">
+            <option value="" disable selected>Answer</option>
+            <option value="1">Jan</option>
+            <option value="2">Feb</option>
+            <option value="3">Mar</option>
+        </select>
+        <div class="ques4Info">
+            <container id="question4"></container>
+        </div>
+
+        <h4 class="dataLabel">Question 5</h4>
+        <p style="color: white">What is the average (in whole #) of the data for Jan?</p>
+        <input type="text" id="quest5Answer" placeholder="Average:" onchange="validateQ5(this)" />
+        <div class="ques5Info">
+            <container id="question5"></container>
+        </div>
+        
+    </div>
+    </main>
+
+    <script src='https://cdn.plot.ly/plotly-2.4.2.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script>
+    <script src="{% static 'mainQuiz.js' %}"></script>
+
+{% endblock %}
