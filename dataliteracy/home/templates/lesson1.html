@@ -1,0 +1,83 @@
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <main class="dashboard">
+        <div id="graphOpt">
+            <div id="useGraph"></div>
+        </div>
+        <div class="dataCollection" id="quiz">
+            <div class="question" id="question1">
+                <h3>Question 1:<br/></h3>
+                <h5>In what year do the populations first overlap?</h5>
+                    <div class="answers">
+                        <input type="radio" id="a" class="answer" value="" name="question1"> <!--Enter answer value to value-->
+                        <label for="html">1965</label><br>
+                        <input type="radio" id="b" class="answer" value="" name="question1"> <!--Enter answer value to value-->
+                        <label for="html">1980</label><br>
+                        <input type="radio" id="c" class="answer" value="" name="question1"> <!--Enter answer value to value-->
+                        <label for="html">1968</label><br>
+                        <input type="radio" id="d" class="answer" value="" name="question1"> <!--Enter answer value to value-->
+                        <label for="html">1982</label><br>
+                    </div>
+            </div>
+            <div class="question" id="question2">
+                <h3>Question 2:<br/></h3>
+                <h5>In what year do the populations first overlap?</h5>
+                    <div class="answers">
+                        <input type="radio" id="a" class="answer" value="" name="question2"> <!--Enter answer value to value-->
+                        <label for="html">1965</label><br>
+                        <input type="radio" id="b" class="answer" value="" name="question2"> <!--Enter answer value to value-->
+                        <label for="html">1980</label><br>
+                        <input type="radio" id="c" class="answer" value="" name="question2"> <!--Enter answer value to value-->
+                        <label for="html">1968</label><br>
+                        <input type="radio" id="d" class="answer" value="" name="question2"> <!--Enter answer value to value-->
+                        <label for="html">1982</label><br>
+                    </div>
+            </div>
+            <div class="question" id="question3">
+                <h3>Question 3:<br/></h3>
+                <h5>In what year do the populations first overlap?</h5>
+                    <div class="answers">
+                        <input type="radio" id="a" class="answer" value="" name="question3"> <!--Enter answer value to value-->
+                        <label for="html">1965</label><br>
+                        <input type="radio" id="b" class="answer" value="" name="question3"> <!--Enter answer value to value-->
+                        <label for="html">1980</label><br>
+                        <input type="radio" id="c" class="answer" value="" name="question3"> <!--Enter answer value to value-->
+                        <label for="html">1968</label><br>
+                        <input type="radio" id="d" class="answer" value="" name="question3"> <!--Enter answer value to value-->
+                        <label for="html">1982</label><br>
+                    </div>
+            </div>
+            <div class="question" id="question4">
+                <h3>Question 4:<br/></h3>
+                <h5>In what year do the populations first overlap?</h5>
+                    <div class="answers">
+                        <input type="radio" id="a" class="answer" value="" name="question4"> <!--Enter answer value to value-->
+                        <label for="html">1965</label><br>
+                        <input type="radio" id="b" class="answer" value="" name="question4"> <!--Enter answer value to value-->
+                        <label for="html">1980</label><br>
+                        <input type="radio" id="c" class="answer" value="" name="question4"> <!--Enter answer value to value-->
+                        <label for="html">1968</label><br>
+                        <input type="radio" id="d" class="answer" value="" name="question4"> <!--Enter answer value to value-->
+                        <label for="html">1982</label><br>
+                    </div>
+            </div>
+            <div class="question" id="question5">
+                <h3>Question 5:<br/></h3>
+                <h5>What is the maximum population of moose in this time interval?</h5>
+                    <div class="answers">
+                        <label for="writtenResponse">Answer Here:</label>
+                        <input id='writtenResponse' type="text" class="inputText" value="" placeholder="Answer...">
+                    </div>
+            </div>
+            <button 
+        </div>
+    </main>
+    
+    <script src='https://cdn.plot.ly/plotly-2.4.2.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script>
+    <script src="{% static 'mainLine.js' %}"></script>
+  
+  {% endblock  %}
