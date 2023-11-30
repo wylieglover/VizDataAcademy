@@ -25,6 +25,8 @@ const stockLayout = {
     autosize: true,
     hovermode: 'closest',
     boxmode: 'group',
+    paper_bgcolor: '#0b122b',
+    plot_bgcolor: '#0b122b',
 
     xaxis: {
         ticks: 'outside',
@@ -50,7 +52,12 @@ const stockLayout = {
     },
 };
 
-Plotly.newPlot('useGraph', stockData, stockLayout, {editable: true}, config);
+Plotly.newPlot('useGraph', stockData, stockLayout, config);
+
+function updateTitle(){
+    let newTitle = document.getElementById('#updateBoxTitle').value;;
+    newTitle.id='NewTitle;'
+};
 
 const divSpace = document.createElement('div');
 divSpace.id='whiteSpace';
@@ -118,8 +125,11 @@ function rainbowPlot(){
 function updateData(){
     const boxNum = document.querySelector('#numBoxes').value;
     var minResults = [];
+    minResults.id = 'minResult';
     var maxResult = [];
+    maxResult.id='maxResult';
     var countResult = [];
+    countResult.id='countResult';
     var barHide = document.querySelector(".barHide");
     var results = document.querySelector('#boxData');
 
@@ -127,7 +137,7 @@ function updateData(){
     for(var i=0; i<boxNum; i++){
         var minLabel = document.createElement('label');
         var minInput = document.createElement('input');
-        minLabel.innerText='Min value #' + i + " : ";
+        minLabel.innerText='Min value #' + (i + 1) + " : ";
         minInput.type='text';
         minInput.placeholder='Enter min value';
         minInput.className='inputText';
@@ -139,10 +149,10 @@ function updateData(){
 
         var maxLabel = document.createElement('label');
         var maxInput = document.createElement('input');
-        maxLabel.innerText = 'Box #' + i + " Max: ";
+        maxLabel.innerText = 'Box #' + (i + 1) + " Max: ";
         maxInput.type = 'text';
         maxInput.placeholder='Max'
-        maxInput.id='rangeMax' + i;
+        maxInput.id='maxVal' + i;
         maxInput.className='inputText';
         results.appendChild(maxLabel);
         results.appendChild(maxInput);
@@ -151,10 +161,10 @@ function updateData(){
 
         var countLabel = document.createElement('label');
         var countInput = document.createElement('input');
-        countLabel.innerText='Box #' + i + " DP: ";
+        countLabel.innerText='Box #' + (i + 1) + " DP: ";
         countInput.type='text';
         countInput.placeholder='Count'
-        countInput.id='numDataEntry' + i;
+        countInput.id='countVal' + i;
         countInput.className='inputText';
         results.appendChild(countLabel);
         results.appendChild(countInput);
@@ -162,10 +172,9 @@ function updateData(){
         results.appendChild(document.createElement('br'));
         let addCount = countResult.push(countInput.value);
     }
-    console.log(minResults[0]);
 };
 
-const datRange = [];
+var datRange = [];
 function submitData(){
     var countBoxes = document.querySelector('#numBoxes').value;
     const nameBoxes = [];
@@ -176,25 +185,27 @@ function submitData(){
 
     //count[i] should be pulling from boxData & grabbing entry for count
     for(var i=0; i<countBoxes; i++){
-        var min = document.querySelector('#minResults'+i).value;
-        var max = document.querySelector('#maxResult'+i).value;
-        var count = document.querySelector('#countResult'+i).value;
+        var min = document.querySelector('#minVal'+i).value;
+        var max = document.querySelector('#maxVal'+i).value;
+        var count = document.querySelector('#countVal'+i).value;
+        var floorMax = Math.floor(max);
+        var ceilingMin = Math.ceil(min);
         var curRange = [];
-        for(var j=0; j<count[i]; j++){
-            curRange.push(Math.random() * (min[countBoxes] - max[countBoxes]) + min[countBoxes]);
+        for(var j=0; j<count; j++){
+            var randVal = Math.floor(Math.random() * (floorMax - ceilingMin + 1) + ceilingMin);
+            curRange.push(randVal);
         }
         //need to store all values of curRange in to value.
         let add = datRange.push(curRange);
-        //curRange = [];
     }
-
 };
-
 const updatedLayout = {
-    title: 'New Data:',
+    title: 'New Data',
     autosize: true,
     hovermode: 'closest',
     boxmode: 'group',
+    paper_bgcolor: '#0b122b',
+    plot_bgcolor: '#0b122b',
 
     xaxis: {
         ticks: 'outside',
@@ -219,69 +230,34 @@ const updatedLayout = {
         }
     },
 };
-const boxPlotTrace1 = [{
-    y: datRange[0],
-    type: 'box',
-    boxpoints: 'all',
-    backgroundColor: 'rgba(68, 121, 248, 0.5)',
-    borderColor: 'rgba(47, 81, 248, 0.85)',
-    borderWidth: 1,
-    outlierColor: 'blue',
-    padding: 12,
-}];
-const boxPlotTrace2 = [{
-    y: datRange[1],
-    type: 'box',
-    boxpoints: 'all',
-    backgroundColor: 'rgba(100, 150, 200, 0.5)',
-    borderColor: 'rgba(60, 100, 210, 0.85)',
-    borderWidth: 1,
-    outlierColor: 'red',
-    padding: 12,
-}];
-const boxPlotTrace3 = [{
-    y: datRange[3],
-    type: 'box',
-    boxpoints: 'all',
-    backgroundColor: 'rgba(100, 150, 200, 0.5)',
-    borderColor: 'rgba(60, 100, 210, 0.85)',
-    borderWidth: 1,
-    outlierColor: 'red',
-    padding: 12,
-}];
-const boxPlotTrace4 = [{
-    y: datRange[4],
-    type: 'box',
-    boxpoints: 'all',
-    backgroundColor: 'rgba(100, 150, 200, 0.5)',
-    borderColor: 'rgba(60, 100, 210, 0.85)',
-    borderWidth: 1,
-    outlierColor: 'red',
-    padding: 12,
-}];
-const boxPlotTrace5 = [{
-    y: datRange[5],
-    type: 'box',
-    boxpoints: 'all',
-    backgroundColor: 'rgba(100, 150, 200, 0.5)',
-    borderColor: 'rgba(60, 100, 210, 0.85)',
-    borderWidth: 1,
-    outlierColor: 'red',
-    padding: 12,
-}];
-
-const numOfBox = document.querySelector('#numBoxes').value;
-const newData = [boxPlotTrace1];
-if(numOfBox>= 2){
-    newData.push(boxPlotTrace2);
-}if (numOfBox>= 3) {
-    newData.push(boxPlotTrace3);
-}if(numOfBox>= 4){
-    newData.push(boxPlotTrace4);
-}if(numOfBox>=5){
-    newData.push(boxPlotTrace5);
-}
-
+//need to: 
+//implement proper updateTitle function
+//implement proper box name in graphNewData
 function graphNewData(){
+    var numOfBox = document.querySelector('#numBoxes').value;
+    var newData=[];
+    for(var i=0; i<numOfBox; i++){
+        var boxTrace = {
+            y: datRange[i],
+            type: 'box',
+            //attempt to fix name
+            // document.querySelector('#numName' + (i + 1)).textContent
+            //'box #' + (i + 1)
+            name: 'box #' + (i + 1),
+            boxpoints: 'all',
+            backgroundColor: 'rgba(68, 121, 248, 0.5)',
+            borderColor: 'rgba(47, 81, 248, 0.85)',
+            borderWidth: 1,
+            outlierColor: 'blue',
+            padding: 12,
+        }
+        newData.push(boxTrace);
+    }
+
     Plotly.newPlot('useGraph', newData, updatedLayout, config);
 }
+//#040c24
+//background: #172042;
+//background-image: linear-gradient(red, yellow);
+
+//styling.css .navbar = background: #1c2147;
