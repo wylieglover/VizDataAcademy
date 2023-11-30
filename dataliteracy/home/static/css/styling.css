@@ -416,8 +416,9 @@ ul {
 
 .logo {
     position: absolute;
-    width: 80%;
-    height: 20%;
+    max-width: 80%;
+    height: auto;
+    min-width: 20%;
     bottom: 100px;
     left: 18px;
     border-radius: 20px;
