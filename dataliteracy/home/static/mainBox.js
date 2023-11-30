@@ -278,7 +278,7 @@ function graphNewData(){
     var numOfBox = document.querySelector('#numBoxes').value;
     var newData=[];
     for(var i=0; i<numOfBox; i++){
-        var boxTrace = [{
+        var boxTrace = {
             y: datRange[i],
             type: 'box',
             boxpoints: 'all',
@@ -287,7 +287,7 @@ function graphNewData(){
             borderWidth: 1,
             outlierColor: 'blue',
             padding: 12,
-        }]
+        }
         newData.push(boxTrace);
     }
 
