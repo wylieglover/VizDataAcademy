@@ -8,7 +8,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login, authenticate
 from .forms import SignUpForm
 from django.contrib.staticfiles import finders
-from .models import Classroom, StudentClassroom, TeacherClassroom, UserData
+from .models import Classroom, StudentClassroom, TeacherClassroom, UserData, User
 from helpers import random_str
 from itertools import chain
 
@@ -145,4 +145,19 @@ def create_assignment(request, class_id):
   return render(request, "createAssignment.html", {
     "user_data": account,
     "classroom": classroom
+    })
+
+def view_all_students(request, class_id):
+  classroom = get_object_or_404(Classroom, join_code=class_id)
+  students = StudentClassroom.objects.filter(classroom=classroom)
+  account = UserData.objects.get(user=request.user)
+  user = User.objects.get(username=request.user)
+  print(user.first_name)
+  print(students)
+
+  return render(request, "classList.html", {
+    "user_role": account,
+    "user": user,
+    "students": students,
+    "classroom": classroom,
     })

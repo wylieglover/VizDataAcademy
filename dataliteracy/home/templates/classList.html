@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block static_head %}
+    <link rel="stylesheet" href="{% static 'css/classList.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="mainBody">
+    <div class="students-card-layout">
+        <div class="student-card-size">
+            <div class="student-info">
+                <h1 class="h1-center">{{user.first_name}} {{user.last_name}}</h1>
+                <div class="info-center">
+                    <p><b>Role: {{user_role.role}}</b></p>
+                    <p><b>{{user.get_username}}</b></p>
+                    <p><b>Score: </b></p>
+                </div>
+            </div>
+        </div>
+        {% for student in students %}
+            <div class="student-card-size">
+                <div class="student-info">
+                    <h1 class="h1-center">{{student.first_name}} {{student.last_name}}</h1>
+                    <div class="info-center">
+                        <p><b>Role: STUDENT</b></p>
+                        <p><b>{{student.get_username}}</b></p>
+                        <p><b>Score: </b></p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    
+    
+
+</div>
+
+
+
+
+{% endblock %}
+

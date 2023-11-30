@@ -106,6 +106,7 @@
 .add-features {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-column-gap: 10px;
 }
 
 .add-assign,
@@ -116,6 +117,7 @@
     min-width: 75%;
     margin: 5% 15% 5% 15%;
     background: white;
+    border-radius: 4px;
 }
 
 .add-assign:hover,
@@ -146,6 +148,8 @@
 }
 
 .center-text2 {
+    margin-top: 8%;
+    padding-top: 15px;
     height: 100%;
     width: 100%;
     font-size: 25px;
