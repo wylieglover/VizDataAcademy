@@ -52,7 +52,12 @@ const stockLayout = {
     },
 };
 
-Plotly.newPlot('useGraph', stockData, stockLayout, {editable: true}, config);
+Plotly.newPlot('useGraph', stockData, stockLayout, config);
+
+function updateTitle(){
+    let newTitle = document.getElementById('#updateBoxTitle').value;;
+    newTitle.id='NewTitle;'
+};
 
 const divSpace = document.createElement('div');
 divSpace.id='whiteSpace';
@@ -132,7 +137,7 @@ function updateData(){
     for(var i=0; i<boxNum; i++){
         var minLabel = document.createElement('label');
         var minInput = document.createElement('input');
-        minLabel.innerText='Min value #' + i + " : ";
+        minLabel.innerText='Min value #' + (i + 1) + " : ";
         minInput.type='text';
         minInput.placeholder='Enter min value';
         minInput.className='inputText';
@@ -144,7 +149,7 @@ function updateData(){
 
         var maxLabel = document.createElement('label');
         var maxInput = document.createElement('input');
-        maxLabel.innerText = 'Box #' + i + " Max: ";
+        maxLabel.innerText = 'Box #' + (i + 1) + " Max: ";
         maxInput.type = 'text';
         maxInput.placeholder='Max'
         maxInput.id='maxVal' + i;
@@ -156,7 +161,7 @@ function updateData(){
 
         var countLabel = document.createElement('label');
         var countInput = document.createElement('input');
-        countLabel.innerText='Box #' + i + " DP: ";
+        countLabel.innerText='Box #' + (i + 1) + " DP: ";
         countInput.type='text';
         countInput.placeholder='Count'
         countInput.id='countVal' + i;
@@ -183,7 +188,6 @@ function submitData(){
         var min = document.querySelector('#minVal'+i).value;
         var max = document.querySelector('#maxVal'+i).value;
         var count = document.querySelector('#countVal'+i).value;
-        console.log('min: ' + min + '   Max: ' + max + "  count: " + count);
         var floorMax = Math.floor(max);
         var ceilingMin = Math.ceil(min);
         var curRange = [];
@@ -195,12 +199,13 @@ function submitData(){
         let add = datRange.push(curRange);
     }
 };
-
 const updatedLayout = {
-    title: 'New Data:',
+    title: 'New Data',
     autosize: true,
     hovermode: 'closest',
     boxmode: 'group',
+    paper_bgcolor: '#0b122b',
+    plot_bgcolor: '#0b122b',
 
     xaxis: {
         ticks: 'outside',
@@ -225,57 +230,9 @@ const updatedLayout = {
         }
     },
 };
-var boxPlotTrace1 = [{
-    y: datRange[0],
-    type: 'box',
-    boxpoints: 'all',
-    backgroundColor: 'rgba(68, 121, 248, 0.5)',
-    borderColor: 'rgba(47, 81, 248, 0.85)',
-    borderWidth: 1,
-    outlierColor: 'blue',
-    padding: 12,
-}];
-var boxPlotTrace2 = [{
-    y: datRange[1],
-    type: 'box',
-    boxpoints: 'all',
-    backgroundColor: 'rgba(100, 150, 200, 0.5)',
-    borderColor: 'rgba(60, 100, 210, 0.85)',
-    borderWidth: 1,
-    outlierColor: 'red',
-    padding: 12,
-}];
-var boxPlotTrace3 = [{
-    y: datRange[3],
-    type: 'box',
-    boxpoints: 'all',
-    backgroundColor: 'rgba(100, 150, 200, 0.5)',
-    borderColor: 'rgba(60, 100, 210, 0.85)',
-    borderWidth: 1,
-    outlierColor: 'red',
-    padding: 12,
-}];
-var boxPlotTrace4 = [{
-    y: datRange[4],
-    type: 'box',
-    boxpoints: 'all',
-    backgroundColor: 'rgba(100, 150, 200, 0.5)',
-    borderColor: 'rgba(60, 100, 210, 0.85)',
-    borderWidth: 1,
-    outlierColor: 'red',
-    padding: 12,
-}];
-var boxPlotTrace5 = [{
-    y: datRange[5],
-    type: 'box',
-    boxpoints: 'all',
-    backgroundColor: 'rgba(100, 150, 200, 0.5)',
-    borderColor: 'rgba(60, 100, 210, 0.85)',
-    borderWidth: 1,
-    outlierColor: 'red',
-    padding: 12,
-}];
-
+//need to: 
+//implement proper updateTitle function
+//implement proper box name in graphNewData
 function graphNewData(){
     var numOfBox = document.querySelector('#numBoxes').value;
     var newData=[];
@@ -283,6 +240,10 @@ function graphNewData(){
         var boxTrace = {
             y: datRange[i],
             type: 'box',
+            //attempt to fix name
+            // document.querySelector('#numName' + (i + 1)).textContent
+            //'box #' + (i + 1)
+            name: 'box #' + (i + 1),
             boxpoints: 'all',
             backgroundColor: 'rgba(68, 121, 248, 0.5)',
             borderColor: 'rgba(47, 81, 248, 0.85)',

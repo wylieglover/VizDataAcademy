@@ -12,7 +12,7 @@
         </div>
         <div class="dataCollection">
             <h2 class="boxLabel" id="boxTitle">Stock Box</h2>
-            <input type="text" id="updateBoxTitle" placeholder="Change Title" onchange="updateTitle()"/> 
+            <input type="text" id="updateBoxTitle" placeholder="Change Title" onchange="updateTitle(this)"/> 
             <script>
                 function updateTitle(){
                     let Title = document.getElementById('updateBoxTitle').value;
@@ -20,7 +20,7 @@
                 }
             </script>
 
-            <h2 class="boxLabel" id="numBox">Number of BoxPlots</h2>
+            <h3 class="boxLabel" id="numBox">Number of BoxPlots</h3>
             <select id="numBoxes" placeholder="" onchange="refreshBoxCount(this)">
                 <option value="" disable selected>Select</option>
                 <option value="1">1</option>
@@ -33,7 +33,7 @@
                 <container id="numBoxPlot"></container>
             </div>
 
-            <h2 class="boxLabel" id="typeHeader">Choose Plot type</h2>
+            <h3 class="boxLabel" id="typeHeader">Choose Plot type</h3>
             <form action="/action_page.php" method="get">
                 <label for="boxChoice">Choose boxType</label>
                 <input list="box_type" name="boxChoice" id="boxChoice" placeholder="Select" onchange="updateBoxStyle(this);updateData()">
@@ -47,13 +47,7 @@
                 <container id="boxData"></container>
             </div>
 
-
-            <!--create a select list with options, change graph from there-->
-            <!-- <label for="submitData">Submit Data</label> -->
-            <!-- <button id="submitData" onclick="updateData()">Submit</button> -->
-
-
-
+            <br>
             <h4 class="boxLabel" id="generateDat">Hit Enter to Submit Data</h4>
             <button class="sendData" id="genData" onclick="submitData()">Enter</button>
             <br>
