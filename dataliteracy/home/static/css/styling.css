@@ -44,8 +44,8 @@ ul {
 /*====== Navbar ======*/
 .navbar {
     text-decoration: none;
-    
-    background: linear-gradient( #040c24, #1c2147);
+
+    background: linear-gradient(#040c24, #1c2147);
     z-index: 3;
     position: fixed;
     width: 100%;
@@ -75,7 +75,7 @@ ul {
     height: 50px;
     justify-content: center;
     align-content: center;
-    background: linear-gradient(to bottom right, #040c24, #1c2147);
+    background: linear-gradient(#040c24, #1c2147);
 }
 
 .main-logo {
@@ -302,7 +302,7 @@ ul {
     font-size: 100px;
     margin: 10px 10px;
     color: rgb(70, 86, 233);
-    
+
     background-image: linear-gradient(#1c2147, #040c24);
     height: max-content;
     width: max-content;
