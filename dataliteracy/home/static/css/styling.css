@@ -337,8 +337,8 @@ ul {
     font-size: 18px;
     color: #FFF;
     /* margin-top: 20px; */
-    /* background-color: #040c24;
-    width: 800px; */
+    background-color: #040c24;
+    width: 150vh;
     margin-left: 10px;
     margin-right: 10px;
     display: grid;

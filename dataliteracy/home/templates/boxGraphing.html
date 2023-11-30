@@ -21,7 +21,7 @@
             </script>
 
             <h3 class="boxLabel" id="numBox">Number of BoxPlots</h3>
-            <select id="numBoxes" placeholder="" onchange="refreshBoxCount(this)">
+            <select id="numBoxes" class="selector" placeholder="" onchange="refreshBoxCount(this)">
                 <option value="" disable selected>Select</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -53,7 +53,7 @@
             <br>
 
             <h4 class="boxLabel" id="sendDat">Hit Enter to Display New Graph</h4>
-            <button class="sendData" id="sendData" onclick="graphNewData()">Graph</button>
+            <button class="sendData submit" id="sendData" onclick="graphNewData()">Graph</button>
 
             <div class="barHide"></div>
 

@@ -75,6 +75,7 @@ function updateLines(_this) {
   for (let i = 0; i < numLines; i++) {
     const barNameInput = document.createElement('input');
     barNameInput.type = 'text';
+    barNameInput.className = 'inputText';
     barNameInput.placeholder = `Line ${i + 1} name`;
     barNamesContainer.appendChild(barNameInput);
   }
@@ -91,12 +92,14 @@ function updateValues(_this) {
       const lineInputX = document.createElement('input');
       lineInputX.id = 'nameNumX' + i + j;
       lineInputX.type = 'text';
+      lineInputX.className = 'inputText';
       lineInputX.placeholder = `x${j + 1} value`;
       lineInputContainer.appendChild(lineInputX);
 
       const lineInputY = document.createElement('input');
       lineInputY.id = 'nameNumY' + i + j;
       lineInputY.type = 'text';
+      lineInputY.className = 'inputText';
       lineInputY.placeholder = `y${j + 1} value`;
       lineInputContainer.appendChild(lineInputY);
 
