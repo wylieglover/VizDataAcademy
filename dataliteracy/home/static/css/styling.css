@@ -330,23 +330,23 @@ ul {
 
 .statementP {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 25px;
+    font-size: 18px;
     color: #FFF;
     /* margin-top: 20px; */
     /* background-color: #040c24;
     width: 800px; */
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 10px;
+    margin-right: 10px;
     display: grid;
     border: 2px solid #fff;
     border-radius: 2px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
 }
 
 .statementContainer {
     background-color: #040c24;
-    width: 1500px;
+    width: 1300px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 40px;

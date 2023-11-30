@@ -167,7 +167,7 @@ function updateData(){
     }
 };
 
-const datRange = [];
+var datRange = [];
 function submitData(){
     var countBoxes = document.querySelector('#numBoxes').value;
     const nameBoxes = [];
@@ -276,16 +276,21 @@ var boxPlotTrace5 = [{
 
 function graphNewData(){
     var numOfBox = document.querySelector('#numBoxes').value;
-    var newData = [boxPlotTrace1];
-    if(numOfBox>= 2){
-        let add=newData.push(boxPlotTrace2);
-    }if (numOfBox>= 3) {
-        let add=newData.push(boxPlotTrace3);
-    }if(numOfBox>= 4){
-        let add=newData.push(boxPlotTrace4);
-    }if(numOfBox>=5){
-        let add=newData.push(boxPlotTrace5);
+    var newData=[];
+    for(var i=0; i<numOfBox; i++){
+        var boxTrace = [{
+            y: datRange[i],
+            type: 'box',
+            boxpoints: 'all',
+            backgroundColor: 'rgba(68, 121, 248, 0.5)',
+            borderColor: 'rgba(47, 81, 248, 0.85)',
+            borderWidth: 1,
+            outlierColor: 'blue',
+            padding: 12,
+        }]
+        newData.push(boxTrace);
     }
 
     Plotly.newPlot('useGraph', newData, updatedLayout, config);
 }
+//Plotly.newPlot('useGraph', stockData, stockLayout, {editable: true}, config);
