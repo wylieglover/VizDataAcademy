@@ -25,6 +25,8 @@ const stockLayout = {
     autosize: true,
     hovermode: 'closest',
     boxmode: 'group',
+    paper_bgcolor: '#0b122b',
+    plot_bgcolor: '#0b122b',
 
     xaxis: {
         ticks: 'outside',
