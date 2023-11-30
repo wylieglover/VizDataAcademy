@@ -7,7 +7,7 @@
     display: flex;
     flex-direction: row;
     height: 125px;
-    background-color: white;
+    background-image: radial-gradient(#040c24, #040c24, #040c24, #1c2147, #1c2147);
     color: black;
     border-radius: 6px;
     border: 2px;
@@ -15,10 +15,10 @@
 }
 
 .title-text {
-    margin-left: 2%;
+    margin-left: 40%;
     font-size: 70px;
     font-family: 'Monaco';
-    color: black;
+    color: rgb(70, 86, 233);
 }
 
 .description-content {
@@ -40,13 +40,13 @@
     min-width: 100%;
     border-radius: 6px;
     border: 2px;
-    background-color: white;
+    background-image: radial-gradient(#040c24, #040c24, #040c24, #1c2147, #1c2147);
     color: black;
 
 }
 
 .decription-view {
-    background-color: white;
+    background-image: radial-gradient(#040c24, #040c24, #040c24, #1c2147, #1c2147);
     color: black;
 
     text-align: center;
@@ -61,7 +61,7 @@
     font-size: 30px;
     font-family: 'Monaco';
     text-align: center;
-    color: black;
+    color: #EAEAEA;
 
 }
 
@@ -72,7 +72,7 @@
     margin: 5px 5px;
     font-size: 20px;
     min-width: 100%;
-    color: black;
+    color: #EAEAEA;
 
 }
 
@@ -110,19 +110,19 @@
 
 .add-assign,
 .add-student {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); 
     transition: 0.3s;
     min-height: 60%;
     min-width: 75%;
     margin: 5% 15% 5% 15%;
-    background: white;
+    background-image: radial-gradient(#040c24, #040c24, #040c24, #1c2147, #1c2147);
 }
 
 .add-assign:hover,
 .add-student:hover {
     box-shadow: 0 12px 15px 0 cadetblue;
     color: white;
-    background-color: black;
+    background-color: rgba(255, 255, 255, .4);
 }
 
 .text-middle {
@@ -141,7 +141,7 @@
     font-weight: 800;
     font-family: 'Lucida Sans';
     text-align: center;
-    color: black;
+    color: #EAEAEA;
 
 }
 

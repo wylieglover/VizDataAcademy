@@ -2,7 +2,7 @@ body {
     margin: 0;
     font-family: Helvetica, sans-serif;
     color: #fff;
-    background: #172042;
+    background: #1c2147;
     min-height: 100vh;
 }
 
@@ -44,7 +44,8 @@ ul {
 /*====== Navbar ======*/
 .navbar {
     text-decoration: none;
-    background: #1c2147;
+    
+    background: linear-gradient( #040c24, #1c2147);
     z-index: 3;
     position: fixed;
     width: 100%;
@@ -74,6 +75,7 @@ ul {
     height: 50px;
     justify-content: center;
     align-content: center;
+    background: linear-gradient(to bottom right, #040c24, #1c2147);
 }
 
 .main-logo {
@@ -120,7 +122,7 @@ ul {
 .navbar ul a {
     font-size: 0.8em;
     text-transform: uppercase;
-    color: #6b6f8a;
+    color: #F4F4F4;
     padding-bottom: 0.2em;
     transition: 0.3s;
 }
@@ -179,7 +181,7 @@ ul {
     top: 10px;
     height: 100%;
     padding: 3em 2em 0 2em;
-    background: linear-gradient(0deg, #040c24, #1c2147);
+    background: linear-gradient(to right, #040c24, #1c2147);
     overflow-y: hidden;
     width: 15%;
 }
@@ -220,7 +222,7 @@ ul {
     color: #fff;
 }
 
-
+/*==== Graphs ====*/
 #useGraph {
     position: fixed;
     left: 15%;
@@ -300,7 +302,8 @@ ul {
     font-size: 100px;
     margin: 10px 10px;
     color: rgb(70, 86, 233);
-    background-color: #040c24;
+    
+    background-image: linear-gradient(#1c2147, #040c24);
     height: max-content;
     width: max-content;
     margin: auto;
@@ -324,6 +327,7 @@ ul {
 .pageTitle {
     text-align: center;
     color: #474747;
+    font-family: 'Georgia';
     font-size: 100px;
     margin-bottom: 40px;
 }
@@ -345,7 +349,7 @@ ul {
 }
 
 .statementContainer {
-    background-color: #040c24;
+    background-color: rgba(4, 12, 36, .55);
     width: 1300px;
     margin-left: auto;
     margin-right: auto;

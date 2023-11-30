@@ -256,4 +256,8 @@ function graphNewData(){
 
     Plotly.newPlot('useGraph', newData, updatedLayout, config);
 }
-//Plotly.newPlot('useGraph', stockData, stockLayout, {editable: true}, config);
+//#040c24
+//background: #172042;
+//background-image: linear-gradient(red, yellow);
+
+//styling.css .navbar = background: #1c2147;
