@@ -111,15 +111,12 @@
 
 .add-assign,
 .add-student {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); 
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
     min-height: 60%;
     min-width: 75%;
     margin: 5% 15% 5% 15%;
-<<<<<<< HEAD
     border-radius: 4px;
-=======
->>>>>>> main
     background-image: radial-gradient(#040c24, #040c24, #040c24, #1c2147, #1c2147);
 }
 
