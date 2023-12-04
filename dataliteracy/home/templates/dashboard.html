@@ -17,7 +17,9 @@
             
             <button type="button" class="basic-button" onclick="joinPopup()">Join Class</button>  
             <div class="popup" id="popup">
-                <form method="">
+                <form method="POST">
+                    {% csrf_token %}
+                    
                     <h2>Hello {{user.get_username}}</h2>
                     <h3>Enter Class Code:</h3>
                     <input  type="text"  id=join_code placeholder="7 Character Code">

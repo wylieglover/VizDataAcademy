@@ -100,21 +100,23 @@
 }
 
 .class-cards:hover {
-    box-shadow: 0 8px 16px 0 red;
+    box-shadow: 0 8px 16px 0 white;
 }
 
 .add-features {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-column-gap: 10px;
 }
 
 .add-assign,
 .add-student {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); 
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
     min-height: 60%;
     min-width: 75%;
     margin: 5% 15% 5% 15%;
+    border-radius: 4px;
     background-image: radial-gradient(#040c24, #040c24, #040c24, #1c2147, #1c2147);
 }
 
@@ -146,6 +148,8 @@
 }
 
 .center-text2 {
+    margin-top: 8%;
+    padding-top: 15px;
     height: 100%;
     width: 100%;
     font-size: 25px;
