@@ -11,11 +11,11 @@
             <h2 class="dataLabel">Graph Title</h1>
             <input type="text" id="chartName" placeholder="Graph Name" />
             <h2 class="dataLabel">X-Axis Label</h1>
-            <input type="text" id="xAxisLabel" placeholder="X-Axis" />
+            <input type="text" class="inputText" id="xAxisLabel" placeholder="X-Axis" />
             <h2 class="dataLabel">Y-Axis Label</h1>
-            <input type="text" id="yAxisLabel" placeholder="Y-Axis" />
+            <input type="text" class="inputText" id="yAxisLabel" placeholder="Y-Axis" />
             <h2 class="dataLabel">Number of Lines </h2>
-            <select id="numLines" placeholder='' onchange="updateLines(this)">
+            <select id="numLines" class="selector" placeholder='' onchange="updateLines(this)">
                 <option value="" disable selected>Select</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -27,7 +27,7 @@
                 <div id="barNamesInput"></div>
             </div>
             <label for="numLines"><h2>Number of Points per line</h2></label>
-            <select id="valLines" placeholder='' onchange="updateValues(this)">
+            <select id="valLines" class="selector" placeholder='' onchange="updateValues(this)">
                 <option value="" disable selected>Select</option>
                         <option value="1">1</option>
                         <option value="2">2</option>

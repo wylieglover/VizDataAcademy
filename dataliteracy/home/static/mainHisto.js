@@ -43,11 +43,13 @@ function updateBars() {
   for (let i = 0; i < numBars; i++) {
     const barNameInput = document.createElement('input');
     barNameInput.type = 'text';
+    barNameInput.className = 'inputText'
     barNameInput.placeholder = `Bar ${i + 1} Label`;
     barNamesContainer.appendChild(barNameInput);
 
     const barValueInput = document.createElement('input');
     barValueInput.type = 'number';
+    barValueInput.className = 'inputText'
     barValueInput.placeholder = `Bar ${i + 1} Value`;
     barValuesContainer.appendChild(barValueInput);
   }
