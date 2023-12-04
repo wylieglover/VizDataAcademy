@@ -116,7 +116,10 @@
     min-height: 60%;
     min-width: 75%;
     margin: 5% 15% 5% 15%;
+<<<<<<< HEAD
     border-radius: 4px;
+=======
+>>>>>>> main
     background-image: radial-gradient(#040c24, #040c24, #040c24, #1c2147, #1c2147);
 }
 
