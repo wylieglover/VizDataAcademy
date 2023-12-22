@@ -9,7 +9,7 @@ class UserDataInLine(admin.StackedInline):
     can_delete = False
     verbose_name_plural = 'UserDatas'
 
-class CustomizedUserAdmin (UserAdmin):
+class CustomizedUserAdmin (UserAdmin): 
     inlines = (UserDataInLine, )
 
 admin.site.unregister(User)
