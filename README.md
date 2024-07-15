@@ -26,4 +26,3 @@ python manage.py runserver
 ```
 
 There you go! You can now start developing the project locally!
-
